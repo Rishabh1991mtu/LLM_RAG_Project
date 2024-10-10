@@ -48,8 +48,8 @@ if __name__ == "__main__":
     docs_data = pd.read_csv(csv_file)
     
     # Query the index
-    query = "How to import a part from part library in Hypermesh ?"
-    retrieved_docs = retrieve_documents(model, index, docs_data, query, k=1)
+    query = "What are the requirements on door locks ? "
+    retrieved_docs = retrieve_documents(model, index, docs_data, query, k=6)
     
     # Generate a response using Ollama based on the retrieved documents
     generate_response_with_ollama(query, retrieved_docs)

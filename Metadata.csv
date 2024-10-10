@@ -1,2720 +1,886 @@
 Index_ID,Text_Chunk
-0,"3/28/23, 12:01 AM
-About Parts, Part Assemblies, Part Instances
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_and_part_assembly_about_c.htm
-1/2
-2022.2
-About Parts, Part Assemblies, Part Instances
-A part is an engineering representation of a physical part, and a part assembly is a group of
-part assemblies and/or parts. Part Instances, which are recognized from PDM, are
-automatically converted to Part Instances on import into HyperMesh.
-Parts and Part Assemblies"
-1,"Parts and Part Assemblies
-HyperMesh supports CAE parts ( 
- ) and part assemblies ( 
- ) and PDM parts (
-) and part assemblies ( 
- ).
-Parts assemblies and parts facilitate the one-to-one mapping of a CAD hierarchy into the HyperMesh environment as
-a CAE hierarchy. The CAE hierarchy can be created manually or can be imported from a PDM system via a neutral file
-format such as PLMXML.
-Figure 1. PDM BOM
-Figure 2. HyperMesh BOM"
-2,"Figure 1. PDM BOM
-Figure 2. HyperMesh BOM
-If a part is comprised of multiple components, such as cast parts or tailor-welded blanks, you can perform actions
-such as visualization view modes, model management, and connector link definition at the part level.
-Parts can be used to organize a physical part that is made up of multiple components in a CAE model as a single
-part.
-Figure 3. Cast Part in Part Browser"
-3,"3/28/23, 12:01 AM
-About Parts, Part Assemblies, Part Instances
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_and_part_assembly_about_c.htm
-2/2
-In the Part Browser, collapsing all folders at the part level enables you to see all owned and referenced entities.
-Expanding folders at the part level displays a nested list of all referenced components and their entity specific
-attribute values which are shown in the respective columns.
-Part Instances"
-4,"Part Instances
-The Part browser provides limited support for part instances of externally sourced BOMs.
-Part Instances (
-) share UID and Part names. The name assigned to child instances is incremented by *.ixx, where
-xx indicates the number of the child instance. The positioning of Part Instances is dictated by the transformation
-matrix applied to the Part in the PDM system. Part Instances can also be created and broken interactively in a"
-5,"session. Upon creation, you will automatically be prompted to transform the part via the Transform tool. When
-broken, instances are split into two separate parts that are independent of each other.
-In circular, symmetric, or rectangular patterns, certain parts may appear in a BOM multiple times. Typical examples
-include bolts, hinges, and symmetric parts.
-Creating or saving part representations for instantiated parts saves a single representation in the repository."
-6,Importing instantiated parts positions them according to their respective 4 x 3 transformation matrices.
-7,"3/28/23, 12:02 AM
-About Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representations_about_c.htm
-1/2
-2022.2
-About Representations
-The CAD representation is typically the original source of information of what a physical part
-will look like. It forms the basis of the Common representation, which in turn is the basis of all
-subsequent discipline specific mesh representations. A part can contain multiple
-representations."
-8,"representations.
-Figure 1. Hierarchical Relationship of Representations
-The Common representation component typically contains geometry, though it can also consist of FE mesh.
-A folder based Representation repository stores all CAE data that is required during the model build and assembly
-process. CAE data stored in the Representation repository includes the geometric and FE representation of the parts
-that comprise the subsystem specific model hierarchy."
-9,"You can import a BOM via a neutral file format such as PLMXML or manually create a part structure using the Part
-Browser context menu.
-Common Representation
-The Common representation is derived from the CAD representation and forms the basis of all subsequent discipline
-specific mesh representations.
-For sheet metal parts, the Common representation consists of midsurfaced geometry or FE. The CAD is sent to the"
-10,"BatchMesher for midsurface extraction; upon completion it is saved into the repository and you can elect to
-immediately import the representation into the session."
-11,"3/28/23, 12:02 AM
-About Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representations_about_c.htm
-2/2
-HyperMesh entities are generated from the PDM metadata, if available, in the post-run procedure of the BatchMesh
-operation. The PDM PID is assigned to the component and property, the PDM MID and PDM material is assigned to
-the material and the PDM Thickness is assigned to the Thickness attribute of the property. If the PDM Thickness is"
-12,"blank, the CAD Thickness calculated during the midsurface operation is automatically assigned to the Thickness
-attribute of the property.
-For parts such as castings and tailor-welded blanks, you can save CAD representations as Common models.
-Alternatively, you can send solid parts to the BatchMesher. If thin-solid detection is enabled in the Common
-representation parameter file, then solids will be detected and saved as the Common representation without"
-13,"processing. By default, the midsurface algorithm skin is used. CAD representation does not need to be loaded into
-the session in order to generate the Common representation since it is sent directly to the BatchMesher for
-processing.
-When you select a discipline specific mesh representation from the Change Representation dialog, Create tab, the
-Common representation residing in the repository is automatically sent to the BatchMesher for processing. If the"
-14,"Common representation does not exist it will be automatically generated.
-Discipline Specific Mesh Representations
-Common representations form the basis of all discipline specific representations. When you select a discipline
-specific mesh representation from the Create Representation dialog, the Common representation residing in the
-repository is automatically sent to the BatchMesher for processing. The Common representation does not need to"
-15,"be loaded in the session to generate discipline specific mesh representations.
-Figure 2. PDM Column Data in Part Browser"
-16,"3/28/23, 12:03 AM
-Add Representations from External Sources
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_add_from_external_source_t.htm
-1/4
-2022.2
-Add Representations from External Sources
-Add representations from external sources for a single part or for multiple parts and part
-assemblies.
-When selecting a part assembly or multiple parts, the Add Representations dialog enables you to map and associate"
-17,"representation files to multiple parts simultaneously.
-If appropriate metadata is available in the BOM, then the alias values will be preselected. After choosing a
-Representation Folder, representation files will be mapped according to the HyperMesh naming convention. You can
-then manually select or update any of the alias and representation file values.
-Indicators are displayed for each part to indicate the status of that row.
-Skip.
-Any Part which does not have a mapped or selected representation.
-OK."
-18,"OK.
-Alias and representation are chosen for the part.
-Overwrite.
-Part already has a representation which will be overwritten by the selected
-mapping.
-Duplicated.
-The same representation file is chosen for more than one part, or the chosen
-representation file is already used by another part in the same BOM. You
-cannot click OK to add the representations when representations are
-duplicated.
-1. In the Part Browser, right-click on the part assemblies or part(s) and select Representations  > (and then) Add"
-19,> (and then) from Files the context menu.
-20,"3/28/23, 12:03 AM
-Add Representations from External Sources
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_add_from_external_source_t.htm
-2/4
-2. In the Add Representation(s) dialog, define options accordingly."
-21,"3/28/23, 12:03 AM
-Add Representations from External Sources
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_add_from_external_source_t.htm
-3/4
-To add representations
-for
-Do this
-Single part
-a. From the Representation field, specify a desired representation type to which a
-representation file will be added.
-Choose a default representation type.
-Enter your own user defined representation into the field."
-22,"b. If you entered your own representation, select the appropriate mesh
-parameter and criteria files.
-User defined representations with defined mesh parameter and criteria files
-created in the Add Representation dialog will be available in the Change
-Representation dialog, Create tab. User defined representations with undefined
-mesh parameter and criteria files created in the Add Representation dialog will
-not be available in the Change Representation dialog, Create tab, but will appear"
-23,"in the Load tab if a representation is found in the repository.
-The availability of the selected representation in the repository is displayed next
-to the representation type within parentheses.
-Figure 1.
-Multiple part or part
-assemblies
-a. In the Representation Folder field, navigate to the representation file.
-b. For each part, select the representation type to be added. Use the
-Representation File drop-down menu for each part to map. Parts associate"
-24,"with the representation file. This will be done automatically if there is a
-matching file.
-Note:
-You cannot add CAD or connectors.
-You can select Part or Part Assembly for adding the representation."
-25,"3/28/23, 12:03 AM
-Add Representations from External Sources
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_add_from_external_source_t.htm
-4/4
-Figure 2.
-3. To save the representations to the Part Library select the Save to Library checkbox.
-4. Click OK."
-26,"3/28/23, 12:02 AM
-Add Representations from the Part Library
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_add_from_part_libraray_t.htm
-1/1
-2022.2
-Add Representations from the Part Library
-1. In the Part Browser, right-click on a part/part assembly and select Representations  > (and then) Add  > (and
-then) from Library from the context menu.
-2. In the Add Representations from Library dialog, select representations to add."
-27,"3. Optional: To simultaneously add and load representations, select representations to load from the Load
-Added Representations list.
-4. Click OK.
-Figure 1."
-28,"3/28/23, 12:03 AM
-Add Representations to the Part Library
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_add_to_part_library_t.htm
-1/1
-2022.2
-Add Representations to the Part Library
-After importing a BOM, you can add CAD representations to the Part Library.
-1. In the Part Browser, right-click on a part/part assembly and select Representations  > (and then) Add  > (and
-then) to Library from the context menu."
-29,"then) to Library from the context menu.
-2. In the Add Representation to Library dialog, select representations and click OK.
-The Add Representation to Library dialog displays information regarding the availability of representations in library,
-session, and overwrite details.
-In Figure 1, CAD representations are being added to the Part Library. The Library column displays 0/8, which
-indicates there are no CAD representations available in the Part Library. The Session column displays 6/8, which"
-30,"indicate 6 out of 8 representations are currently available in the active HyperMesh session. The Overwrite column
-displays 0/8, which indicates none of the representations will need to be overwritten.
-Figure 1."
-31,"3/27/23, 11:41 PM
-Area Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/area_realization_methods_unity_t.htm
-1/1
-2022
-Area Realization Methods
-Overview of the area connector realization process and methods.
-Each test point can be considered as a single spot. The methods are the same and the results look identical.
-Figure 1."
-32,"3/28/23, 12:03 AM
-Browse Library Content
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/browser_library_content_r.htm
-1/1
-2022.2
-Browse Library Content
-Review library content using the Library Viewer.
-1. In the Part Browser, right-click on the part assemblies or part(s) and select one of the following:
-Representations  > (and then) Add  > (and then) browse Library the context menu.
-Library  > (and then) Library Viewer the context menu.
-The Library Viewer opens."
-33,"The Library Viewer opens.
-2. Select the Part that contains the representations you would like to review.
-A list of properties associated with the Part are displayed in the Properties pane.
-Figure 1. Library Viewer"
-34,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-1/7
-2022
-Create and Realize Connectors
-Use the tools in the Create tool set to create connectors, assign controls, and realize.
-1. Navigate to the Connectors ribbon then select any of the tools in the Create tool set to define the associated
-connector type.
-Point
-Fastener
-Line
-Area
-2. On the guide bar, click"
-35,"Fastener
-Line
-Area
-2. On the guide bar, click 
- to define connector options.
-3. Use the selector on the guide bar to choose an entity type, then select features on which to create connectors."
-36,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-2/7
-4. Use the options in the microdialog to further define the connector.
-The following options are available for all entity types and tools.
-Option
-Description
-Move/Morph
-(
-)
-Relocate sections or the whole connector to a different position
-Link Edit (
-)"
-37,"Link Edit (
-)
-Opens a dialogue that allows you to adjust the link detection logic.
-Show/Hide
-Projections (
-)
-Show and hide the pre-projections that indicate where the connector will connect to.
-Other options are dependent on the entity type and selected tool."
-38,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-3/7
-Option
-Description
-Trim (
-)
-Split the connector at a selected position.
-Available for node list, line, element, and surface selection.
-Partition (
-)
-Partition the seam connector if any part of that connector does not have projections.
-Only available for the Line tool.
-Pitch and
-Density
-Pitch (
-)"
-39,"Pitch and
-Density
-Pitch (
-)
-Adjust the number of significant points along the connector line by given spacing.
-Density (
-)
-Adjust the number of significant points along the connector line by a number.
-Available for node list and line selection in the Point and Line tools.
-Line
-Interpolation
-Straight line (
-)
-A straight interpolation line is created between the selected nodes.
-Figure 1.
-Interpolated line (
-)
-A smoothed interpolation line is created between the selected nodes."
-40,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-4/7
-Figure 2.
-Available for node list selection in the Point and Line tools.
-Line Creation
-None (
-)
-Leave the line selections separate.
-Figure 3.
-Combine Smooth (
-)
-Combine selected lines with an interpolated line.
-5. Use the drop-down menu on the guide bar to assign a control to the connector."
-41,"Choose a previously defined control or click Create New to open the Control Manager and define a new
-control. If you select Undefined, the connector will be created without a control.
-By default, an assigned control is realized.
-6. On the guide bar, click one of the following:
- - Apply and stay in the tool
- - Apply and close the tool
- - Exit the tool without applying
-Auto Point
-Create weld points at a predefined pitch distance so that the model build process can continue"
-42,"without the need to wait for the published weld data from CAD. The Auto Point tool is useful
-when working with elements, not geometry."
-43,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-5/7
-Figure 4.
-Combine Straight (
-)
-Combine selected lines with a straight line.
-Figure 5.
-Mid Line (
-)
-Generate a midline between selected lines.
-Figure 6.
-Only available for line selection.
-Remesh (
-)
-Remesh the connector surface
-Figure 8. ."
-44,")
-Remesh the connector surface
-Figure 8. .
-Starting with a CAD model, the Auto Point tool creates unrealized connectors (yellow) which can then realized via the Point tool.
-1. From the Connectors ribbon, Point tool group, click the Auto Point tool.
-Figure 9.
-2. Select the components to automatically add connectors to.
-All selected components receive connectors with the same qualities to help you perform a blanket application"
-45,"of connectors – using the same pitch – to all components that need them as a single operation. Be wary of
-simply selecting the whole model, however, as this could result in undesirable actions, such as adding welds
-to a car's tires."
-46,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-6/7
-Remesh (
-)
-Remesh the connector surface.
-Figure 7.
-Available for any selection type in the Area tool.
-3. Click 
- on the guide bar and define the following options.
-Consider closed
-shell thin solids
-Use shell meshes that enclose a volume (some small gaps are allowed)
-as input.
-Create in middle"
-47,"as input.
-Create in middle
-Create connectors in the middle of the found flanges.
-Combine spots to
-lines
-Combine a series of spot connectors into a spot-line connector.
-Maximum number
-of layers field
-The maximum number of layers for the connector to add.
-Search distance
-The distance to consider between components.
-Spot pitch distance
-The distance between each connector.
-Spot pitch end
-offset
-The distance from the end of an edge/flange to the connector.
-Distance from free
-edge"
-48,"Distance from free
-edge
-The distance from the free edge to the connector.
-Distance from
-feature edge
-The distance from feature edge to connector.
-Feature angle
-The angle used to segregate the model into faces that are planar within
-its specified value.
-Max deviation from
-avg dist (%)
-the average distance that can be calculated based on the estimation
-that the distance between two flanges does not change too much in the
-areas where connectors should be placed."
-49,"areas where connectors should be placed.
-If the distance at the position where a connector is planned exceeds the
-given deviating value, no connector will be created at that position.
-This segregation is used to identify where auto point connectors are
-placed. For example, faces found to have significant topological
-complexity are not used to create auto point connectors.
-Note:  By reducing its value, the complexity of some of these faces is
-generally reduced. Of course, flat regions are unaffected by the"
-50,"parameter.
-Exclude holes with
-width less than
-Filter holes from the flange search if under a defined width.
-4. Click 
- on the guide bar.
-The created output is connectors with the appropriate spacing and other associated parameters. The connectors are
-in the unrealized state."
-51,"3/27/23, 11:48 PM
-Create and Realize Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_create_realize_t.htm#connectors_create_realize_t
-7/7
-Auto Line
-Use the Auto Line tool to identify locations to create line connectors between components and
-parts. This process works on 2D geometry and mesh.
-1. From the Connectors ribbon, Line tool group, click the Auto Line tool.
-Figure 10.
-2. Select the parts to automatically add connectors to.
-3. Click"
-52,"3. Click 
- on the guide bar and define the following options.
-Search distance
-The distance between the parts.
-Minimum length
-The tolerance for the smallest connector.
-Holes exclusion
-radius
-Filters holes from the flange search if under a defined width.
-Spacing
-Sets a spacing value on the connector.
-Create internal
-seams
-Creates connectors within a part if able.
-4. Click 
- on the guide bar.
-The created output is connectors with the appropriate spacing and other associated parameters. The connectors are"
-53,in the unrealized state.
-54,"3/28/23, 12:01 AM
-Create Parts, Part Assemblies, and Part Instances
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_partassembly_partinstance_create_t.htm
-1/1
-2022.2
-Create Parts, Part Assemblies, and Part Instances
-Only CAE parts and part assemblies can be manually created in HyperMesh. PDM parts and
-part assemblies must be imported into HyperMesh.
-Parts and Part Assemblies"
-55,"Parts and Part Assemblies
-1. In the Part Browser, right-click and select Create  > (and then) <entity type> from the context menu.
-The new part, or part assembly, is created and displayed in the browser. Part assembly or part level entities
-cannot be modified or deleted.
-Part Instances
-2. To link two or more similar parts as instances, right-click on the appropriate parts and select Instances  > (and
-then) Link from the context menu.
-You are prompted to select the source part via the Link Instance."
-56,"3. In the Part Browser, right-click on a part and select Instances  > (and then) Create from the context menu.
-The new part instance is created and displayed in the browser. You will automatically be prompted to
-transform the part via the Transform tool.
-4. To separate the part instance, right-click on the instance and select Instances  > (and then) Break.
-5. To propagate changes made from one instance to all other instances, right-click on the instance part where"
-57,"changes are complete and select Instance  > (and then) Sync.
-Changes are propagated from the selected instance to all other instances in the session.
-6. To rename a part instance, do one of the following:
-Click on the part instance to highlight it and rename.
-Right-click on the part instance and select Rename from the context menu.
-Click on the part instance to select it then click on the name in the Entity Editor."
-58,Note:  Changing the name of the part instance will propagate to the part instance of the same part.
-59,"3/28/23, 12:04 AM
-Create Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_create_t.htm
-1/2
-2022.2
-Create Representations
-Representations utilize the mesh parameter and criteria files that are included with HyperMesh. You can find these
-files in the BatchMesher. The Param File and Criteria File fields display the representation specific mesh parameter
-and criteria file."
-60,"and criteria file.
-Common representations form the basis of all subsequent discipline specific mesh representations. When you select
-a discipline specific mesh representation from the Change Representation dialog, Create tab, the Common
-representation residing in the repository is automatically sent to the BatchMesher for processing. If the Common
-representation does not exist it will be automatically generated."
-61,"1. In the Part Browser, right-click on part assemblies or parts and select Representations  > (and then) Create
-from the context menu.
-2. In the Change Representation dialog, Create tab, select a desired representation.
-The availability of the selected representation in the repository is displayed next to the representation type
-within parentheses.
-Figure 1. Available Representations.
-(0/11) common representations available in the repository."
-62,"3. Optional: To save the newly created representations to the Part Library select the Save to Library checkbox.
-4. Select the Midsurface method (default is Skin)."
-63,"3/28/23, 12:04 AM
-Create Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_create_t.htm
-2/2
-5. Click OK.
-All representations are sent to the BatchMesher for processing in parallel. Upon completion, all
-representations are automatically saved to the repository.
-Figure 2. BatchMesher Processing
-6. In the BatchMesh dialog, specify how representations are imported.
-Click Yes to import all representations into the session."
-64,"Click No to not import the representations into the session.
-Note:  The representations will be available in the Load Representation dialog."
-65,"3/28/23, 12:02 AM
-Define Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_define_t.htm
-1/1
-2022.2
-Define Representations
-Create your own user defined representation. User defined representations are saved to the
-settings and will be available in subsequent HyperMesh sessions.
-1. In the Part Browser, right-click on part assemblies or parts and select Representations  > (and then) Settings  >"
-66,"(and then) User Representations from the context menu.
-2. In the User Representation dialog, click + to add a new representation.
-3. In the Representation field, enter a name for the representation.
-4. In the Param File and Criteria File fields, select the appropriate mesh parameter and criteria file.
-5. If the representation is for solids, select the Solid checkbox.
-6. Click OK."
-67,"3/28/23, 12:06 AM
-Delete Representations from the Current HyperMesh Session
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_delete_from_session_t.htm
-1/1
-2022.2
-Delete Representations from the Current HyperMesh
-Session
-1. In the Part Browser, right-click on part assemblies or parts and select Representations  > (and then) Delete  >
-(and then) from Session from the context menu.
-2. In the Delete Representations dialog, select representations to be deleted."
-68,"3. To remove representations from the Part Library, select the Delete representation from library checkbox.
-Note:  The Study version will be incremented if a representation is deleted from the Library.
-4. Click OK.
-Figure 1."
-69,"3/28/23, 12:06 AM
-Delete Representations from the Part Library
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_delete_part_library_t.htm
-1/1
-2022.2
-Delete Representations from the Part Library
-1. In the Part Browser, right-click on part assemblies or parts and select Representations  > (and then) Delete  >
-(and then) from Library from the context menu.
-2. In the Delete Representations From Library dialog, select representations to be deleted.
-3. Click OK."
-70,"3. Click OK.
-Figure 1."
-71,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-1/12
-2022
-Fastener Realization Methods
-Overview of the fastener connector realization process and methods.
-The following flow chart outlines a four-stage process used to select the best routine for fastener realization.
-Figure 1.
-Depending on the realization type, the mesh connectivity will automatically be assigned as independent or"
-72,"dependent.
-mesh independent
-Use for realizations which do not need any mesh changes, and the connection is primarily defined via a solver-
-specific card or the nodes which need to be connected are defined by a cylinder, such as Bolt (cylinder spring)
-for Radioss.
-For all mesh independent fastener realization types, a cylinder is defined. Fastener hole detection is not
-performed because holes are not required. All of the nodes inside the cylinder are considered part of the"
-73,"fastener realization unless they also belong to a link defined on the connector.
-The cylinder dimension is primarily defined by its diameter, length L1 and L2."
-74,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-2/12
-L1 points in the same direction as the connector vector and describes the distance from the connector
-position to the first end of the cylinder.
-L2 points in the opposite direction and measures the distance between the connector position and the
-second end of the cylinder."
-75,"second end of the cylinder.
-Therefore, the connector vector is essential for these types of realizations.
-If a vector is not predefined and is determined dynamically, the vector will always point from the connector
-position to the projection point on the farthest link.
-Figure 2. .
-Dynamic vectors have been used in the first two cylinder. Interchanging the values for L1 and L2 leads to very different"
-76,"realizations. By comparison, the third cylinder uses the same values for L1 and L2 as in the second cylinder, but the result looks
-better because of the predefined connector vector in the global z-direction.
-In some automated processes, the cylinder diameter is automatically set to the fastener shaft diameter. This
-leads to failed cylinder fasteners when the holes are properly modeled because the defined cylinder does not"
-77,"contain nodes. In such cases, the cylinder diameter factor has been introduced; this factor is set to 1.0 by
-default and is a multiplier for the cylinder diameter to increase the final cylinder diameter when necessary.
-Note:  The cylinder diameter as well as the cylinder diameter factor can be reviewed and modified in the
-Connector Browser. Connectors can also be rerealized with modified cylinder diameters and cylinder diameter"
-78,factors without updating L1 or L2 in the browser. This is not possible from the panel.
-79,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-3/12
-Figure 3.
-mesh dependent
-Use for all other cases."
-80,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-4/12
-1. For mesh dependent types, you must determine:
-Is the existence of holes in each layer requested upfront?
-How should the 2D mesh be prepared before the final realization is performed?
-In the past, a fastener realization always required a hole for each layer in the initial mesh. This is no longer"
-81,"necessary for 2D meshes because the imprint capability punches the needed holes into the mesh before the
-final realization is performed, enabling the mesh to be manipulated in a pre-step. This makes it possible to
-punch holes, move holes, close holes, create washers, and so on.
-Under the Connectivity heading, select one of the following:
-consider existing hole only
-A minimum of one hole per layer must be available in the origin mesh. If holes do not exist, the"
-82,"realization will fail. This is the default method and must be used for any type of solid meshes.
-Figure 4.
-create hole, if none
-If there are not any holes on a certain layer, they will be punched into that layer at the position of the
-projection point. The diameter of the new hole is defined under the Realization Details heading. This
-method is used if the model does not contain the appropriate amount of holes per fastener, but holes
-are required for specific realization types.
-Figure 5."
-83,"Figure 5.
-use hole, if available
-Creates hybrids (hole on one side only), but other combinations are allowed. On the mesh side (no
-hole), the connection is realized via the head elements defined in the chosen realization type. The head
-element(s) is/are created between the appropriate body element node and the nodes inside the
-diameter (no hole connection dia) defined under the Realization Details heading. This option is used for
-realization types which are not eager for holes.
-Figure 6."
-84,"Figure 6.
-fill & remesh hole, if available"
-85,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-5/12
-Use this option when you do not want the shape of holes to interfere with the mesh flow in the fastener
-region. The detected holes are closed and a remesh of the new elements and a few additional rows of
-adjacent elements is performed. The connection is realized via the head elements defined in the chosen"
-86,"realization type. The head elements are created between the appropriate body element nodes and the
-nodes inside the diameter (no hole connection dia) defined under the Realization Details heading.
-Figure 7.
-Note:  The hole detection mechanism for the last three options takes into account a cylinder which is
-defined under the Realization Details heading. The hole consideration cylinder option can be defined as a"
-87,"factor of the no hole connection dia option or as an exact diameter. Principally holes which are inside or
-touching the cylinder can be detected, but the hole consideration is reduced to one hole per link per
-connector. Additionally, holes need to fit to the requested dimensions, which are also defined under the
-Realization Details heading.
-2. For the create hole, if none, and use hole options, a mesh modification including a hole movement is allowed."
-88,"Therefore, you can determine whether to adjust the hole(s) or to adjust the realization.
-adjust hole position (2D)
-Moves the center of a hole into the position of the projection point.
-Figure 8.
-adjust realization
-Hole positions are not modified, enabling the realized elements to compensate the nonaligned centers
-of holes.
-Figure 9."
-89,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-6/12
-3. Define behavior options.
-After Imprint
-During realization, if the mesh is altered to realize the connector, this option allows you to select
-between ""Remesh"" and ""Rebuild"" meshing algorithms.
-Rebuild Washer
-Perform a rebuild operation on the created washer in cases where the washer is very close to a feature"
-90,"edge. This will potentially change the shape of the washer to snap to feature edges to avoid poor mesh
-quality.
-Unrealize Fill Hole Created
-If the control is set to Create hole, if none, this fills the created hole when the connector is unrealized,
-returning the surface back to its original configuration before realization"
-91,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-7/12
-4. Define realize and hole detection details
-This stage cannot be skipped, as it has great influence on stages 2 and 3, which is expressed by the large
-arrow underlying those stages in the flow chart.
-This stage contains all realize and hole detection details which need to be known before the final realization is"
-92,"done. The realize and hole detection are found under the Realization Details heading.
-Hole Detection Details
-Dimension and Feature Angle
-The minimum and maximum dimensions define which holes should be considered during
-fastener realization. The minimum and maximum feature angle define the features to be
-considered as hole edges for solid elements.
-Hole Consideration Cylinder
-Not all of the holes found in the given connector tolerance can be considered for the various
-fastener realizations."
-93,"fastener realizations.
-The connector tolerance, especially when set to a large value, detects many holes. To
-prevent detecting holes which are far away from the connector position and are not
-aligned with the other hole(s), the consideration cylinder excludes outer holes from the
-detection."
-94,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-8/12
-Since the existence of a hole is not necessarily requested anymore, a space has to be
-defined where the holes are expected to be. It is no longer sufficient to use just the
-connector tolerance, therefore the Hole Consideration Cylinder option performed along"
-95,"the projection path becomes necessary. All of the holes the cylinder touches or contains
-can be considered for the various fastener realizations.
-Figure 10.
-Define cylinder diameters in the following ways:
-auto cylinder
-diameter (factor)
-Factors given diameters, which include: create hole
-diameter (2D), create/adjust hole diameter (2D), adjust hole
-diameter (2D), and no hole connection diameter. The first
-available diameter is used. The default factor is 1.5.
-exact cylinder
-diameter"
-96,"exact cylinder
-diameter
-Specify an exact diameter. The default diameter is 15.0
-Note:  The hole consideration cylinder option is not
-offered when using the consider existing holes only option."
-97,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-9/12
-Realization Details
-Depending on the options selected in stage 2, varying subsets of the options are offered.
-Diameter and adjustments options include:
-create hole diameter (2D)
-Create new holes with the specified diameter. Used if holes are required by the create hole, if
-none option.
-Figure 11.
-create and adjust hole diameter (2D)"
-98,"Figure 11.
-create and adjust hole diameter (2D)
-Create new holes with the specified diameter and adjust existing holes with the specified
-diameter, which leads to fastener realizations with the exact same diameter on all links. Used if
-holes are required by the create hole, if none option.
-Figure 12.
-adjust hole diameter (2D)
-Adjust existing holes to the specified diameter. The do not adjust hole diameter option switches"
-99,"off the adjustment and uses the holes with their origin size. Used if holes are not necessarily
-required when using the use hole, if available option, but the existing holes need to have a
-specific diameter."
-100,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-10/12
-Figure 13.
-no hole connection diameter
-Connect a link without an available hole by joining the nodes found inside the circle with the
-specified diameter around the projection point via head elements. Used if holes are not required
-when using the use hole, if available option or fill and remesh hole, if available option."
-101,"Hole filling and number of nodes around holes options include:
-Fill Holes (2D)
-Fill detected holes during fastener realization. There are various quad patterns available, which
-cause a remeshing of the area around the hole.
-Figure 14."
-102,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-11/12
-Holes can also be filled with pie pieces. If the number of pie pieces is defined, the surrounding
-mesh is remeshed. The pie pieces preserve option also creates pie pieces, but takes the existing
-hole nodes into account and prevents the remeshing."
-103,"Note:  Activating the fill holes (2D) option deactivates the no. of nodes around hole option.
-Figure 15.
-Nodes around Hole
-preserve
-Use the number of nodes of the appropriate origin hole.
-This is the default option which prevents the surrounding
-mesh from being remeshed. For new holes, the auto option
-is used.
-density
-Specify the exact number of nodes (default is 8). The
-surrounding mesh gets remeshed.
-elem size
-Specify an element size (default is 5.0). The number of"
-104,"elements around the hole is calculated based on this size.
-This is the preferred option for extremely different hole
-diameters. The surrounding mesh gets remeshed.
-auto
-Perform a node distribution based on the underlying mesh
-size. The number of nodes is always rounded to an equal
-number.
-Create washer layer options:
-For 2D holes, one or two washer layers can be created, after which the surrounding mesh gets
-remeshed.
-The width of the washer can be defined by:
-Factoring the hole radius."
-105,"3/27/23, 11:40 PM
-Fastener Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fastener_realization_methods_unity_t.htm
-12/12
-Directly specifying the exact width.
-Figure 16."
-106,"3/27/23, 11:41 PM
-FE Absorb Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_fe_absorb_t.htm
-1/5
-2022
-FE Absorb Connectors
-Use the FE Absorb tools to create connectors from existing mesh that meet specific types of
-realizations.
-1. From the Connectors ribbon, click the FE Absorb satellite icon on any of the tools in the Create tool set.
-Each type of absorption is separated by the type of connector you are trying to absorb. The Point tool is"
-107,"shown here as an example.
-Figure 1.
-2. Click 
- on the guide bar.
-3. On the FE details options page, choose a selection method.
-Automatic - Select the type of realization you wish to absorb before running the process.
-Manual - Specify the elements you want to absorb within your model and the realization type, then run
-the absorb algorithm on just those selected elements."
-108,"3/27/23, 11:41 PM
-FE Absorb Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_fe_absorb_t.htm
-2/5
-4. Define the remaining FE details options.
-FE Connectivity
-(Spots Only)
-For many FE config types, this option is pre-determined. But for some
-types of weld representations, multiple configurations of connectivity
-are valid. In such cases, you should select the type that is best for the
-model. For example, a Nastran CWELD element is a mesh-independent"
-109,"weld, which does not directly connect to the shell elements; depending
-on how it was generated, plot elements are sometimes used to connect
-the CWELD to the shells. In such situations, you should select option 2 -
-mesh independent (head), rather than option 3. Depending on the FE
-config selected, one or more connectivity types are valid.
-Mesh dependent
-Valid for weld elements that share
-nodal connectivity with the
-connecting shell parts.
-Mesh independent
-(head)
-Valid for weld elements that are"
-110,"(head)
-Valid for weld elements that are
-mesh-independent (do not share
-nodal connectivity with the
-connecting shell parts) but are
-connected to the shell parts via
-secondary entities (plot elements,
-equations, and so on).
-Mesh independent
-(projs)
-Valid for weld elements that are mesh
-independent (do not share nodal
-connectivity with the connecting shell
-parts) and are not connected to the
-shell parts in any way. Only their
-projections fall on the shell elements.
-Combine in case of
-equivalent body"
-111,"Combine in case of
-equivalent body
-nodes (Spots Only)
-FE Absorption logic enhancement while absorbing connectors if body is
-separated on both sides of the layer. Even if body has coincident nodes
-on both sides of a layer, instead of absorbing as multiple connectors, it
-is absorbed as one single connector.
-Enhanced approach
-(Lines and Areas
-only when set to
-Manual)
-The absorption of solid seams and area connectors can be performed
-on all elements in a model. In order to identify valid connector elements"
-112,"from such a selection, instead of identifying regular solid parts as
-connections, certain characteristics need to be true.
-Note:  The pre-selection of valid connection elements helps to
-absorb connectors faster.
-Select this checkbox when some of the characteristics the tool is looking
-for might be too strict for certain connections, thus preventing them
-from being absorbed, even though they represent solid connections.
-The enhanced approach requires a pre-selection of only connection"
-113,"elements. The complete selection is treated as valid connection
-elements, and only connector creation and link detection are"
-114,"3/27/23, 11:41 PM
-FE Absorb Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_fe_absorb_t.htm
-3/5
-performed.
-Area connector mid-
-position (Area Only)
-Position and absorb area connectors into the middle of the hexa
-adhesive realization. By default, this option is activated.
-Consider single
-element cluster
-(Area Only)
-Identify element clusters using certain rules during absorption. This
-approach finds plane solid (hexas, pentas) element constellations which"
-115,"are connected to 1D elements on two opposite sides. This option
-provides better control of the identification of adhesives. The general
-identification approach allows the creation of adhesive connectors even
-from single elements, if all other rules are observed. Normally these
-single elements should be absorbed into spots; this checkbox allows
-you to also absorb single elements into an adhesive connector.
-However, to prevent you from doing this by mistake, even when this"
-116,"option is selected, it only becomes activated if all the selected 3D
-elements belong to a unique component.
-With tie contact
-(Lines when set to
-Solid Seams and
-Areas)
-Determine links by investigating tie contacts. Only entities that are part
-of a tie contact will be considered for links.
-Group links (Lines
-when set to Solid
-Seams and Areas)
-During absorption, the top and bottom side of the solid connection is
-identified. Combine all found links connected to the top side of the solid"
-117,"connection into one group link and combine all found links connected
-to the bottom side into a second group link.
-When realizing a connector that is defined with group links, it is
-guaranteed that at each test point valid projections for both group links
-have to be found in order to have a successful connection. That
-behavior encourages more reproducible results.
-With head only
-(Lines when set to
-Solid Seams and
-Areas)
-Only consider solid connections with head elements for absorption."
-118,"Tip:  It is recommended that you use this option in case you have
-connections with heads, because it will lead to a better performance
-and a safer link detection.
-Clear this checkbox to also consider connections without head
-elements. Link detection will rely on projections."
-119,"3/27/23, 11:41 PM
-FE Absorb Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_fe_absorb_t.htm
-4/5
-5. Define Creation and Link details options.
-Creation:
-Organise
-connectors into
-connector groups
-Save connector entities into the connector group named after the FE
-that they are linked to.
-Spot line
-Combines the Spots into a Spot line if they meet the combine settings.
-Link details:
-Maximum link
-distance"
-120,"Link details:
-Maximum link
-distance
-Consider only connections in which the link distance is smaller than this
-value for absorption. Depending on the unit system used, it may be
-useful to increase or decrease the value. Very large values can affect
-performance.
-Link type
-Can be set to Parts, Properties or Components,
-Re-connect rule
-This is how the links are referred to by the connector.
-use id
-Use the selected link entity’s IDs to
-re-connect. If the link entity is not
-currently in the model, the connector"
-121,"currently in the model, the connector
-with this re-connect rule will search
-for entities with the same ID.
-use name
-Use the selected link entity’s names
-to re-connect. If the link entity is not
-currently in the model, connectors
-using this re-connect rule search for
-entities with the same name.
-use uid
-Only for Parts. Use the selected link
-entity’s UID to re-connect. If the link
-entity is not currently in the model,
-the connector with this re-connect
-rule will search for entities with the
-same UID."
-122,"rule will search for entities with the
-same UID.
-6. Select the specific type of realization to absorb using the drop-down menu on the guide bar. If the selection
-method is set to Manual, select the elements you want to absorb.
-All the different realizations that are loaded through the feconfig file (except for a notable few) are listed. For
-more information on the feconfig file, click here."
-123,"3/27/23, 11:41 PM
-FE Absorb Connectors
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connectors_fe_absorb_t.htm
-5/5
-7. On the guide bar, click one of the following:
- - Run the absorption algorithm and stay in the tool
- - Run the absorption algorithm and exit the tool at the end of the process
- - Exit the tool without saving changes"
-124,"3/27/23, 11:48 PM
-FE Configuration File
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fe_configuration_file.htm
-1/5
-2022
-FE Configuration File
-The FE configuration file (feconfig.cfg) is used to define custom welds such as ACM (Area
-Contact Method) and other special types.
-Weld definitions are solver dependant (Nastran, LS-DYNA, and so on). The weld definition in the file includes the type"
-125,"of weld to create and the surrounding connector to shells. The specific solver template for the type of weld must be
-loaded before the welds can be created using a connector entity. When HyperWorks launches, it searches for
-feconfig.cfg in the following locations, listed in search order:
-1. The product installation path
-2. HW_CONFIG_PATH (a specified environment variable)
-3. Your home directory (in UNIX, for example)
-4. The current working directory."
-126,"4. The current working directory.
-By default, the feconfig.cfg file from the <install_directory>/hm/bin directory is loaded in each of the panels
-related to each connector type, such as Spot, Seam and Area. It is not recommended to have more than one config
-file of the same name, even in different directories, as the results can be unpredictable as to which one will be used
-by default.
-Weld Definition Template
-CFG <SOLVER> <USER_FE_TYPE> <USER_FE_NAME>
-*filter <FILTER_TYPE > [<FILTER_TYPE>]"
-127,"*filter <FILTER_TYPE > [<FILTER_TYPE>]
-*style < STYLE_TYPE> <STYLE_NUM>
-*head
-<HM_FE_CONFIG> <HM_FE_TYPE> <RIGID_FLAG>
-*body <BODY_FLAG>
-<HM_FE_CONFIG> <HM_FE_TYPE> <LENGTH_LOCATION_FLAG> [<DOFS>]
-[<HM_FE_CONFIG> <HM_FE_TYPE> <LENGTH_LOCATION_FLAG> [<DOFS>]]
-*post <POST_SCRIPT_NAME>
-Figure 1. Weld Definition Template
-Where,
-CFG
-Keyword to start a custom weld definition.
-SOLVER
-The solver template for which FE needs to be created.
-Supported solvers are: Abaqus, ANSYS, LS-DYNA, Nastran, OptiStruct,"
-128,"PAM-CRASH, or PAM-CRASH 2G."
-129,"3/27/23, 11:48 PM
-FE Configuration File
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fe_configuration_file.htm
-2/5
-USER_FE_TYPE
-A unique (with respect to a solver) user defined configuration type ID.
-Customer-defined CFGs should use numbers greater than 10,000 to
-ensure no collisions with future native HM CFGs.
-USER_FE_NAME
-The user-specified name for the FE configuration. The specified name is
-saved and displayed in the Connector Browser."
-130,"saved and displayed in the Connector Browser.
-Note:  This should be the first line in the custom weld definition.
-*filter
-Allows only the specified connector types to realize the configuration.
-For example, *FILTER spot seam indicates that this configuration can be realized only by the spot and seam
-connector types. In addition, this option is used as a filter when displaying FE configurations in the type = field
-of respective realize panels.
-*filter lines also set which panel the CFG is visible in."
-131,"CE_TYPE
-The connector type, spot, bolt, seam, area, and so on.
-*style
-Indicates that the configurations have specific behaviors associated during realization, and that they are
-native types.
-Note:  The style definition line for these configurations must not be edited.
-For example, *style bolt 1 indicates that this is a bolt connection of type 1 that creates a specific bolted
-connection between the parts.
-STYLE_TYPE
-The connector style name, such as ""adhesive"", ""bolt"", ""acm"", ""quad"","
-132,"""continuous"", and so on.
-STYLE_NUM
-The connector style number:
-Adhesive:
-""1"" mesh independent adhesive nodes tie to shells with
-RBE3/RBE2.
-""2"" force shell gap length on. Adhesive (HEXA element)
-shares nodes with shell at co-incident locations.
-Bolt:
-""0"" normal bolt: ""wagon wheels"" in the holes.
-""1"" symmetrical spider bolt.
-""2"" unsymmetrical spider bolt: the middle node is biased
-towards one hole.
-""3"" cylinder bolt: ties together all nodes within virtual
-cylinder."
-133,"3/27/23, 11:48 PM
-FE Configuration File
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fe_configuration_file.htm
-3/5
-ACM:
-""1"" share the nodes of HEXA element for consecutive
-layers (> 2T) and the length of HEXA is average of part
-thickness.
-""2"" HEXA elements in consecutive layers have unique
-nodes and the length of HEXA is average of part thickness.
-""3"" share the nodes of HEXA elements for consecutive
-layers and the length of HEXA is the gap distance between
-parts."
-134,"parts.
-""5"" HEXA nodes are not equivalenced with the shell
-nodes/washer nodes, if a washer is present.
-Quad
-""1"" create two sets of QUAD4 elements, first along
-projection direction and second at an orientation
-determined by average part thickness.
-""2"" create one set of QUAD4 elements at an orientation
-determined by average part thickness.
-*head
-The string head is required to specify that a rigid is to be created to connect the weld node to the surrounding
-shell element."
-135,"shell element.
-*head lines must be followed with at most one HM_FE_CONFIG line.
-HM_FE_CONFIG
-The config for the rigid currently supported.
-The various types supported are ""bar2"", ""bar3"", ""equations"", ""gap"",
-""hex8""(3D), ""plot"", ""mass""(0D), ""rigid"", ""rigidlink"", ""rbe3"", ""rod"",
-""spring"", ""weld"", ""quad4""(2D seam only), or ""penta6""(3D adhesive
-only).
-HM_FE_TYPE
-Unique (with respect to a solver) user defined configuration type id
-defined in the solver template.
-RIGID_FLAG"
-136,"defined in the solver template.
-RIGID_FLAG
-Defines the number and arrangement of rigids.
-""0"" is a single rigid
-""1"" is multiple rigids
-""2"" is multiple rigids to outer shell nodes (for 2D bolt washers
-only)
-""3"" is multiple rigids to outer alternate shell nodes (for 2D bolt
-washers only)
-""10"" is multiple rigids with a 0 length leg connecting with body
-(for bolt only)
-""12"" is multiple rigids to inner and outer shell nodes (for 2D bolt
-washers only)"
-137,"washers only)
-""13"" is multiple rigids to inner and outer alternate shell nodes
-(for 2D bolt washers only)"
-138,"3/27/23, 11:48 PM
-FE Configuration File
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fe_configuration_file.htm
-4/5
-DOFS (Optional)
-Degrees of freedom of the rigid (1-6).
-*body
-Specifies that a weld is to be created to connect the link entities added to the connector.
-*body lines may be followed by one or more HM_FE_CONFIG lines
-BODY_FLAG
-The body flag is used to calculate the length of the weld. If the
-body flag = 0, the length is calculated based on the distance"
-139,"between the connecting layers (link entities). If the body flag = 1,
-the length is calculated based on the average thickness of the
-connecting layers (link entities).
-HM_FE_CONFIG
-The config for the rigid currently supported. The various types
-supported are ""bar2"", ""bar3"", ""equations"", ""gap"", ""hex8""(3D),
-""plot"", ""mass""(0D), ""rigid"", ""rigidlink"", ""rbe3"", ""rod"", ""spring"",
-""weld"", ""quad4""(2D seam only), or ""penta6""(3D adhesive only).
-HM_FE_TYPE
-The solver defined type for the HyperMesh config. For example,"
-140,"CBUSH is of config spring and type 6. The type number is defined
-in respective solver templates and differs, based on the solver.
-LENGTH_LOCATION_FLAG
-0D element details.
-""0"" place the 0D element along the proposed 1D element
-path. If this 0D element is the only config given in the *body,
-then it is placed at the center of the proposed 1D element
-path.
-""1"" has the same behavior as ""0"" except only a single 0D
-element is created even if multiple bodies are created (as
-happens in >2T welds)"
-141,"happens in >2T welds)
-""2"" place the 0D element at the connector location.
-1D element details.
-""0"" force zero length welds.
->""0"" but <""1"" denote a percentage of the distance between
-shells the length of a given weld should be. To create series
-welds, all the PERCENT_LENGTH_FLAG variables for a given
-*body must add up less than or equal to 1.0. Example: 0.33
-or 0.50
-""1"" force each body weld to have a length equal to the
-distance between the shells, which can be used for parallel
-welds."
-142,"welds.
-""2"" place the 1D element at the connector location, with
-both nodes coincident.
-""3"" place multiple (thickness-1) 1D elements at the
-connector location connected end-to-end, with all nodes
-coincident.
-3D element details."
-143,"3/27/23, 11:48 PM
-FE Configuration File
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/fe_configuration_file.htm
-5/5
-""0"" force a floating hexa element to have a length equal to
-half the distance specified by the BODY_FLAG.
-""1"" force the hexa element's length to be equal to the full
-distance specified by the BODY_FLAG.
-DOFS (Optional)
-The degrees of freedom (1-6) of the rigid.
-*post"
-144,"The degrees of freedom (1-6) of the rigid.
-*post
-*post lines are optional, but if specified, they must be followed by the name, excluding path, of a valid TCL
-script with a .tcl extension. HyperMesh searches for the TLC script in the locations and order specified below:
-1. Current working directory
-2. Users home directory
-3. Paths in HW_CONFIG_PATH environment variable
-4. Installation directory
-5. hm/bin directory
-6. hm/scripts directory
-7. hm/scripts/connectors/ directory"
-145,"7. hm/scripts/connectors/ directory
-This post script will be automatically executed post FE realization, and can be used to edit weld properties,
-attributes, and other solver specific details.
-FE Specification Rules
-Each solver will have a specific definition so the same user-defined types can be repeated for each solver.
-The head and the body definition must begin with a ""*"" to define rigid and weld definitions."
-146,"Multiple solid element combinations are not currently supported. Therefore, an ACM can have only one hexa weld
-element specified in the definition.
-1D and 3D element combinations are not supported.
-The total length of series welds cannot exceed 1.0 (100 percent). Hence there cannot be three welds specified in
-series having a length factor of 0.5 (50 percent) each.
-Series and parallel weld element combinations are not supported."
-147,"Series welds are not supported where the link entities are coincident. Series welds are not created when the distance
-between the connecting link entities is zero.
-User comments should start with a hash character ""#""."
-148,"3/28/23, 12:01 AM
-Import Parts, Part Assemblies, and Part Instances
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_partassembly_partinstance_import_t.htm#task_nd4_jrb…
-1/2
-2022.2
-Import Parts, Part Assemblies, and Part Instances
-PDM parts and part assemblies can be imported into HyperMesh via a PDM generated PLMXML file.
-1. From the menu bar, click File  > (and then) Import  > (and then) BOM."
-149,"2. Select a file that contains the parts, part assemblies, and part instances to import.
-3. Define additional options as needed.
-4. Click Import.
-Import PDM Data
-Import metadata from CAD to part. This facilitates visualizing CAD-centric metadata in the Part
-Browser and aids in the model build workflow.
-1. From the Part Browser, right-click on a part and select Metadata  > (and then) Update or Metadata  > (and
-then) Settings.
-Note:  The Metadata option is only available when you right-click on parts."
-150,"2. If you selected Update in the previous step:
-a. From the sub-menu, select Part Data or PDM Data.
-Choose Part Data to update part metadata. The CAD file is parsed to extract the metadata without
-having to load the CAD representation into the session. After extraction, part metadata is immediately
-visible in the metadata section of the entity editor.
-Choose PDM Data to update PDM attributes. The updates the PDM attributes for the selected map."
-151,"3/28/23, 12:01 AM
-Import Parts, Part Assemblies, and Part Instances
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_partassembly_partinstance_import_t.htm#task_nd4_jrb…
-2/2
-3. If you selected Settings in Step 1:
-a. From the sub-menu, select Update or Mapping.
-The Update selection refers to the REM settings for part data and PDM data. You can choose whether to
-import only incoming data, or to keep both."
-152,"import only incoming data, or to keep both.
-The Mapping selection refers to mapping CAD metadata to PDM attributes. These settings can vary
-depending on the CAD format. The following figure is an example of PDM mapping settings for the JT
-CAD reader.
-Figure 1.
-Note:  You can also access these settings by right-clicking in the part browser and selecting
-Representations  > (and then) Settings  > (and then) Load  > (and then) CAD  > (and then) Load Options."
-153,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-1/8
-2022
-Line Realization Methods
-Overview of the line connector realization process and methods.
-The following flow chart outlines a four-stage process used to select the best routine for line realization.
-Figure 1."
-154,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-2/8
-1. Select the realization type.
-mesh independent
-Use for realizations that do not need any mesh changes for the body of the realization, and the
-connection is primarily defined via a solver-specific card or 0D elements, such as LLINKs for PAM-
-CRASH.
-Figure 2."
-155,"CRASH.
-Figure 2.
-During the realization, the solver-specific connection is created. For example, for the PAM-CRASH LLINK,
-all necessary solver-specific cards are created along with the realization.
-mesh dependent
-Use for all other cases.
-2. If mesh dependent is selected, you must decide whether to adjust the mesh or the realization.
-adjust mesh
-Projection is done in a perpendicular way, and the mesh must be adapted to the projection points.
-adjust realization"
-156,"adjust realization
-The mesh will not be modified, at the expense of non-normal or incomplete realizations. Many
-realization types are defined with head elements attached to body elements. In the case of these
-realization types, the head elements realize the connection without modifying the mesh, and the body
-elements are created in a normal direction."
-157,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-3/8
-3. Select a method for performing adjustments.
-Adjust Mesh
-remesh
-Connects the weld to the links using snap and split capabilities.
-Note:  Remesh does not look for a correct t-edge in the case of a quad realization. This option
-only ensures that the weld and the mesh have a proper node to node connection in the position
-of the projection point."
-158,"of the projection point.
-Figure 3.
-quad transition
-Creates perfectly shaped quad elements around the projection line. The quad size is determined
-by the average mesh size. From one projection point to the next, exactly one pair of elements is
-created. You can also use this option to create lines from quad elements and realize the
-connections to the links through perfectly modeled t-edges.
-For line quad transitions, the automatic snapping and feature detection option, Allow Snapping,"
-159,"is activated. This prevents the creation of elements that are too small and ensures that the
-geometry is not modified too much."
-160,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-4/8
-Free edges and features with an angle greater than 25° are always taken into account. If smaller
-feature angles should be considered, decrease the value in the Feature Angle field under the
-Behavior heading. Feature angles smaller than 5° will not be considered at all."
-161,"By default, snapping is allowed by a distance of one third of the quad pattern element size. In the
-case of a predefined quad pattern element size of 10.0, the outer nodes can snap to features in a
-distance of 3.3. The algorithm also tries to snap all three nodes of a quad pattern or none.
-Adjust Realization
-find nearest nodes
-Searches for the nearest nodes within the given tolerance, making it possible to connect t-joints"
-162,"and similar areas. This option is very useful in situations where the connectors are not positioned
-perfectly. These realizations are allowed to be non-normal.
-Find nearest nodes does not do any projection.
-Note:  If the connector points are close to each other and two of these points find the same
-closest nodes, the connector fails.
-Figure 4.
-project and find nodes
-Requires a valid projection onto the link entities in the first step. In the second step the nodes"
-163,"closest to the projection points will be used for the connection. If a projection (connector
-tolerance) is not possible, the realization fails. Because a non-normal projection for lines is
-always allowed, the results will be exactly the same as the results for find nearest node.
-Note:  The realization fails when the connector points are close to each other, and two of
-these points find the same nodes."
-164,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-5/8
-Figure 5.
-Ensure projection
-The minimum condition for the realization is a possible normal projection. The realization will be
-performed in the direction from one projection point to the next. If the projection point is
-coincident with a shell node they will be equivalenced.
-Figure 6."
-165,"Figure 6.
-Note:  Ensure projection can lead to incompletely defined connections from a solver
-perspective unless the connector positions are not aligned to the mesh. The advantage of this
-projection method is the exact determination of the projection points."
-166,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-6/8
-4. If you selected quad transition in step 3, define imprint options.
-imprint
-When creating mesh-dependent realizations with quad transitions, the quad transition meshes can
-overlap and disturb each other if more than one set of connectors is created too close to each other."
-167,"The imprint option reconciles such transitions with each other and modifies the underlying mesh to
-match the results to create a final result that is seamless and properly meshed.
-The option Resolve Conflicts is activated by default, enabling smaller imprint conflicts to be
-automatically resolved when connectors are realized. Overlapping elements are released, and a normal
-remesh of that area is performed as long as the overlapping area is smaller than half the regular quad
-transition element size."
-168,"transition element size.
-The size of the imprint can be determined using the pitch size (use pitch size) or using the average size
-of the underlying mesh (use avg. mesh size). If you want to define a specific imprint size, select user
-input size.
-Figure 7.
-skip imprint
-Prevents the last step of quad transition from being performed. Instead, the component ^conn_imprint
-is created, which contains the element pattern. These elements can be modified and manually"
-169,"imprinted later using the Connector Imprint panel.
-Skip imprint enables you to realize such mesh-dependent realizations in very complex areas of the
-model where the automatic imprint fails because of issues such as conflicting lines.
-The size of the imprint can be determined using the pitch size (use pitch size) or using the average size
-of the underlying mesh (use avg. mesh size). If you want to define a specific imprint size, select user
-input size."
-170,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-7/8
-Figure 8.
-After Imprint
-During realization, if the mesh is altered to realize the connector, this option allows you to select
-between ""Remesh"" and ""Rebuild"" meshing algorithms.
-Located under the Behavior heading.
-Note:  Historically, the connector spot lines and seam lines have contained a test point distributed evenly"
-171,"between the start and the end points of the line. This, however, would mean that the test points could lie between a
-corner, and as a result the corner would be missed. Connector lines now allow the connector to create Significant
-Points between features of the lines – for example, corners. The connector then interprets the test points between
-the significant points.
-Figure 9."
-172,"3/27/23, 11:40 PM
-Line Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/line_realization_methods_unity_t.htm
-8/8
-Figure 10."
-173,"3/28/23, 12:05 AM
-Load Representations from Current HyperMesh Session
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_load_from_current_hypermesh_session_t.htm
-1/2
-2022.2
-Load Representations from Current HyperMesh Session
-1. In the Part Browser, right-click on part assemblies or parts and select Representations  > (and then) Load  >
-(and then) from Session from the context menu."
-174,"(and then) from Session from the context menu.
-2. In the Change Representation dialog, Load tab, select a type of representation to load.
-Representations that exist in the repository are shown in the Representations column, and their availability is
-indicated in the Available column.
-Figure 1.
-3. To send unavailable representations to the BatchMesher directly from the Change Representation dialog,
-select the Batch Mesh Unavailable checkbox."
-175,"select the Batch Mesh Unavailable checkbox.
-Note:  Available representations will also be loaded when you click OK if the Batch Mesh Unavailable
-checkbox is selected.
-4. To save the representations to the Part Library select the Save to Library checkbox.
-5. Click OK.
-6. In the Confirm Load Representation dialog, specify how representations are loaded.
-Click Load All to load all available representations into the current session for selected parts."
-176,Click Skip Loaded to ignore representations that are already loaded for selected parts.
-177,"3/28/23, 12:05 AM
-Load Representations from Current HyperMesh Session
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_load_from_current_hypermesh_session_t.htm
-2/2
-As representations are created and saved to the repository they are displayed in the Available Representations pane."
-178,"3/28/23, 12:05 AM
-Load Representations from the Part Library
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_load_from_part_library_t.htm
-1/1
-2022.2
-Load Representations from the Part Library
-After importing a BOM that has representations saved in the Part library, you can load the
-saved representations.
-1. In the Part Browser, right-click on a part/part assembly and select Representations  > (and then) Load  > (and"
-179,"then) from Library from the context menu.
-2. In the Change Representation dialog, Library tab, select representations and click OK.
-The selected representations are loaded to the Representation folder on the file system. Similarly, every time a BOM
-is imported, files are loaded to the Representations folder, if you retrieve them from the Part Library.
-Figure 1."
-180,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-1/7
-2022.2
-Manage Configurations
-Group common and unique parts/part assemblies together in part sets, and organize parts
-and part sets that are unique to a configuration.
-In the traditional model build and assembly workflow, subsystems that contain multiple variants are stored in"
-181,"multiple HyperMesh binary files. This complicates the model build and update process as part updates and revisions
-will need to be performed on each binary file.
-An example of a subsystem that may contain multiple configurations is a vehicle body-in-white (BIW). A typical sedan
-BIW may have the following configurations:
-Left-hand drive (LHD)
-Right-hand drive (RHD)
-Fixed roof (Fixed)
-Panoramic roof (Pano)
-Figure 1."
-182,"Panoramic roof (Pano)
-Figure 1.
-All common and unique parts that appear in all configurations for a given subsystem are stored in a single
-HyperMesh binary file, known as a Layered Model. In a Layered Model, common parts are active in all configurations.
-Unique parts are active only in a specific configuration. You must deactivate unique parts not appearing in a"
-183,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-2/7
-configuration.
-Part sets and configurations are written to the solver deck as XML comments. The XML block is added at the bottom
-of the solver deck so that when importing a deck the info can be rebuilt. In this case, the HyperMesh binary is not
-used.
-Figure 2.
-About Part Sets and Configurations"
-184,"Figure 2.
-About Part Sets and Configurations
-Part sets group common or unique parts, and configurations organize parts and part sets that
-are mutually exclusive to a configuration.
-Example: Configuration Management Workflow
-Configuration management workflow for a Dash and Cowl subsystem.
-The configuration management workflow for a Dash and Cowl subsystem is shown in Figure 3, along with the Left-
-hand drive (LHD) and Right-hand drive (RHD) configurations contained in the Layered HyperMesh binary file."
-185,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-3/7
-Figure 3.
-Common parts are active in all configurations and unique parts are active only in a specific configuration. The model
-hierarchy is shown in Figure 4.
-Figure 4.
-To activate the LHD configuration of the Dash and Cowl assembly, perform one of the following:"
-186,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-4/7
-Clear the Active column for the following individual, unique parts that belong to the RHD configuration.
-Dash Panel RHD
-Dash Bracket Large RHD
-Dash Inner Bracket RHD
-Dash Cross Member RHD
-If all unique parts are nested in a single part assembly, clear the Active column for Dash RHD Assembly."
-187,"If all parts and part sets that are unique are organized in a configuration, enable the LHD configuration’s
-associated checkbox in the Active column of the Configuration view.
-All RHD unique parts are removed from the modeling window and are automatically set to do not export. Export the
-solver deck for the LHD configuration using the Export Solver Deck Browser.
-Figure 5.
-Create Part Sets
-1. Open the Part Browser."
-188,"Create Part Sets
-1. Open the Part Browser.
-2. In the Part Set view, right-click and select Create  > (and then) Part Set from the context menu.
-A new part set is created."
-189,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-5/7
-3. From the Part view, click-and-drag parts and part assemblies that are common and/or unique onto the part
-set.
-Tip:  Dragging-and-dropping selected parts/part assemblies into the white space of the Part Set view
-automatically creates a new part set for the selected.
-Create Configurations
-1. Open the Part Browser."
-190,"Create Configurations
-1. Open the Part Browser.
-2. In the Configuration view, right-click and select Create  > (and then) Configuration from the context menu.
-3. From the Part and/or Part Set views, click-and-drag parts, part assemblies, and part sets that are unique to a
-configuration onto the configuration.
-Tip:  Dragging-and-dropping selected parts, part assemblies, and part sets into the white space of the
-Configuration view automatically creates a new Configuration for the selected."
-191,"Remove Contents of Part Sets and Configurations
-In the Part Browser, remove the contents of part sets and configurations in the following:
-Right-click on the entity and select Remove from the context menu.
-Drag the entity into the white space of the respective browser view.
-Activate/Deactivate Configurations
-Control the display and export state of parts and part assemblies by changing the
-active/inactive state of configurations."
-192,"active/inactive state of configurations.
-Entities set to inactive are still visible in the Part Browser. Deactivated components will not be visible in the Model
-Browser, Display panel, and panel entity collectors."
-193,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-6/7
-Set configuration to active.
-1. Go to the Part Browser, Configuration view.
-2. In the Active column, select the configuration's checkbox.
-Note:  Only one configuration can be activated.
-Tip:  For simple models you can activate a configuration in the Part view by setting all unique parts not"
-194,"appearing in the configuration to inactive.
-All of the parts, part assemblies, components, and part sets organized in the active configuration are
-isolated in the modeling window.
-All of the parts, part assemblies, components, and part sets not associated with the active configuration
-become inactive and their display is turned off in the modeling window.
-Inactive components are set to do not export.
-Set part assembly to inactive.
-Removes all nested parts and owned components from the modeling window."
-195,"Sets all owned components to do not export.
-Set part to inactive.
-Removes the part and its owned components from the modeling window.
-Sets all owned components to do not export.
-Create and Organize Part Sets from PDM Variants
-1. In the Part Browser, Part Set view, right-click on a part set entity (if available) or in the white space and select
-Create Variants from the context menu.
-2. In the Confirm Create Variants dialog, click Yes.
-The created part sets are nested under a Variants Part Set."
-196,Note:  Part sets are recreated on each invoke of the Create Variants operation.
-197,"3/28/23, 12:06 AM
-Manage Configurations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/configuration_manage_t.htm#reference_msf_xjj_t2b
-7/7
-Figure 6.
-PDM Variant Conditions
-PDM Variant Conditions are utilized in PDM systems, such as Teamcenter, to mark similar parts
-in BOMs that may contain multiple variants, such as an automotive BIW.
-Attributes supported in the Part Browser via BOM Import and user editing via the Entity Editor include:
-PDM Variant
-Condition"
-198,"PDM Variant
-Condition
-If non-empty, the part is used as a variant in one or more part configurations.
-PDM Variant Scope
-Along with the Variant Condition attribute, it describes which part
-configurations the part belongs to as a variant.
-Part sets are created per PDM Variant Condition attribute found in the global part assembly/part hierarchy. The
-operation can be invoked at model, part assembly, or part level.
-You can organize part sets from PDM Variants in any view of the Part Browser."
-199,"3/28/23, 12:06 AM
-Manage Part Revisions
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_revision_manage_t.htm#task_h12_ybd_vfb
-1/4
-2022.2
-Manage Part Revisions
-Manage, control and update Major, Study and Library Part revisions using the Part Library.
-About Part Library and Revisions
-The Part Library is an integral part of data management and revision control within the Part
-Browser.
-Part Library"
-200,"Browser.
-Part Library
-By default, a Part Library is generated when the Part Browser is enabled. There are two modes:
-Unmanaged
-Local file management
-Managed
-Uses the Part Library
-The default Part Library is located at <user home>\AltairLibraries\2022.2.
-The Part Library serves as a centralized library of HyperMesh parts, which in turn facilitates the collaboration
-between simulation teams both locally and abroad.
-You must be connected to a Part Library to access all Part Library related options."
-201,"Parts without a UID cannot be saved to the Library. Considering this, the UID field in the Save Representation dialog
-is user editable.
-Revisions
-In the Part Browser, the Revision column displays the Major revision, Study revision, and Library Part revision. All of
-the appropriate workflows have entry or access points to the part library, enabling quick and easy access to previous
-revisions or simply generating new revisions.
-Major Revision"
-202,"Major Revision
-Depicts a change or set of changes that have been finalized and released for
-further review. In most cases the Major Revision is mapped to the PDM
-Revision, but you can modify it.
-Study Revision
-Created locally to track experimental changes or prototyping changes that
-may or may not be published. The purpose of the Study Revision is to manage
-design and prototype exploratory concepts. You can modify the Study
-Revision."
-203,"3/28/23, 12:06 AM
-Manage Part Revisions
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_revision_manage_t.htm#task_h12_ybd_vfb
-2/4
-Library Part
-Revision
-Locally, published revision within the Part Library. You cannot modify the
-Library Part Revision. The library revision is incremented each time you save a
-part representation.
-You can review and edit a part's Major Revision, Study Revision, and Library Part Revision in Entity Editor."
-204,"Figure 1. Revisions for the LeftOuter_A_000435_Safety.c01 Part.
-Major Revision = A (mapped to the PDM revision, user editable), Study Revision = 1 (can be any letter or numerical value, user editable),
-Library Part Revision = 1 (library version, not editable)
-Register and Connect Libraries
-Register and connect to new libraries of your choice."
-205,"3/28/23, 12:06 AM
-Manage Part Revisions
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_revision_manage_t.htm#task_h12_ybd_vfb
-3/4
-A default Part Library is generated when the Part Browser is enabled, and is located at <user
-home>\AltairLibraries\2022.2.
-1. In the Part Browser, right-click and select Library  > (and then) Libraries from the context menu.
-The Libraries dialog opens.
-2. Register new library.
-a. Click +.
-b. Select Library type.
-Local"
-206,"a. Click +.
-b. Select Library type.
-Local
-Shared (see PostGres installation for a shared Library)
-c. Enter Library host/port.
-If you are working with a shared Library, enter a Library port.
-d. Enter a Library Name and Library Path.
-e. Click Add.
-3. Disconnect currently connected library.
-Before you can connect to a new library, you must disconnect from the currently connected library.
-a. Select the currently connected library.
-b. Click Disconnect.
-4. Connect library.
-a. Select a disconnected library."
-207,"a. Select a disconnected library.
-b. Click Connect."
-208,"3/28/23, 12:06 AM
-Manage Part Revisions
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_revision_manage_t.htm#task_h12_ybd_vfb
-4/4
-Figure 2.
-Sync Library Revisions
-Sync the in-session version with the latest, available version in the Part Library.
-If the version available in the current session is out of sync with the Library reversion, use Sync to update the session
-version with the Part Library version."
-209,"version with the Part Library version.
-Before you can sync library revisions, you must Register and Connect Libraries.
-In the Part Browser, right-click on a part/part assembly and select Library  > (and then) Sync from the context menu.
-Edit Study Revisions
-Study Revisions are a way to explore design space, and can be promoted to a Major Revision as
-required.
-Assign and edit Study Revisions in the Entity Editor.
-1. In the Part Browser, select a part/part assembly."
-210,"2. In the Entity Editor, edit the Study Revisions field."
-211,"3/28/23, 12:07 AM
-Match Parts
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/group_parts_t.htm
-1/2
-2022.2
-Match Parts
-Automatically group selected parts into part sets based on comparison method and criteria
-selected.
-1. From the Assembly ribbon, click the Match tool.
-Figure 1.
-A guide bar will display with the active selector set to Parts.
-2. Select the necessary parts in the graphics area or through the Advanced selection dialog."
-212,"3. Optional: Select the comparison method. The default is shapeAI.
-4. Optional: Select the Choose reference checkbox and select the parts that will act as a reference for
-comparison. You can select more than one reference part.
-5. Optional: Set options as necessary by clicking 
- on the guide bar."
-213,"3/28/23, 12:07 AM
-Match Parts
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/group_parts_t.htm
-2/2
-6. Click Match on the guide bar.
-A progress bar initializes in the status bar. A part set is created for each group of parts that match each other.
-The top level part set is created using a combination of comparison method and criteria, and is prefixed with
-""Grouped_."" Nested part sets are created for each part having similar or matching parts, with a prefix of
-""Matched_."""
-214,"""Matched_.""
-Figure 2.
-Note:  Match also supports comparisons based on part name and metadata. You can group parts based
-on complex queries using name, metadata, or a combination of both. Partset name can be specified before
-creation and these queries can be saved and shared in a configuration file."
-215,"3/27/23, 11:38 PM
-Open the Connector Browser
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connector_browser_open_unity_r.htm
-1/3
-2022
-Open the Connector Browser
-Use the Connector Browser to view and modify connectors in the current model.
-To open the Connector Browser, first navigate to the Connectors ribbon, then click the Connectors tool.
-The Connector Browser consists of:"
-216,"The Connector Browser consists of:
-The Link Entity Browser – located in the left pane of the split tab, it displays information about all of the linked
-entities in the model and Connectors groups.
-Figure 1."
-217,"3/27/23, 11:38 PM
-Open the Connector Browser
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connector_browser_open_unity_r.htm
-2/3
-The All Tab – displays a table of contents tree view of all the connections the model contains. HyperWorks
-organizes and displays the connectors in different folders based on their respective realization type. The
-names of the folders are obtained from the FE configuration names that are specified for respective solvers in
-the feconfig.cfg file."
-218,"the feconfig.cfg file.
-Figure 2.
-Use the Connector Browser to:
-Add Links
-Remove links
-Update links
-Find Connectors from Parts or Links
-Find Connectors from Realizations
-Find Links from Connectors"
-219,"3/27/23, 11:38 PM
-Open the Connector Browser
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/connector_browser_open_unity_r.htm
-3/3
-If you double-click an entity in the entity list, that entity and all of its associations will display in the Connector
-Browser. For example, in the image below, if you double-click on a fastener (1), the Fastener tab will display all of the
-entity's associations (2).
-Figure 3."
-220,"entity's associations (2).
-Figure 3.
-The actions performed in the Connector Browser, such as selecting, highlighting, showing, or hiding supported
-entities, are reflected in the modeling window.
-The browser and the HyperMesh database synchronize with each other to ensure that all the changes made to the
-connector or the supported entities information in the database are reflected correctly in the browser at all times."
-221,"The browser can be configured to only display the information you wish to see. The current configuration is always
-saved, so that when the browser is opened in the future it will contain the same configuration as the last time that it
-was used."
-222,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-1/13
-2022.2
-Open the Part Browser
-Use the Part Browser to create, organize and manage the CAE part structure/hierarchy.
-From the Assembly ribbon, click the Parts tool.
-Figure 1.
-The Part Browser opens.
-By default, the following attributes are listed as columns."
-223,"Add or remove columns by right-clicking on a column and checking/unchecking the appropriate attribute.
-Entity
-List of the Model, Part Assemblies, Parts and Components. By default the
-browser is displayed in Hierarchical View.
-Color
-Displays the Component and Part entity colors.
-UID
-Displays the Part Assembly and Part Unique IDs.
-Revision
-Displays the Major revision, Study revision, and Library Part revision.
-Representation
-Displays the in-session/loaded representation.
-Active"
-224,"Active
-Displays the Part entity active status.
-For a full description of usage, refer to Manage Configurations.
-CID
-Displays the entity specific Component ID’s. At the Part level it displays IDs for
-owned components. At Component level it shows the ID of components.
-PID
-Displays the entity specific Property ID’s. At the Part level it displays IDs for
-referenced properties. At Component level it shows the ID of the referenced
-property.
-MID"
-225,"property.
-MID
-Displays the entity specific Material ID’s. At the Part level it displays IDs for
-referenced materials. At Component level it shows the ID of the referenced
-material.
-Material
-Displays the material name.
-Thickness
-Displays the entity specific thickness. At the Part level it displays the
-thicknesses of the referenced properties. At Component level it shows the"
-226,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-2/13
-thickness of the referenced property.
-PDM metadata captured upon the importation of a BOM via the Import dialog will also be listed as columns.
-PDM PID
-PDM Property ID metadata.
-PDM MID
-PDM Material ID metadata.
-PDM Material
-PDM Material name metadata.
-PDM Thickness
-PDM Thickness metadata.
-PDM MeshFlag"
-227,"PDM Thickness metadata.
-PDM MeshFlag
-PDM Mesh metadata (not case sensitive).
-PDM Variant
-Condition
-If non-empty, displays the part that is used as a variant in one or multiple part
-configurations. It is user editable in the Entity Editor.
-PDM Variant Scope
-Along with the Variant Condition attribute, displays which part configurations
-the part belongs to as a variant. It is user editable in the Entity Editor.
-View Modes"
-228,"View Modes
-Access different views to create and organize parts, and subsystem sets and configurations.
-At the top of the Part Browser and Subsystem Browser, you can access different views used to create and organize
-parts, and subsystem sets and configurations.
-Figure 2.
-1. Entity View. Displays a single view in the browser for parts or subsystems.
-2. Set View. Splits the browser into two views: Entity View and Set View. In the Set View you can create, organize
-and manage part and subsystem sets."
-229,"and manage part and subsystem sets.
-3. Configuration View. Splits the browser into three vertical views: Configuration, Set and Entity View. In the
-Configuration view you can create, organize and manage configurations.
-4. Configuration View, Split Left. Splits the browser into three views: Configuration, Set and Entity View. In the
-Configuration view you can create, organize and manage part configurations and subsystem configurations.
-Part View Modes"
-230,"Part View Modes
-In Part view, you can change the display of entities in the browser using the predefined browser views.
-Figure 3."
-231,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-3/13
-1. Hierarchical Part View. Displays all entities, including components, in a hierarchical view.
-Figure 4.
-2. Flat Part View. Displays all entities, with the exception of components, in a flat list. Part Assemblies and Parts
-are logically grouped into their own collectors.
-Figure 5."
-232,"Figure 5.
-For example, in Flat Part View, you can use the Query Builder to isolate part entities. In the example BOM
-shown above, setting the entity type filter to Part results in the following view.
-Figure 6.
-Entity Editor
-Edit part and component attributes in the Entity Editor.
-Edits can be made for a single part or component or multiple parts and components. If a component is selected, the
-Entity Editor displays component specific attributes."
-233,"The attributes available in the Entity Editor vary based on the entity type selected.
-Part/Part Assembly
-General Data
-Displays attributes that are unique to the part or assembly, including
-part/assembly name, Unique ID (UID), color, and include file, and Revision
-data."
-234,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-4/13
-Parts and part assemblies require a unique name and a unique identifier
-(UID), both of which can contain alphanumeric characters. The UID is an
-optional field that is utilized in part representation management and import
-model entity management. For example, when merging a component with a"
-235,"part (module), the two entities will be matched using the UID if it exists. If a
-UID does not exist, merging will be based on the part name.
-Representations
-Data
-Displays attributes that are specific to a part representation, such as
-representation name, file location, property ID, material ID/name, and
-thickness. These attributes are non-editable at the part level.
-Position Data
-Displays the 4 x 3 transformation matrix of a part, namely its translation,"
-236,"rotation, and scaling. These attributes are non-editable.
-Library Data
-Displays the Major, Study, and Library revisions of the representations. The
-comment saved along with the representation is displayed here.
-PDM Data
-Displays PDM attributes that were parsed as metadata during the BOM
-importation, such as PDM ID, PDM Revision, PDM Variant Condition and PDM
-Variant Scope. This information, namely the PDM PID, PDM MID, PDM
-Material and PDM Thickness, is used to generate the initial component,"
-237,"property, and material cards upon creation of the common representation.
-These attributes can be used to cross-reference common and discipline
-specific mesh representation attributes.
-Part Set
-General Data
-Displays attributes that are unique to the part set, including part/assembly
-name and ID.
-Part Assemblies /
-Parts Data
-Displays the number of parts organized into the selected part set.
-Click the Part Assemblies/Part field to select parts and part assemblies to"
-238,"organize into the selected part set. Select entities in the Select Part
-Assemblies/Parts dialog, or from the graphics area when the Parts selector is
-enabled.
-Part Sets Data
-Displays the number part sets organized into the selected part set.
-Click the Part Sets field to select part sets to organize into the selected part
-set. Select entities in the Select Part Sets dialog, or from the graphics area
-when the Partsets selector is enabled.
-Configuration
-General Data"
-239,"Configuration
-General Data
-Displays attributes that are unique to the configuration, including name, and
-ID.
-Parts Assemblies /
-Parts Data
-Displays the number of parts organized into the selected configuration.
-Click the Part Assemblies/Part field to select parts and part assemblies to
-organize into the selected configuration. Select entities in the Select Part"
-240,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-5/13
-Assemblies/Parts dialog, or from the graphics area when the Parts selector is
-enabled.
-Configurations Data
-Displays the number of configurations organized into the selected
-configuration.
-Click the Configurations field to select other configurations to organize into"
-241,"the selected configuration. Select entities in the Select Configurations dialog,
-or from the graphics area when the Configurations selector is enabled.
-Part Sets Data
-Displays the number part sets organized into the selected configuration.
-Click the Part Sets field to select part sets to organize into the selected
-configuration. Select entities in the Select Part Sets dialog, or from the
-graphics area when the Partsets selector is enabled.
-Active"
-242,"Active
-Indicates the active/inactive state of the selected configuration. This attribute
-is non-editable. To activate a configuration, enable the configuration’s
-associated checkbox in the Active column of the Configuration view.
-Workflow Batch
-The Part Browser can be used to batch the model build workflow.
-Model Build Workflow
-The model build workflow includes the following:
-Importing BOM files (PLMXML, UDMXML or CAD BOM)
-Creating multiple representations"
-243,"Creating multiple representations
-Exporting UDMXML, delta PLMXML files, or Vizmockup PLMXML files (for PDTek use cases)
-Saving the monolithic HyperMesh binary on export
-Saving the representations to the connected part library
-Syncing metadata on export BOM
-Create the Batch File
-In this task you will create the model build batch file."
-244,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-6/13
-1. Using any text editor, copy the following content into the text editor and name it, Model_build.bat.
-REM Altair HyperMesh v2020
-REM Copyright (C)1990-2018 - Altair Engineering, Inc. All Rights Reserved.
-REM Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication."
-245,"REM Decompilation or disassembly of this software is strictly prohibited.
-CLS
-@ECHO OFF
-pushd %~dp0
-set curr_dir=%~dp0
-REM Set below 4 Variables
-set ALTAIR_LICENSE_PATH=<License_File_Path>
-set input_plxml=""%curr_dir%input_plmxml.xml""
-set output_plmxml=""%curr_dir%output_plmxml.xml"" 
-set rep_create={{Crash 5mm} {Crash 10mm}}
-set Install_Path=C:\Program Files\Altair\2020.0\hwdesktop\hm
-REM Do not change below this line
-set Log_File_name=log_%RANDOM%.log
-set log_file_path=""%curr_dir%%Log_File_name%"""
-246,"set log_file_path=""%curr_dir%%Log_File_name%""
-set batch_exe_path=""%Install_Path%\hwdesktop\hm\bin\win64\hmbatch.exe""
-set batch_tcl_path=""%Install_Path%\hwdesktop\hm\scripts\br\views\modules\batch\script.tcl""
-ECHO .
-ECHO       
-##################################################
-##################################################
-ECHO       #                                                                                                    #"
-247,"ECHO       #                            Altair HyperMesh v2019                                                  #
-#
-ECHO       # Copyright (C)1990-2018 - Altair Engineering, Inc. All Rights Reserved.                            #
-ECHO       # Contains trade secrets of Altair Engineering, Inc. Copyright notice does not imply publication.  #
-ECHO       # Decompilation or disassembly of this software is strictly prohibited.                              #"
-248,"ECHO       #                                                                                                    #
-ECHO       
-#################################################
-#################################################
-%batch_exe_path% -tcl %batch_tcl_path% %input_plxml% -blSaveMonolithic 1 -
-blSaveToLibrary 0 -blSyncMetadataToPDM 0  -createRepresentations %rep_create% -
-exportFile %output_plmxml% -fileType UDMXML -logFile %log_file_path%"
-249,"2. On the line that reads, set ALTAIR_LICENSE_PATH=<License_File_Path> , type in the appropriate license path.
-3. On the line that reads, set input_plxml=""%curr_dir%input_plmxml.xml"" , type in the appropriate BOM file
-(PLMXML file) name and path.
-4. On the line that reads, set output_plmxml=""%curr_dir%output_plmxml.xml"" , type in the appropriate output
-PLMXML name and path.
-5. On the line that reads, set rep_create={{Crash 5mm} {Crash 10mm}} , specify the representations to create."
-250,"6. On the line that reads, set Install_Path=C:\Program Files\Altair\2019.0\hwdesktop\hm , point to the
-HyperMesh install path.
-Note:  Only HyperMesh 2019 and later is supported. For version 2020 onward, the directory structure is
-changed for hmbatch.exe."
-251,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-7/13
-7. Save the batch file.
-8. Run the batch file from the command prompt.
-Note:  After the batch file is executed, it will start HyperMesh in batch mode and create the
-representations as specified. You will not see the GUI during this process.
-Solver Specific Details
-Abaqus"
-252,"Solver Specific Details
-Abaqus
-The complete set-up of Abaqus parts and instances format input files is supported.
-Primary use cases:
-1. Import of a CAD geometry
-2. Import of an Abaqus parts and instances format input file
-Import of a CAD Geometry
-Preference setting
-Upon opening HyperWorks, you can set the user profile to Abaqus Standard2D/Standard3D/Explicit via File  >
-(and then) Solver Interface. Further, click Preferences in the File menu and check the Part ID Management
-option, as shown below."
-253,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-8/13
-Figure 7.
-In classic HyperWorks, the same preference option is available from the Tools pull-down menu when the user
-profile is set to Abaqus.
-Importing the CAD geometry and viewing in Part Browser
-Upon importing the CAD geometry with the Part ID Management preference setting checked, you can open"
-254,"the Part Browser to view the part and instance hierarchy.
-Figure 8."
-255,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-9/13
-Any instanced part from the CAD geometry is recognized as an Abaqus instanced part. The Part Browser is
-available in classic HyperWorks via View  > (and then) Browsers  > (and then) HyperMesh  > (and then) Part.
-Meshing Abaqus parts and instance format geometry"
-256,"Meshing Abaqus parts and instance format geometry
-Meshing parts individually is always recommended. When there are multiple instances of the same part, it is
-crucial to mesh the first instance of the part and synchronize the mesh to other parts. It is always important to
-ensure that the part geometry that is meshed has the mesh stored in its original component.
-Figure 9.
-Once the first instance of a part is meshed, a right-click option to synchronize the mesh with other instances"
-257,of the same part is available in the Part Browser.
-258,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-10/13
-Figure 10.
-In HyperWorks classic, mesh generation should be used with “Elements to Surf/Solid Comp”.
-Material
-Materials can be created in the Model Browser.
-Part content (Property, Sets, Surfaces, System, and so on)
-A double-click on any instance in the Part Browser will take it to an isolated part edit mode. Here, you can set"
-259,"up all the part content, such as a property with a material orientation system, sets, and surfaces that can be
-contained within a part. If the part has multiple instances in the model assembly, upon exiting the part edit
-mode, the changes and additions are automatically synchronized with other instances of the same part.
-It is only in this location that any part related content mentioned above can be added in HyperWorks. A right-"
-260,"click on the part in this mode will allow the creation of a property and other part contained entities. Switching
-back to a hierarchical part view or flat part view will automatically synchronize the changes with other
-instances of the same part."
-261,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-11/13
-Figure 11.
-If a part needs to split from other instances, a right-click on the part in the Part Browser will allow you to break
-the part from other instances.
-Assembly and Root model content
-A right-click on Model allows a selection option to make the root model current. With the root model set as"
-262,"current, any surface, set, contact/tie, boundary conditions created using the Model Browser, panel, or any
-specific workflow tools like the Contact Browser creates entities in Assembly (outside of instances) or at root
-model (outside of Assembly) where it is relevant for the entity to remain.
-Analysis setup
-All the analysis conditions are a part of model level data (after *END ASSEMBLY). The corresponding model is"
-263,"set as current. Further, loads and boundary conditions can be created through panels with a load collector
-created for their use in the Model Browser. The Contact Browser is available to set up contact/tie between
-mating parts or components. Tie constraints created using the Contact Browser ensure that the keyword is
-placed at the Assembly level, as per the solver requirement. The analysis step can be defined using the"
-264,"loadstep manager. All these entities can also be created through the Model Browser or Solver Browser.
-Similarly, all other entities, such as output blocks and group entities like control cards, model change, contact
-interference, and so on can be created in the Model Browser or Solver Browser and can be appropriately
-chosen for a defined loadstep.
-Export
-Exporting a solver input file with Parts and Instances format requires activating a checkbox in the solver
-export options, as shown below."
-265,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-12/13
-Figure 12.
-If the Parts and Instances option is not turned on for export, HyperMesh will export a flat format Abaqus input
-file. Additionally, you have an option to push each part to a separate include file while exporting.
-Import of an Abaqus parts and instances format input file"
-266,"Unlike CAD geometry, an Abaqus parts and instances format input file can be directly imported using the solver
-import options. There is no need to turn on the Part ID management. Further set-up of any analysis conditions can
-be defined using the options discussed above.
-Limitations and Restrictions
-Entities defined at the instance level are not supported.
-Does not support the creation or export of new include files. Include files from the imported input file are
-preserved and cannot be modified."
-267,"3/28/23, 12:01 AM
-Open the Part Browser
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_browser_open_t.htm#part_browser_open_t
-13/13
-Analysis set-up is restricted to the following:
-Entities such as sets and surfaces cannot be created or edited in an instance. The same entities can be
-created at the assembly or part level.
-It is highly recommended not to use panels for any set-up except for loads and boundary conditions."
-268,"3/28/23, 12:01 AM
-Organize Part Assemblies and Parts
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_assemblies_and_parts_organize_t.htm
-1/2
-2022.2
-Organize Part Assemblies and Parts
-Organize part assemblies, parts, and components in your model.
-Entity organization rules are as follows:
-The Model is the root of the hierarchy in the browser. It represents the contents of the HyperMesh binary file
-and can contain part assemblies, parts, and components."
-269,"A part assembly can contain part assemblies and parts.
-A part can only contain components.
-Reorganize part assemblies, parts, and components in the Part Browser.
-1. From the Part Browser, left-click on an entity and drag and drop it to a new location.
-In Figure 1, Component B is being reorganized into Part B.
-Figure 1.
-Reorganize parts and components using the Organize tool.
-1. From the Assembly ribbon, click the Organize tool.
-Figure 2."
-270,"Figure 2.
-2. Use the first selector on the guide bar to pick the parts or components to move.
-3. Use the second selector to pick a destination collector.
-4. Click 
- to save your changes and remain in the tool or click 
- to save your changes and exit the tool."
-271,"3/28/23, 12:01 AM
-Organize Part Assemblies and Parts
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_assemblies_and_parts_organize_t.htm
-2/2
-Reorganize components into a new part using the Organize panel.
-1. From the Tool page, click the Organize panel, Parts subpanel.
-2. Use the comps selector to select the component(s) to move.
-3. In the dest part field, select the part to move the selected components into.
-4. Click move."
-272,"3/28/23, 12:06 AM
-PDM Live Connection
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/pdm_live_connection_r.htm#pdm_live_connection_r
-1/3
-2022.2
-PDM Live Connection
-Using PDM live connection, on-demand downloading of datasets from external PDM systems
-such as Teamcenter is possible
-In the traditional model build and assembly workflow, you were forced to download an entire BOM along with its"
-273,"CAD/FE representations. With PDM live connections, you are able to just download what you need while maintaining
-the entire BOM view.
-Note:  Currently, only the Teamcenter repository is supported.
-Register a PDM Repository
-In order to use PDM live functionality, you need to register a Teamcenter repository first.
-1. Go to File  > (and then) Import  > (and then) BOM  > (and then) Remote.
-Figure 1.
-The Explore dialog opens.
-2. Click Manage Repositories to add a new repository.
-3. Select the registry type."
-274,"3. Select the registry type.
-4. Click Register.
-5. Enter the repository details in the Value column.
-6. Click Apply."
-275,"3/28/23, 12:06 AM
-PDM Live Connection
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/pdm_live_connection_r.htm#pdm_live_connection_r
-2/3
-7. Optional: To make any changes, click Reset to clear your information or Discard to cancel and hide the
-Repository Details panel.
-8. Click OK to register your repository.
-Download a BOM Only
-Downloading a BOM from Teamcenter is enhanced to offer two types of downloads.
-Download an entire BOM with all associated datasets."
-276,"Download just the BOM. This will not download any associated datasets and is controlled by an option in the
-Explore dialogue.
-1. Go to File  > (and then) Import  > (and then) BOM  > (and then) Remote.
-Figure 2.
-The Explore dialog opens.
-2. Click the Teamcenter repository or add a new one.
-3. Click Login.
-4. Select the type of item to search for.
-5. Enter text to search for in the Query field and select which attribute to search for from the By list."
-277,"The items displayed in the Type field as well as the attributes in the By list are configurable and can be
-modified based on a particular Teamcenter installation or individual search needs. Default values are provided
-in the pdmsysconfig.xml file located on each HyperWorks client in the
-%USER_PROFILE%\.Altair\hwe\pdmconnector\config folder. Contact your Altair account manager for more
-details on configuration.
-6. Select the Latest only option to retrieve only the latest version of items found by the query."
-278,"7. Click Simple query.
-Items matching the query criteria are returned."
-279,"3/28/23, 12:06 AM
-PDM Live Connection
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/pdm_live_connection_r.htm#pdm_live_connection_r
-3/3
-8. Select the desired item(s) or file(s) to review its properties
-You can browse the item structure and view individual files associated to item revisions by expanding or
-collapsing items in the tree or by selecting Expand all from the context menu."
-280,"You can also view additional properties of the selected item revision by selecting More Properties from the
-context menu.
-9. Select a temporary folder to retrieve the files in the Select output directory field.
-Selecting an item revision results in all files associated with the selected item revision and all files associated
-with the selected item's children being retrieved. You can retrieve only specific file types by choosing from the"
-281,"list in the Download file types field. Selecting individual files results in those files being retrieved.
-10. Uncheck the Download datasets option.
-This ensures only the BOM gets downloaded.
-11. Click Open.
-Just the PLMXML BOM file is downloaded.
-Load the Representations from PDM
-Once the BOM is downloaded, you can load the available representations from the PDM system directly.
-1. After loading the BOM, right-click on the top-level assembly in the Part Browser and select Representations  >"
-282,"(and then) Load  > (and then) From PDM.
-The Change Representation dialogue opens with the PDM tab.
-2. Select the representation to load and click OK.
-It will download the representation from PDM system and load it in session.
-Upload the Representations to PDM
-The representations can be uploaded back to the PDM system via the Save Representation option where you must
-select Save to PDM. It is also possible to upload the representations while sending the parts to Batchmesher."
-283,"Selecting Save to PDM in the Create Representations dialogue uploads the created representations back to the PDM
-system after completion of the Batchmesher process.
-Note:  In order to access the newly uploaded representation in the current session from Load Representations,
-you have to re-download the BOM."
-284,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-1/11
-2022
-Point Realization Methods
-Overview of the point connector realization process and methods.
-The following flow chart outlines a four-stage process used to select the best routine for point realizations.
-Figure 1."
-285,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-2/11
-1. Under the Connectivity heading, select the realization type.
-mesh independent
-Use for realizations that do not need mesh changes for the body of the realization, and the connection
-is primarily defined via a solver-specific card or 0D elements, such as CWELDs for Nastran or ACM for
-OptiStruct."
-286,"OptiStruct.
-During the realization, the solver-specific connection is created. For example, for the Nastran CWELD of
-ELEMID option, the shells which are in contact are observed and defined in the CWELD card.
-mesh dependent
-Use for all other cases.
-2. If mesh dependent is selected, you must decided whether to adjust the mesh or the realization.
-adjust mesh
-Projection is done in a perpendicular way, and the mesh must be adapted to the projection points.
-adjust realizations"
-287,"adjust realizations
-The mesh will not be modified, at the expense of non-normal or incomplete realizations. Many
-realization types are defined with head elements attached to body elements. In the case of these
-realization types, the head elements realize the connection without modifying the mesh. Then the body
-element is still created in a normal direction."
-288,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-3/11
-3. Select a method for performing adjustments.
-Adjust Mesh
-remesh
-Takes the projection points into account and uses snap and split capabilities to connect the weld
-to the links.
-quad transition
-Creates perfectly shaped quad elements around the projection points. By default, the quad size"
-289,"is determined by the average mesh size. Alternatively, you can specify a specific quad size in the
-Quad Size field.
-For point quad transition, the automatic snapping and feature detection option, Allow Snapping,
-is activated. This prevents the creation of elements that are too small and ensures that the
-geometry is not modified too much.
-Free edges and features with an angle greater than 25° are always taken into account. If smaller"
-290,"feature angles should be considered, decrease the value in the Feature Angle field under the
-Behavior heading. Feature angles smaller than 5° will not be considered at all.
-By default, snapping is allowed by a distance of one third of the quad pattern element size. In the
-case of a predefined quad pattern element size of 10.0, the outer nodes can snap to features in a
-distance of 3.3. The algorithm also tries to snap all three nodes of a quad pattern or none."
-291,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-4/11
-The top, left image illustrates the initial model situation. The remaining images illustrate connectors that have
-been realized with quad transition using different quad pattern sizes: average, coarse, small. The regular quad
-pattern size is highlighted and the red lines illustrate which nodes have been snapped to a relevant feature or free"
-292,"edge.
-The image below is the same example as above, except the model is realized as a quad transition
-with an adequate quad pattern size."
-293,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-5/11
-In Figure 2, points were created at the same exact position, though there is a notable difference.
-In both images, the connectors have been created along a line, but in the left image the split to
-points option was enabled.
-Therefore, in the left image, the quad transition pattern is aligned to the mesh; in the right"
-294,"image, the quad transition pattern is oriented along the point connector line. All elements
-around the point connector line belong to the regular pattern. The number of element pairs
-created along the point connector line between the point positions depends on the average or
-selected mesh size, which can range from one to many. The quad elements are distributed
-equidistant along the line.
-In curved regions the inner and outer lengths of the element edges differ.
-Figure 2.
-Adjust Realizations"
-295,"Figure 2.
-Adjust Realizations
-find nearest nodes
-Only searches for the nearest nodes within the given tolerance, making it possible to connect t-
-joints and similar areas. This option is very useful in situations where the connectors are not
-positioned perfectly. The realizations are allowed to be non-normal."
-296,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-6/11
-Find nearest node does not perform projections.
-Figure 3.
-project and find nodes
-Requires a valid normal projection onto the link entities in a first step. In a second step, the
-nodes closest to the projection points will be used for the connection. If a normal projection is
-not possible, the realization fails as indicated in the image below."
-297,"Figure 4.
-An angle of less than five degrees is considered normal. Activating the Nonnormal checkbox
-under the Behavior heading omits the requirement for a normal projection and permits links to
-only be found in the connector tolerance. The result is exactly the same as it is for the find
-nearest nodes option."
-298,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-7/11
-Figure 5.
-ensure projection
-The minimum condition for the realization is a possible projection. The realization will be
-performed in the direction from one projection point to the next. If the projection point is
-coincident with a shell node they will be equivalenced.
-Figure 6."
-299,"Figure 6.
-Note:  Ensure projection can lead to incompletely defined connections from a solver
-perspective unless the connector positions are not aligned to the mesh. The advantage of this
-projection method is the exact determination of the projection points.
-Enabling the Nonnormal checkbox allows the realization to be performed from one projection point to
-the next."
-300,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-8/11
-Figure 7."
-301,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-9/11
-4. If you selected quad transition in step 3, define imprint options.
-imprint
-When creating mesh-dependent realizations with quad transitions, the quad transition meshes can
-overlap and disturb each other if more than one set of connectors is created too close to each other."
-302,"Imprint reconcile such transitions with each other and modifies the underlying mesh to match the
-results. This creates a final result that is seamless and properly meshed.
-The option Resolve Conflicts is activated by default, enabling smaller imprint conflicts to be
-automatically resolved when connectors are realized. Overlapping elements are released, and a normal
-remesh of that area is performed as long as the overlapping area is smaller than half the regular quad
-transition element size.
-Figure 8."
-303,"transition element size.
-Figure 8.
-skip imprint
-Prevents the last step of quad transition from being performed. The component ^conn_imprint is
-created instead, which contains the element pattern. These elements can be modified and manually
-imprinted later using the Connector Imprint panel.
-Skip imprint allows you to realize such mesh-dependent realizations in very complex areas of the model
-where the automatic imprint fails because of issues such as conflicting points."
-304,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-10/11
-Figure 9.
-After Imprint
-During realization, if the mesh is altered to realize the connector, this option allows you to select
-between ""Remesh"" and ""Rebuild"" meshing algorithms.
-Located under the Behavior heading."
-305,"3/27/23, 11:40 PM
-Point Realization Methods
-https://2022.help.altair.com/2022/hwdesktop/hwx/topics/pre_processing/connectors/point_realization_methods_unity_t.htm
-11/11
-5. If available, define a diameter value.
-This field is used for realizations based on hexa elements such as ACM, where the size of the realized element
-(hexa, and so on) is created based on the diameter value, or for certain realization types where the diameter is
-used by a post script."
-306,"used by a post script.
-The size of the hexa face is calculated from the diameter value 
- .
-When you have weld nuggets from hexa patterns (more than one hexa), the diameter will be measured from
-two opposite nodes.
-Figure 10. Hexa
-Figure 11. Weld Nugget
-diameter
-Specify a single diameter value.
-diameter mapping
-file
-Obtain diameter values that you assigned to a range of flange
-thicknesses in the Diameter Table.
-Along with flange thickness ranges, you can also specify the main flange"
-307,"thicknesses to consider when assigning diameter values.
-α = √d2 ⋅π
-4"
-308,"3/28/23, 12:05 AM
-Reload Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_reload_t.htm
-1/1
-2022.2
-Reload Representations
-Restore part representations to their original state.
-In the Part Browser, right-click on parts or part assemblies and select Representation  > (and then) Reload from the
-context menu.
-Representations are reloaded from the repository."
-309,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-1/9
-2022.2
-Renumber Entities
-Use the Renumber tool to review and organize the IDs of model entities.
-Organizing entity IDs can facilitate easier post-processing and model management. This tool can renumber entities
-into a different range, offset the IDs of selected entities by a specified amount, and/or renumber entities in a
-particular order."
-310,"particular order.
-1. From the Assembly ribbon, click the Renumber tool.
-Figure 1.
-2. Choose either the Renumber or the Offset method from the drop-down on the guide bar.
-3. Select the entities to be renumbered.
-Use the Ordered checkbox to select nodes or elements in the explicit order they are to be renumbered.
-Use the Alt shortcut key to quickly make selections by path.
-By default, IDs are shown on selected entities for review. This may be turned off in the options menu ("
-311,") for large selections or when ID labels are otherwise undesirable.
-4. Input the new starting ID and/or offset as appropriate.
-By default, entities will be renumbered to the next available ID if the starting ID is already in use. The
-Overwrite existing IDs option will force renumbering into the specified range and automatically renumber any
-conflicting entities above the highest ID used in the model.
-5. On the guide bar, click one of the following:
- - Apply and stay in the tool
- - Apply and close the tool"
-312,"- Apply and close the tool
- - Exit the tool without applying
-Use the Maintain selection option to perform iterative renumbering actions on the same selection.
-After renumbering, the new IDs are displayed on the renumbered entities for review until another selection is made.
-Spatial Renumbering
-Renumber elements and nodes based on spatial sorting."
-313,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-2/9
-1. From the Assembly ribbon, click the arrow next to the Renumber tool, then select Spatial Renumber.
-2. Select a sorting schema from the drop-down on the guide bar.
-3. Select a list of nodes or elements to renumber."
-314,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-3/9
-4. Use the microdialog to define relevant options."
-315,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-4/9
-Option
-Description
-Spatial
-a. Click 
- and select a system.
-The global system may be used.
-b. Define the ordered list of axes to consider to sort the selection
-(primary/secondary/tertiary axes).
-Arrows will show the starting location and directions for renumbering.
-c. Define the start ID.
-d. Define a tolerance and ID increment for each axis."
-316,"The ID schema is continuous across directions.
-Rectangular
-grid
-Using this method, you can renumber a rectangular regular array of elements or quads in
-two perpendicular directions in a user-defined coordinate system (Cartesian or cylindrical).
-The steps are the same as the spatial method, but in this case a local coordinate system must
-be used to match the primary numbering directions and the mesh is expected to be a
-rectangular pattern of quads. You must define 3 different increments."
-317,"Figure 2. Before Element Renumber
-Figure 3. After Element Renumber: X increment by 1, Y increment by 100
-Adjacent
-Using the adjacent method, renumbering is based on element/node connectivity directions
-instead of system directions.
-This method works only with quadrilateral elements (without any triangular elements) and"
-318,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-5/9
-s 
-et od o
-s o
-y 
-t  quad
-ate a  e e
-e ts (
-t out a y t a gu a  e e
-e ts) a d
-should have a mapped (regular) pattern.
-a. Enter the Start ID.
-b. Click Options on the guide bar.
-c. Select a starting node or element.
-d. Select an element/node for the primary, secondary, and tertiary directions and define their
-ID increments."
-319,"ID increments.
-These should be connected to the starting element.
-5. On the guide bar, click one of the following:
- - Apply and stay in the tool
- - Apply and close the tool
- - Exit the tool without applying
-How the Tolerance Setting Affects the Renumber Result
-The tolerance is used to group the nodes/elements in the correct order for renumbering.
-For example, if you have a simple structured mesh with nodes distanced 5 mm on the local X direction and 2 mm on"
-320,"the local Y you want to renumber the nodes so that it starts with 101 for the starting ID. Then increment in local X
-direction by 1, for example 101, 101+1, 101+2, and in local Y direction by 10, for example 101, 101+10, 101+20.
-Figure 4.
-If you use the correct tolerance of 1 mm (which is <5 mm and < 2 mm nodal distances) here is the result:"
-321,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-6/9
-Figure 5.
-In a real scenario you rarely get meshes like the example above, so the distances between nodes are variable like the
-image below. You want to renumber it with the same objective and tolerances (1mm)."
-322,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-7/9
-Figure 6.
-The result is:"
-323,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-8/9
-Figure 7.
-As you can see in the image above, the renumbering is not done properly. This is because the smallest nodal
-distance is 0.5 mm which is smaller than 1 mm tolerance. If you reduce the tolerance to 0.1 mm you will get the
-correct result."
-324,"3/28/23, 12:07 AM
-Renumber Entities
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/renumber_t.htm#renumber_t
-9/9
-Figure 8.
-See Also
-ID-Management"
-325,"3/28/23, 12:06 AM
-Representation Load Settings
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_load_settings_r.htm
-1/1
-2022.2
-Representation Load Settings
-Settings to configure the representation entity management behavior.
-Open the Representation Load Settings dialog by right-clicking in the Part Browser and selecting Representations  >
-(and then) Settings  > (and then) Load Settings."
-326,"(and then) Settings  > (and then) Load Settings.
-The representation entity management settings work independent of the import binary and import deck entity
-management settings.
-The following options are available for components, properties, and materials.
-Offset ID.
-Merges incoming attributes with conflicting IDs into the session, and offsets
-their IDs.
-Keep Existing
-Attributes.
-Maintains existing in-session entity attributes and incoming conflicting entity
-IDs.
-Keep Incoming
-Attributes (default)."
-327,"IDs.
-Keep Incoming
-Attributes (default).
-Maps incoming entity attributes to the in-session entities.
-When Offset ID is selected for components, both incoming and existing geometry and FE residing in the component
-with conflicting IDs are kept. When Keeping Existing Attributes or Keep Incoming Attributes are selected for
-components, incoming geometry and FE that resides in the component with conflicting IDs are kept."
-328,"3/28/23, 12:02 AM
-Save Assemblies as HyperMesh Binary Files
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/assembly_save_as_hypermesh_binary_file_t.htm
-1/2
-2022.2
-Save Assemblies as HyperMesh Binary Files
-The part assembly can be saved as a self-contained binary file, which will include the part
-assembly based hierarchy and attributes such as components, properties, and materials."
-329,"You can perform all necessary tasks such as geometry updates and meshing in the distributed HyperMesh binary
-file. The completed file can then be imported into the master HyperMesh session by importing a model.
-You can also update by saving representations from a standalone part assembly to the library, and loading updated
-representations in the second session.
-1. In the Part Browser, right-click on a part assembly and select Save As from the context menu."
-330,"2. In the Save As dialog, save the binary in the representations directory for the current binary file.
-In Figure 1, the LeftRail_A_000433_Safety part assembly in the Frame_Assembly_000495 part assembly is being saved
-as an HyperMesh binary file.
-Tip:  Alternatively, you can select multiple Parts in different assemblies and select Save As from context menu.
-Figure 1.
-Because the saved part assembly is self-contained, all HyperMesh entities shown in the Part Browser are saved to"
-331,"the binary file. Opening the saved binary file in a new HyperMesh session results in the Part Browser view shown in
-Figure 2."
-332,"3/28/23, 12:02 AM
-Save Assemblies as HyperMesh Binary Files
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/assembly_save_as_hypermesh_binary_file_t.htm
-2/2
-Figure 2."
-333,"3/28/23, 12:06 AM
-Save Part Assemblies
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/parts_saving_part_assemblies_t.htm
-1/1
-2022.2
-Save Part Assemblies
-Part Assemblies can also be saved to the Library. This saves all parts as one Part Assembly representation rather
-than individual Part representations. This enables mesh connectivity between parts to be retained upon unloading
-and loading of the Part Assembly."
-334,"and loading of the Part Assembly.
-1. In the Part Browser, right-click on part assemblies and select Representations  > (and then) Save from the
-context menu.
-The Save Representation dialog displays.
-2. Change the Parts selection in the bottom left to Part Assemblies.
-Figure 1.
-3. Edit the Major Revision and Study Revision columns to reflect the intended revisions.
-4. Select the Representation type."
-335,"4. Select the Representation type.
-5. To overwrite representations that already exist in the repository, select the Overwrite available checkbox.
-6. To only save parts locally, deselect the Save to Library checkbox.
-7. Click OK."
-336,"3/28/23, 12:06 AM
-Save Parts
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/parst_saving_parts_t.htm
-1/1
-2022.2
-Save Parts
-Parts and part assemblies without a UID cannot be saved to the Library. Considering this, the
-UID field in the Save Representation dialog is user editable.
-1. In the Part Browser, right-click on part assemblies or parts and select Representations  > (and then) Save from
-the context menu."
-337,"the context menu.
-A checkmark in the Available column indicates that the representation already exists in the repository. A
-checkmark in the Library column indicates that a revision is already available in the Part Library.
-The Save Representation dialog opens.
-2. Edit the Major Revision and Study Revision columns to reflect the intended revisions.
-3. To overwrite representations that already exist in the repository, select the Overwrite available checkbox."
-338,"Note:  Original CAD representations will not be overwritten because the original file location is stored as a
-link on the part. Enabling Overwrite available saves an HyperMesh binary file of the modified CAD
-representation in the repository.
-4. To only save parts locally, disable the Save to Library checkbox.
-5. Click OK.
-Unavailable parts are saved, and available parts are overwritten and saved if Overwrite available was selected.
-Figure 1."
-339,"3/28/23, 12:05 AM
-Sync Metadata To PDM
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/metadata_to_pdm_sync_t.htm
-1/1
-2022.2
-Sync Metadata To PDM
-Sync PDM metadata (PDM PID, PDM Thickness, PDM Material, and PDM MID) based on a
-selected part or part's metadata (PID, Thickness, Material, MID).
-In the Part Browser, right-click on a part or parts and select Representations  > (and then) Sync Metadata from the
-context menu."
-340,"context menu.
-*When a part has multiple properties, only the first property will display in the PID PDM field when you select Sync
-Metadata.
-When Material is not mentioned in PDM metadata, material is created by default with MID."
-341,"3/28/23, 12:02 AM
-Transform Parts Assemblies and Parts
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/part_assemblies_and_parts_translate_t.htm
-1/1
-2022.2
-Transform Parts Assemblies and Parts
-Translate, rotate, reflect, scale, and position selected parts and part assemblies.
-1. In the Part Browser, right-click on a part or a part assembly and select Transform from the context menu.
-2. In the Action field, select an action to perform on your selection."
-342,3. Define any relevant parameters and then click Apply.
-343,"3/28/23, 12:05 AM
-Unload Representations
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/representation_unload_t.htm
-1/1
-2022.2
-Unload Representations
-Unload part representations from a session.
-1. In the Part Browser, right-click on the model, part assemblies, or parts and select Representation  > (and
-then) Unload from the context menu.
-2. In the Confirm Unload Representation dialog, click Yes to unload the selected representations.
-Figure 1."
-344,"3/28/23, 12:05 AM
-Update Metadata From PDM
-https://help.altair.com/hwdesktop/hwx/topics/pre_processing/model_build_and_assembly/metadata_from_pdm_update_t.htm
-1/1
-2022.2
-Update Metadata From PDM
-1. In the Part Browser, right-click on a part or parts to update and select Representations  > (and then) Update
-from the context menu.
-2. Update metadata.
-Rename the selected parts or part's component, or create if it does not already exist.
-Create a material based on PDM Material and PDM MID."
-345,"If a material of the given ID already exists, then it will not be overwritten or recreated in order to avoid
-overwriting any existing material properties.
-Only linear attributes are updated. Default steel attributes are used with the following unit system:
-millimeter, second, tonne, and Newton.
-Create a property based on PDM PID and PDM Thickness*.
-If a property of the given PID already exists, its thickness will be updated based on PDM Thickness;"
-346,"however, the existing property will not be recreated. Only relevant metadata will be updated in order to
-avoid overwriting any existing property card values.
-Note:  *If the PDM MeshFlag attribute is set to SMT (Solid Mesh Tetra) or SMH (Solid Mesh Hexa), than a
-solid card image will be assigned to the property."
+0,"Title 49 —Transportation
+Subtitle B —Other Regulations Relating to Transportation
+Chapter V —National Highway Traffic Safety Administration, Department of Transportation
+Part 571 —Federal Motor Vehicle Safety Standards
+Subpart B —Federal Motor Vehicle Safety Standards
+Source: 36 FR 22902, Dec. 2, 1971, unless otherwise noted.
+Authority: 49 U.S.C. 322, 30111, 30115, 30117, and 30166; delegation of authority at 49 CFR 1.95.
+§ 571.206 Standard No. 206; Door locks and door retention components."
+1,"This content is from the eCFR and is authoritative but unofficial.
+S1. Scope and Purpose. This standard specifies requirements for vehicle door locks and door retention
+components, including latches, hinges, and other supporting means, to minimize the likelihood of
+occupants being ejected from a vehicle as a result of impact.
+S2. Application. This standard applies to passenger cars, multipurpose passenger vehicles, trucks designed to"
+2,"carry at least one person, and buses with a gross vehicle weight rating (GVWR) of 4,536 kg or less.
+S3. Definitions.
+Auxiliary Door Latch is a latch equipped with a fully latched position, with or without a secondary latched
+position, and fitted to a door or door system equipped with a primary door latch system.
+Auxiliary Door Latch System consists of door latches and strikers other than those associated with the
+primary door latch system."
+3,"primary door latch system.
+Back Door is a door or door system on the back end of a motor vehicle through which passengers can
+enter or depart the vehicle or cargo can be loaded or unloaded. It does not include:
+(a)
+A trunk lid; or
+(b)
+A door or window composed entirely of glazing material and whose latches and/or hinge
+systems are attached directly to the glazing material.
+Body Member is that portion of the hinge normally affixed to the body structure."
+4,"Door Closure Warning System is a system that will activate a visual signal when a door latch system is not
+in its fully latched position and the vehicle ignition is activated.
+Door Hinge System is one or more hinges used to support a door.
+Door Latch System consists of latches and strikers installed on a door system.
+Door Member is that portion of the hinge normally affixed to the door structure and constituting the
+swinging member."
+5,"swinging member.
+Door System is the door, latch, striker, hinges, sliding track combinations and other door retention
+components on a door and its surrounding doorframe. The door system of a double door includes
+both doors.
+Editorial Note: Nomenclature changes to part 571 appear at 69 FR 18803, Apr. 9, 2004.
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 (Oct. 8, 2024)
+49 CFR 571.206 S3. “Door System” (enhanced display)
+page 1 of 27"
+6,"Double Door is a system of two doors where the front door or wing door opens first and connects to the
+rear door or bolted door, which opens second.
+Folding Door is a movable barrier, which will close off an entranceway to a bus, multipurpose passenger
+vehicle or truck, consisting of two or more hinge panels that swing, slide, or rotate; does not have a
+striker and latch assembly.
+Fork-bolt is the part of the latch that engages and retains the striker when in a latched position."
+7,"Fork-bolt Opening Direction is the direction opposite to that in which the striker enters the latch to engage
+the fork-bolt.
+Fully Latched Position is the coupling condition of the latch that retains the door in a completely closed
+position.
+Hinge is a device system used to position the door relative to the body structure and control the path of the
+door swing for passenger ingress and egress.
+Hinge Pin is that portion of the hinge normally interconnecting the body and door members and"
+8,"establishing the swing axis.
+Latch is a device employed to maintain the door in a closed position relative to the vehicle body with
+provisions for deliberate release (or operation).
+Primary Door Latch is a latch equipped with both a fully latched position and a secondary latched position
+and is designated as a “primary door latch” by the manufacturer.
+Primary Door Latch System consists of a primary door latch(s) and a striker(s)."
+9,"Secondary Latched Position refers to the coupling condition of the latch that retains the door in a partially
+closed position.
+Side Front Door is a door that, in a side view, has 50 percent or more of its opening area forward of the
+rearmost point on the driver's seat back, when the seat back is adjusted to its most vertical and
+rearward position. For vehicles without a driver's designated seating position it is a door that in a"
+10,"side view, has 50 percent or more of its opening area forward of the rearmost point on the most
+rearward passenger's seat back in the front row of seats, when the seat backs are adjusted to their
+most vertical and rearward position.
+Side Rear Door is a door that, in a side view, has 50 percent or more of its opening area to the rear of the
+rearmost point on the driver's seat back, when the driver's seat is adjusted to its most vertical and"
+11,"rearward position. For vehicles without a driver's designated seating position it is a door that in a
+side view, has 50 percent or more of its opening area rear of the rearmost point on the most
+rearward passenger's seat back in the front row of seats, when the seat backs are adjusted to their
+most vertical and rearward position.
+Striker is a device with which the latch engages to maintain the door in the fully latched or secondary
+latched position."
+12,"latched position.
+Trunk Lid is a movable body panel that provides access from outside the vehicle to a space wholly
+partitioned from the occupant compartment by a permanently attached partition or fixed or fold-
+down seat back.
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S3. “Double Door”
+49 CFR 571.206 S3. “Trunk Lid” (enhanced display)
+page 2 of 27"
+13,"S4. Requirements. The requirements apply to all side and back doors, that lead directly into a compartment
+that contains one or more seating accommodations and the associated door components, except for
+those on folding doors, roll-up doors, detachable doors, bus doors used only for emergency egress
+purposes and labeled accordingly and on bus doors to accommodate a permanently attached wheelchair
+lift system that when the device is in the retracted position, the lift platform retracts to a vertical"
+14,"orientation parallel to and in close proximity with the interior surface of the lift door and in that position,
+the platform completely covers the doorway opening, has fixed attachments to the vehicle and provides a
+barricade to the doorway. The bus wheelchair lift door must be linked to an alarm system consisting of
+either a flashing visible signal located in the driver's compartment or an alarm audible to the driver that is"
+15,"activated when the door is not fully closed and the vehicle ignition is activated.
+S4.1 Hinged Doors
+S4.1.1 Primary and Auxiliary Door Latch Systems. Each hinged door system shall be equipped with at
+least one primary door latch system. By the time a vehicle is certified a manufacturer shall
+designate the door latch system(s) that is the “primary door latch system(s).” Upon
+certification, a manufacturer may not thereafter alter the designation of a primary door latch"
+16,"system. Each manufacturer shall, upon request from the National Highway Traffic Safety
+Administration, provide information regarding such designation.
+S4.1.1.1 Load Test One.
+(a)
+Each primary door latch system and auxiliary door latch system, when in the fully
+latched position, shall not separate when a load of 11,000 N is applied in the
+direction perpendicular to the face of the latch such that the latch and the striker
+anchorage are not compressed against each other, when tested in accordance with"
+17,"S5.1.1.1.
+(b)
+When in the secondary latched position, the primary door latch system shall not
+separate when a load of 4,500 N is applied in the same direction specified in
+paragraph (a) of this section when tested in accordance with S5.1.1.1.
+S4.1.1.2 Load Test Two.
+(a)
+Each primary door latch system and auxiliary door latch system, when in the fully
+latched position, shall not separate when a load of 9,000 N is applied in the fork-bolt"
+18,"opening direction and parallel to the face of the latch, when tested in accordance
+with S5.1.1.2.
+(b)
+When in the secondary latched position, the primary door latch system shall not
+separate when a load of 4,500 N is applied in the same direction specified in
+paragraph (a) of this section when tested in accordance with S5.1.1.2.
+S4.1.1.3 Load Test Three. (Applicable only to back doors that open in a vertical direction). Each"
+19,"primary door latch system on back doors, when in the fully latched position, shall not
+separate when a load of 9,000 N is applied in a direction orthogonal to the directions
+specified in S4.1.1.1 and S4.1.1.2 when tested in accordance with S5.1.1.3.
+S4.1.1.4 Inertial Load. Each primary door latch system and auxiliary door latch system shall
+meet either the dynamic requirements specified in paragraphs (a) and (b) of S4.1.1.4 or"
+20,"the calculation of inertial load resistance specified in paragraph (c) of S4.1.1.4.
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S4.
+49 CFR 571.206 S4.1.1.4 (enhanced display)
+page 3 of 27"
+21,"(a)
+Each primary door latch and auxiliary door latch on each hinged door shall not
+disengage from the fully latched position when an inertia load is applied to the door
+latch system, including the latch and its activation device, in the directions parallel to
+the vehicle's longitudinal and transverse axes with the locking device disengaged,
+when tested as specified in S5.1.1.4(b).
+(b)
+Each primary door latch and auxiliary door latch on each hinged back door shall also"
+22,"not disengage from the fully latched position when an inertia load is applied to the
+door latch system, including the latch and its activation device, in the direction
+parallel to the vehicle's vertical axis with the locking device disengaged, when tested
+as specified in S5.1.1.4(b).
+(c)
+Each component or subassembly is calculated for its minimum inertial load
+resistance in a particular direction. The combined resistance to the unlatching"
+23,"operation must assure that the door latch system, when properly assembled in the
+vehicle door, will remain latched when subjected to an inertial load of 30 g in the
+vehicle directions specified in paragraph (a) of this section or paragraph (b) of this
+section, as applicable, when calculated in accordance with S5.1.1.4 (a).
+S4.1.2 Door Hinges.
+S4.1.2.1 When tested in accordance with S5.1.2, each door hinge system shall:
+(a)
+Support the door,
+(b)
+Not separate when a longitudinal load of 11,000 N is applied,"
+24,"(c)
+Not separate when a transverse load of 9,000 N is applied, and
+(d)
+For back doors,
+(1)
+Not separate when a load of 11,000 N is applied perpendicular to the hinge face
+plate (longitudinal load test) such that the hinge plates are not compressed
+against each other (Load Test One).
+(2)
+Not separate when a load of 9,000 N is applied perpendicular to the axis of the
+hinge pin and parallel to the hinge face plate (transverse load test) such that the"
+25,"hinge plates are not compressed against each other (Load Test Two).
+(3)
+Not separate when a load of 9,000 N is applied in the direction of the axis of the
+hinge pin (Load Test Three—only for back doors that open in a vertical
+direction).
+S4.1.2.2 If a single hinge within the hinge system is tested instead of the entire hinge system,
+the hinge must bear a load proportional to the total number of hinges in the hinge system."
+26,"(For example, an individual hinge in a two-hinge system must be capable of withstanding
+50% of the load requirements of the total system.)
+S4.1.2.3 On side doors with rear mounted hinges that can be operated independently of other
+doors,
+(a)
+The interior door handle shall be inoperative when the speed of the vehicle is greater
+than or equal to 4 km/h, and
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S4.1.1.4(a)"
+27,"49 CFR 571.206 S4.1.1.4(a)
+49 CFR 571.206 S4.1.2.3(a) (enhanced display)
+page 4 of 27"
+28,"(b)
+A door closure warning system shall be provided for those doors. The door closure
+warning system shall be located where it can be clearly seen by the driver.
+S4.1.3.2 Side Rear Door Locks. In passenger cars and multipurpose passenger
+vehicles, when the locking mechanism is engaged both the outside and inside door
+handles or other latch release controls shall be inoperative.
+S4.2 Sliding Side Doors.
+S4.2.1 Latch System. Each sliding door system shall be equipped with either:
+(a)"
+29,"(a)
+At least one primary door latch system, or
+(b)
+A door latch system with a fully latched position and a door closure warning system. The
+door closure warning system shall be located where it can be clearly seen by the driver.
+Upon certification a manufacturer may not thereafter alter the designation of a primary
+latch. Each manufacturer shall, upon request from the National Highway Traffic Safety
+Administration, provide information regarding such designation.
+S4.2.1.1 Load Test One.
+(a)"
+30,"S4.2.1.1 Load Test One.
+(a)
+At least one door latch system, when in the fully latched position, shall not separate
+when a load of 11,000 N is applied in the direction perpendicular to the face of the
+latch such that the latch and the striker anchorage are not compressed against each
+other, when tested in accordance with S5.2.1.1.
+(b)
+In the case of a primary door latch system, when in the secondary latched position,
+the door latch system shall not separate when a load of 4,500 N is applied in the"
+31,"same direction specified in paragraph (a) of this section when tested in accordance
+with S5.2.1.1.
+S4.2.1.2 Load Test Two.
+(a)
+At least one door latch system, when in the fully latched position, shall not separate
+when a load of 9,000 N is applied in the fork-bolt opening direction and parallel to the
+face of the latch when tested in accordance with S5.2.1.2.
+(b)
+In the case of a primary door latch system, when in the secondary latched position,"
+32,"the door latch system shall not separate when a load of 4,500 N is applied in the
+same direction specified in paragraph (a) of this section when tested in accordance
+with S5.2.1.2.
+S4.2.1.3 Inertial Load. Each door latch system certified as meeting the requirements of S4.2.1.1
+and S4.2.1.2 shall meet either the dynamic requirements specified in paragraph (a) of this
+section or the calculation of inertial load resistance specified in paragraph (b) of this
+section.
+(a)"
+33,"section.
+(a)
+The door latch system shall not disengage from the fully latched position when an
+inertial load is applied to the door latch system, including the latch and its activation
+mechanism, in the directions parallel to the vehicle's longitudinal and transversal
+axes with the locking mechanism disengaged, and when tested in accordance with
+S5.1.1.4(b).
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S4.1.2.3(b)"
+34,"49 CFR 571.206 S4.1.2.3(b)
+49 CFR 571.206 S4.2.1.3(a) (enhanced display)
+page 5 of 27"
+35,"(b)
+The minimum inertial load resistance can be calculated for each component or
+subassembly. Their combined resistance to the unlatching operation must assure
+that the door latch system, when properly assembled in the vehicle door, will remain
+latched when subjected to an inertia load of 30 g in the vehicle directions specified in
+paragraph (a) of this section, when calculated in accordance with S5.1.1.4(a).
+S4.2.2 Door System."
+36,"S4.2.2 Door System.
+S4.2.2.1 The track and slide combination or other supporting means for each sliding door, while
+in the closed fully latched position, shall not separate from the door frame when a total
+force of 18,000 N along the vehicle transverse axis is applied to the door as specified in
+S5.2.2.
+S4.2.2.2 When a sliding door system is tested in accordance with S5.2.2, the following
+conditions shall not occur:
+(a)
+A separation which permits a sphere with a diameter of 100 mm to pass"
+37,"unobstructed between the exterior of the vehicle to the interior of the vehicle, while
+the required force is maintained as shown in Figure 1.
+(b)
+Either force application device reaches a total displacement of 300 mm.
+S4.2.2.3 This S4.2.2 applies to vehicles manufactured on or after September 1, 2010.
+S4.3 Door Locks. Each door shall be equipped with at least one locking device which, when engaged, shall
+prevent operation of the exterior door handle or other exterior latch release control and which has an"
+38,"operating means and a lock release/engagement device located within the interior of the vehicle.
+S4.3.1 Rear side doors. Each rear side door shall be equipped with at least one locking device which
+has a lock release/engagement mechanism located within the interior of the vehicle and readily
+accessible to the driver of the vehicle or an occupant seated adjacent to the door, and which,
+when engaged, prevents operation of the interior door handle or other interior latch release"
+39,"control and requires separate actions to unlock the door and operate the interior door handle or
+other interior latch release control.
+S4.3.2 Back doors. Each back door equipped with an interior door handle or other interior latch
+release control, shall be equipped with at least one locking device that meets the requirements
+of S4.3.1.
+S5
+Test Procedures.
+S5.1 Hinged Doors.
+S5.1.1 Primary and Auxiliary Door Latches."
+40,"S5.1.1 Primary and Auxiliary Door Latches.
+S5.1.1.1 Load Test One Force Application. The test procedures for S4.1.1.1 and S4.2.1.1 are as
+follows:
+(a)
+Fully latched position.
+(1)
+Attach the test fixture shown in Figure 2 to the mounting provisions of the latch
+and striker. Align the direction of engagement parallel to the linkage of the
+fixture. Mount the fixture with latch and striker in the fully latched position in the
+test machine so as to apply a load perpendicular to the face of the latch."
+41,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S4.2.1.3(b)
+49 CFR 571.206 S5.1.1.1(a)(1) (enhanced display)
+page 6 of 27"
+42,"(2)
+Locate weights so as to apply a 900 N load tending to separate the latch and
+striker in the direction of the latch opening.
+(3)
+Apply the test load, in the direction specified in S4.1.1.1 and Figure 5, at a rate
+not to exceed 5 mm/min until the required load has been achieved. Record the
+maximum load achieved.
+(b)
+Secondary Latched Position.
+(1)
+Attach the test fixture shown in Figure 2 to the mounting provisions of the latch
+and striker. Align the direction of engagement parallel to the linkage of the"
+43,"fixture. Mount the fixture with latch and striker in the secondary position in the
+test machine so as to apply a load perpendicular to the face of the latch.
+(2)
+Locate weights so as to apply a 900 N load tending to separate the latch and
+striker in the direction of the latch opening.
+(3)
+Apply the test load, in the direction specified in S4.1.1.1 and Figure 5, at a rate
+not to exceed 5 mm/min until the required load has been achieved. Record
+maximum load achieved.
+(4)"
+44,"maximum load achieved.
+(4)
+The test plate to which the door latch is mounted will have a striker cut-out
+configuration similar to the environment in which the door latch will be mounted
+on normal vehicle doors.
+S5.1.1.2 Load Test Two Force Application. The test procedures for S4.1.1.2 and S4.2.1.2 are as
+follows:
+(a)
+Fully Latched Position.
+(1)
+Adapt the test fixture shown in Figure 3 to the mounting provisions of the latch"
+45,"and striker. Mount the fixture with latch and striker in the fully latched position in
+the test machine so to apply a load in the direction of latch opening.
+(2)
+Apply the test load, in the direction specified in S4.1.1.2 and Figure 5, at a rate
+not to exceed 5 mm/min until the required load has been achieved. Record the
+maximum load achieved.
+(b)
+Secondary Latched Position.
+(1)
+Adapt the test fixture shown in Figure 3 to the mounting provisions of the latch"
+46,"and striker. Mount the fixture with latch and striker in the secondary latched
+position in the test machine so as to apply a load in the direction of latch
+opening.
+(2)
+Apply the test load, in the direction specified in S4.1.1.2 and Figure 5, at a rate
+not to exceed 5 mm/min until the required load has been achieved. Record the
+maximum load achieved.
+S5.1.1.3 Load Test Three Force Application. The test procedures for S4.1.1.3 are as follows:
+(a)"
+47,"(a)
+Adapt the test fixture shown in Figure 4 to the mounting provisions of the latch and
+striker. Mount the fixture with latch and striker in the fully latched position in the test
+machine so as to apply a load in the direction specified in S4.1.1.3 and Figure 5.
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.1.1.1(a)(2)
+49 CFR 571.206 S5.1.1.3(a) (enhanced display)
+page 7 of 27"
+48,"(b)
+Apply the test load, in the direction specified in S4.1.1.3 and Figure 5, at a rate not to
+exceed 5 mm/min until the required load has been achieved. Record the maximum
+load required.
+S5.1.1.4 Inertial Force Application. The test procedures for S4.1.1.4 and S4.2.1.3 are as follows:
+(a)
+Calculation. The calculation is performed in accordance with paragraph 6 of SAE
+Recommended Practice J839 (1991) (incorporated by reference, see § 571.5).
+(b)"
+49,"(b)
+Dynamic Test. The dynamic inertial force application is tested according to the setup
+specified in paragraph (1) or (2) of this section.
+(1)
+Test Setup and Directions for Full Vehicle Test.
+(i)
+Test Setup.
+(A)
+Rigidly secure the full vehicle to an acceleration device that, when
+accelerated together, will assure that all points on the crash pulse
+curve are within the corridor defined in Table 1 and Figure 6.
+(B)
+Install the equipment used to record door opening (doors may be"
+50,"tethered to avoid damaging the recording equipment).
+(C)
+Close the door(s) to be tested and ensure that the door latch(es) is in
+the fully-latched position, that the door(s) is unlocked, and that all
+windows, if provided, on the door(s) are closed.
+(ii)
+Test Directions. (See Figure 7)
+(A)
+Longitudinal Setup 1. Orient the vehicle so that its longitudinal axis is
+aligned with the axis of the acceleration device, simulating a frontal
+impact.
+(B)"
+51,"impact.
+(B)
+Longitudinal Setup 2. Orient the vehicle so that its longitudinal axis is
+aligned with the axis of the acceleration device, simulating a rear
+impact.
+(C)
+Transverse Setup 1. Orient the vehicle so that its transverse axis is
+aligned with the axis of the acceleration device, simulating a left-side
+impact.
+(D)
+Transverse Setup 2. (Only for vehicles having different door
+arrangements on each side.) Orient the vehicle so that its transverse"
+52,"axis is aligned with the axis of the acceleration device, simulating a
+side impact in the direction opposite to that described in b(1)(ii)(C) of
+this paragraph.
+(2)
+Test Setup and Directions for Door Test.
+(i)
+Test Setup.
+(A)
+Mount the door assemblies, consisting of at least the door latch(es),
+exterior door handle(s) with mechanical latch operation, interior door
+opening lever(s), and locking device(s), either separately or combined
+49 CFR 571.206 (up to date as of 10/08/2024)"
+53,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.1.1.3(b)
+49 CFR 571.206 S5.1.1.4(b)(2) (enhanced display)
+page 8 of 27"
+54,"to a test fixture. Each door and striker is mounted to the test fixture to
+correspond to its orientation on the vehicle and to the directions
+specified in b(1)(ii) of this paragraph.
+(B)
+Mount the test fixture to the acceleration device, and install the
+equipment used to record door opening.
+(C)
+Ensure that the door latch is in the fully-latched position, that the door
+is unlocked (doors may be tethered to avoid damaging the recording
+equipment), and that any windows, if provided, are closed.
+(ii)"
+55,"(ii)
+Test Directions. (See Figure 7)
+(A)
+Longitudinal Setup 1. Orient the door subsystem(s) on the
+acceleration device in the direction of a frontal impact.
+(B)
+Longitudinal Setup 2. Orient the door subsystem(s) on the
+acceleration device in the direction of a rear impact.
+(C)
+Transverse Setup 1. Orient the door subsystem(s) on the acceleration
+device in the direction of a driver-side impact.
+(D)
+Transverse Setup 2. Orient the door subsystem(s) on the acceleration"
+56,"device in the direction opposite to that described in (b)(2)(ii)(C) of
+this paragraph.
+(E)
+Vertical Setup 1 (applicable only to back doors that open in a vertical
+direction). Orient the door subsystem(s) on the acceleration device so
+that its vertical axis (when mounted in the vehicle) is aligned with the
+axis of the acceleration device, simulating a rollover impact where the
+force is applied in the direction from the top to the bottom of the door
+(when mounted in a vehicle).
+(F)"
+57,"(when mounted in a vehicle).
+(F)
+Vertical Setup 2 (applicable only to back doors that open in a vertical
+direction). Orient the door subsystem(s) on the acceleration device so
+that its vertical axis (when mounted in the vehicle) is aligned with the
+axis of the acceleration device, simulating a rollover impact where the
+force is applied in the direction opposite to that described in
+(b)(2)(ii)(E) of this paragraph.
+(3)
+Test Operation.
+(i)
+The acceleration device platform shall be instrumented with an"
+58,"accelerometer and data processing system that conforms to the
+requirements specified in SAE Recommended Practice J211-1 DEC2003
+(incorporated by reference, see § 571.5) Channel Class 60. The
+accelerometer sensitive axis is parallel to the direction of test platform
+travel.
+(ii)
+Maintaining a minimum acceleration level of 30 g for a period of at least 30
+ms, while keeping the recorded acceleration within the pulse corridor
+defined in Table 1 and Figure 6, accelerate the acceleration device in the"
+59,"following directions:
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.1.1.4(b)(3)
+49 CFR 571.206 S5.1.1.4(b)(3) (enhanced display)
+page 9 of 27"
+60,"(A)
+For Full Vehicle Tests, in the directions specified in
+S5.1.1.4(b)(1)(ii)(A) through S5.1.1.4(b)(1)(ii)(D).
+(B)
+For Door Tests, in the directions specified in S5.1.1.4(b)(2)(ii)(A)
+through S5.1.1.4(b)(2)(ii)(F).
+(iii) Check recording device for door opening and/or closure during the test.
+(iv) If at any point in time, the pulse exceeds 36 g and the test specifications
+are met, the test shall be considered valid.
+S5.1.2 Door Hinges. The test procedures for S4.1.2 are as follows:"
+61,"S5.1.2.1 Multiple Hinge Evaluation;
+S5.1.2.1 Multiple Hinge Evaluation;
+S5.1.2.1.1 Longitudinal Load Test.
+(a)
+Attach the test fixture illustrated in Figure 8 to the mounting provisions of the
+hinge system. Hinge attitude is configured to simulate vehicle position (door
+fully closed) relative to the hinge centerline. For test purposes, the distance
+between the extreme end of one hinge in the system to the extreme end of
+another hinge in the system is to be set at 406 mm ±4 mm. The load is to be"
+62,"applied equidistant between the linear center of the engaged portions of the
+hinge pins and through the centerline of the hinge pin in the longitudinal vehicle
+direction (see Figure 8).
+(b)
+Apply the test load at a rate not to exceed 5 mm/min until the required load has
+been achieved. Record maximum load achieved.
+S5.1.2.1.2 Transverse Load Test
+(a)
+Attach the test fixture shown in Figure 8 to the mounting provisions of the hinge
+system. Hinge attitude is configured to simulate vehicle position (door fully"
+63,"closed) relative to the hinge centerline. For test purposes, the distance between
+the extreme end of one hinge in the system to the extreme opposite end of
+another hinge in the system is to be set at 406 mm ±4 mm. The load is to be
+applied equidistant between the linear center of the engaged portions of the
+hinge pins and through the centerline of the hinge pin in the transverse vehicle
+direction (see Figure 8).
+(b)
+Apply the test load at a rate not to exceed 5 mm/min until the required load has"
+64,"been achieved. Record maximum load achieved.
+S5.1.2.2 Back Door Hinge Load Test
+(a)
+Load Test One
+(1)
+Attach the test fixture illustrated in Figure 8 to the mounting provisions of the
+hinge system. Hinge attitude is configured to simulate vehicle position (door
+fully closed) relative to the hinge centerline. For test purposes, the distance
+between the extreme end of one hinge system in the system to the extreme
+opposite end of another hinge system is to be set at 406 ±4 mm. The load is to"
+65,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.1.2
+49 CFR 571.206 S5.1.2.2(a)(1) (enhanced display)
+page 10 of 27"
+66,"be applied equidistant between the linear center of the engaged portions of the
+hinge pins and through the centerline of the hinge pin, and as specified in
+S4.1.2.1(d)(1). (See Figure 9).
+(2)
+Apply the test load at a rate not to exceed 5 mm/min until the required load has
+been achieved. Failure consists of a separation of either hinge. Record the
+maximum load achieved.
+(b)
+Load Test Two
+(1)
+Attach the test fixture illustrated in Figure 8 to the mounting provisions of the"
+67,"hinge system. Hinge attitude is configured to simulate vehicle position (door
+fully closed) relative to the hinge centerline. For test purposes, the distance
+between the extreme end of one hinge system in the system to the extreme
+opposite end of another hinge system is to be set at 406 ±4 mm. The load is to
+be applied equidistant between the linear center of the engaged portions of the
+hinge pins and through the centerline of the hinge pin, and as specified in
+S4.1.2.1(d)(2). (See Figure 9).
+(2)"
+68,"S4.1.2.1(d)(2). (See Figure 9).
+(2)
+Apply the test load at a rate not to exceed 5 mm/min until the required load has
+been achieved. Failure consists of a separation of either hinge. Record the
+maximum load achieved.
+(c)
+Load Test Three
+(1)
+Attach the test fixture illustrated in Figure 8 to the mounting provisions of the
+hinge system. Hinge attitude is configured to simulate vehicle position (door
+fully closed) relative to the hinge centerline. For test purposes, the distance"
+69,"between the extreme end of one hinge system in the system to the extreme
+opposite end of another hinge system is to be set at 406 ±4 mm. The load is to
+be applied through the centerline of the hinge pin, and as specified in
+S4.1.2.1(d)(3). (See Figure 9).
+(2)
+Apply the test load at a rate not to exceed 5 mm/min until the required load has
+been achieved. Failure consists of a separation of either hinge. Record the
+maximum load achieved."
+70,"maximum load achieved.
+S5.1.2.3 Single Hinge Evaluation. Individual hinges of a hinge system are tested in accordance
+with the procedures below:
+(a)
+Longitudinal Load. Attach the test fixture illustrated in Figure 8 to the mounting
+provisions of the hinge. Hinge attitude is configured to simulate the vehicle position
+(door fully closed) relative to the hinge centerline. For test purposes, the load is to be
+applied equidistant between the linear center of the engaged portions of the hinge"
+71,"pin and through the centerline of the hinge pin in the longitudinal vehicle direction.
+Apply the test load at a rate not to exceed 5 mm/min until the required load has been
+achieved. Failure consists of a separation of either hinge. Record maximum load
+achieved.
+(b)
+Transverse Load. Attach the test fixture illustrated in Figure 8 to the mounting
+provisions of the hinge. Hinge attitude is configured to simulate the vehicle position"
+72,"(door fully closed) relative to the hinge centerline. For test purposes, the load is to be
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.1.2.2(a)(2)
+49 CFR 571.206 S5.1.2.3(b) (enhanced display)
+page 11 of 27"
+73,"applied equidistant between the linear center of the engaged portions of the hinge
+pin and through the centerline of the hinge pin in the transverse vehicle direction.
+Apply the test load at a rate not to exceed 5 mm/min until the required load has been
+achieved. Failure consists of a separation of either hinge. Record maximum load
+achieved.
+(c)
+Back Door Hinge Load Tests.
+(1)
+Load Test One. Attach the test fixture illustrated in Figure 8 to the mounting"
+74,"provisions of the hinge. Hinge attitude is configured to simulate the vehicle
+position (door fully closed) relative to the hinge centerline. For test purposes,
+the load is to be applied equidistant between the linear center of the engaged
+portions of the hinge pin and through the centerline of the hinge pin, and as
+specified in S4.1.2.1(d)(1). (See Figure 9). Apply the test load at a rate not to
+exceed 5 mm/min until the required load has been achieved. Failure consists of"
+75,"a separation of either hinge. Record maximum load achieved.
+(2)
+Load Test Two. Attach the test fixture illustrated in Figure 8 to the mounting
+provisions of the hinge. Hinge attitude is configured to simulate the vehicle
+position (door fully closed) relative to the hinge centerline. For test purposes,
+the load is to be applied equidistant between the linear center of the engaged
+portions of the hinge pin and through the centerline of the hinge pin, and as"
+76,"specified in S4.1.2.1(d)(2). (See Figure 9). Apply the test load at a rate not to
+exceed 5 mm/min until the required load has been achieved. Failure consists of
+a separation of either hinge. Record maximum load achieved.
+(3)
+Load Test Three. Attach the test fixture illustrated in Figure 8 to the mounting
+provisions of the hinge. Hinge attitude is configured to simulate the vehicle
+position (door fully closed) relative to the hinge centerline. For test purposes,"
+77,"the load is to be applied through the centerline of the hinge pin, and as specified
+in S4.1.2.1(d)(3). (See Figure 9). Apply the test load at a rate not to exceed 5
+mm/min until the required load has been achieved. Failure consists of a
+separation of either hinge. Record maximum load achieved.
+S5.1.2.4 For piano-type hinges, the hinge spacing requirements are not applicable and
+arrangement of the test fixture is altered so that the test forces are applied to the
+complete hinge.
+S5.2 Sliding Side Doors."
+78,"complete hinge.
+S5.2 Sliding Side Doors.
+S5.2.1 Door Latches.
+S5.2.1.1 Load Test One Force Application. The requirements of S4.2.1.1 are tested in accordance
+with the procedures specified in S5.1.1.1.
+S5.2.1.2 Load Test Two Force Application. The requirements of S4.2.1.2 are tested in
+accordance with the procedures specified in S5.1.1.2.
+S5.2.1.3 [Reserved]
+S5.2.1.4 [Reserved]
+S5.2.2 Door System. The test procedures for S4.2.2 are as follows:
+49 CFR 571.206 (up to date as of 10/08/2024)"
+79,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.1.2.3(c)
+49 CFR 571.206 S5.2.2 (enhanced display)
+page 12 of 27"
+80,"S5.2.2.1 Tests are conducted using a full vehicle with the sliding door and its retention
+components.
+S5.2.2.1 Tests are conducted using a full vehicle with the sliding door and its retention
+components.
+S5.2.2.2 The test is conducted using two force application devices capable of applying the
+outward transverse forces specified in S5.2.2.4. The test setup is shown in Figure 10. The
+force application system shall include the following:
+(a)
+Two force application plates,
+(b)"
+81,"(a)
+Two force application plates,
+(b)
+Two force application devices capable of applying the outward transverse load
+requirements for a minimum displacement of 300 mm.
+(c)
+Two load cells of sufficient capacity to measure the applied loads specified in
+S5.2.2.4.
+(d)
+Two linear displacement measurement devices required for measuring force
+application device displacement during the test.
+(e)
+Equipment to measure for a 100 mm separation as specified in S4.2.2.2(a), while"
+82,"respecting all relevant safety and health requirements.
+S5.2.2.3 Test Setup.
+(a)
+Remove all interior trim and decorative components from the sliding door assembly.
+(b)
+Remove seats and any interior components that may interfere with the mounting and
+operation of the test equipment and all pillar trim and any non-structural components
+that overlap the door and cause improper placement of the force application plates.
+(c)
+Each force application device and associated support structure is rigidly fixed on a"
+83,"horizontal surface on the vehicle floor, while applying the loads.
+(d)
+Determine the forward and aft edge of the sliding door, or its adjoining vehicle
+structure, that contains a latch/striker.
+(e)
+Close the sliding door, ensuring that all door retention components are fully engaged.
+(f)
+For any tested door edge that contains one latch/striker, the following set-up
+procedures are used:
+(1)
+(i)
+The force application plate is 150 mm in length, 50 mm in width, and at"
+84,"least 15 mm in thickness. The plate edges are rounded to a radius of 6 mm
+±1 mm.
+(ii)
+The plates are fixed perpendicular to the force application devices and
+move in the transverse direction. For alignment purposes, each plate is
+attached to the application device in a manner that allows for rotation
+about the vehicle's y-axis. In this manner, the face of each plate remains
+parallel to the vertical plane which passes through the vehicle's
+longitudinal centerline."
+85,"longitudinal centerline.
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.2.2.1
+49 CFR 571.206 S5.2.2.3(f)(1) (enhanced display)
+page 13 of 27"
+86,"(2)
+Place the force application device and force application plate against the door
+so that the applied force is perpendicular to the vertical longitudinal plane that
+passes through the vehicle's longitudinal centerline, and vertically centered on
+the door-mounted portion of the latch/striker.
+(3)
+The force application plate is positioned such that the long edge of the plate is
+as close to the interior edge of the door as possible, but not such that the"
+87,"forward edge of forward plate and the rear edge of the rear plate are more than
+12.5 mm from the respective interior edges.
+(g)
+For any tested door edge that contains more than one latch/striker, the following
+setup procedures are used:
+(1)
+(i)
+The force application plate is 300 mm in length, 50 mm in width, and at
+least 15 mm in thickness. The plate edges are rounded to a radius of 6 mm
+±1 mm.
+(ii)
+The plates are fixed perpendicular to the force application devices and"
+88,"move in the transverse direction. For alignment purposes, each plate is
+attached to the application device in a manner that allows for rotation
+about the vehicle's y-axis. In this manner, the face of each plate remains
+parallel to the vertical plane which passes through the vehicle's
+longitudinal centerline.
+(2)
+Place the force application device and force application plate against the door
+so that the applied force is perpendicular to the vertical longitudinal plane that"
+89,"passes through the vehicle's longitudinal centerline, and vertically centered on a
+point mid-way between the outermost edges of the latch/striker assemblies.
+(3)
+The force application plate is positioned such that the long edge of the plate is
+as close to the interior edge of the door as possible, but not such that the
+forward edge of forward plate and the rear edge of the rear plate are more than
+12.5 mm from the respective interior edges.
+(h)"
+90,"12.5 mm from the respective interior edges.
+(h)
+For any tested door edge that does not contain at least one latch/striker, the
+following set-up procedures are used:
+(1)
+(i)
+The force application plate is 300 mm in length, 50 mm in width, and at
+least 15 mm in thickness. The plate edges are rounded to a radius of 6 mm
+±1 mm.
+(ii)
+The plates are fixed perpendicular to the force application devices and
+move in the transverse direction. For alignment purposes, each plate is"
+91,"attached to the application device in a manner that allows for rotation
+about the vehicle's y-axis. In this manner, the face of each plate remains
+parallel to the vertical plane which passes through the vehicle's
+longitudinal centerline.
+49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.2.2.3(f)(2)
+49 CFR 571.206 S5.2.2.3(h)(1) (enhanced display)
+page 14 of 27"
+92,"(2)
+Place the force application device and force application plate against the door
+so that the applied force is perpendicular to the vertical longitudinal plane that
+passes through the vehicle's longitudinal centerline, and vertically centered on a
+point mid-way along the length of the door edge ensuring that the loading
+device avoids contact with the window glazing.
+(3)
+The force application plate is positioned such that the long edge of the plate is"
+93,"as close to the interior edge of the door as possible, but not such that the
+forward edge of forward plate and the rear edge of the rear plate are more than
+12.5 mm from the respective interior edges.
+(i)
+The door is unlocked. No extra fixtures or components may be welded or affixed to
+the sliding door or any of its components.
+(j)
+Place the load application structure so that the force application plates are in contact
+with the interior of the sliding door.
+(k)"
+94,"with the interior of the sliding door.
+(k)
+Apply a preload of 500 N to each actuator and “zero” the displacement measuring
+device.
+S5.2.2.4 Test Procedure.
+(a)
+Increase the force on each force application device as linearly as practicable until a
+force of 9,000 N is achieved on each force application device in not less than 90
+seconds and not more than 120 seconds, or until either force application device
+reaches a total displacement of 300 mm.
+(b)"
+95,"reaches a total displacement of 300 mm.
+(b)
+If one of the force application devices reaches the target force of 9,000 N prior to the
+other, maintain the 9,000 N force with that force application device until the second
+force application device reaches the 9,000 N force.
+(c)
+Once both force application devices have achieved 9,000 N each hold the resulting
+load.
+(d)
+Maintain each force application device load as specified in paragraph (c) and within"
+96,"30 seconds measure the separation between the exterior edge of the doorframe and
+the interior of the door along the perimeter of the door.
+S5.3 Sliding Side Doors. Compliance with S4.3 shall be demonstrated by applying an outward transverse
+load of 8,900 Newtons (2,000 pounds) to the load-bearing members at the opposite edges of the
+door (17,800 Newtons (4,000 pounds) total). The demonstration may be performed either in the
+vehicle or with the door retention components in a bench test fixture."
+97,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.2.2.3(h)(2)
+49 CFR 571.206 S5.3 (enhanced display)
+page 15 of 27"
+98,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 16 of 27"
+99,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 17 of 27"
+100,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 18 of 27"
+101,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 19 of 27"
+102,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 20 of 27"
+103,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 21 of 27"
+104,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 22 of 27"
+105,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 23 of 27"
+106,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 24 of 27"
+107,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 25 of 27"
+108,"[36 FR 22902, Dec. 2, 1971, as amended at 37 FR 284, Jan. 8, 1972; 50 FR 12031, Mar. 27, 1985; 60 FR 13646, Mar. 14, 1995; 60
+FR 50134, Sept. 28, 1995; 61 FR 39907, July 31, 1996; 72 FR 5399, June 27, 2007; 74 FR 35135, July 20, 2009; 74 FR 37176, July
+28, 2009; 75 FR 7382, Feb. 19, 2010; 77 FR 764, Jan. 6, 2012; 87 FR 18588, Mar. 30, 2022]
+Editorial Note: At 72 FR 5399, June 27, 2007, § 571.206 was amended by adding S.5.3; however, the
+amendment could not be incorporated because S.5.3 already exists."
+109,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 26 of 27"
+110,"49 CFR 571.206 (up to date as of 10/08/2024)
+Standard No. 206; Door locks and door retention components.
+49 CFR 571.206 S5.3
+49 CFR 571.206 S5.3 (enhanced display)
+page 27 of 27"
