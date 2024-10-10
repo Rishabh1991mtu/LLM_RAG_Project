@@ -57,10 +57,10 @@ if __name__ == "__main__":
     # Path to the directory with text files   
     
     # Get the absolute path of the script    
-    script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))    
+    script_dir = os.path.dirname(os.path.abspath(__file__))    
     directory_path = os.path.join(script_dir,"data")
     
-    index_path = os.path.join(script_dir, "vector_db", "faiss_index.index")
+    index_path = os.path.join(script_dir,"faiss_index.index")
     
     # Load and process documents
     documents = load_documents_from_files(directory_path)
