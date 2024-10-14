@@ -48,8 +48,9 @@ if __name__ == "__main__":
     docs_data = pd.read_csv(csv_file)
     
     # Query the index
-    query = "What are the requirements on door locks ? "
-    retrieved_docs = retrieve_documents(model, index, docs_data, query, k=6)
+    # k : Number of documents retrieved from user query. 
+    user_query = '''Can you summurize the resume ?'''
+    retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
     
     # Generate a response using Ollama based on the retrieved documents
-    generate_response_with_ollama(query, retrieved_docs)
+    generate_response_with_ollama(user_query, retrieved_docs)
