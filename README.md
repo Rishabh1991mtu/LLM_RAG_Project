@@ -43,11 +43,14 @@ Make sure the following dependencies are installed:
    git clone <your-repo-url>
    cd <your-repo-directory>
 2. Download [Ollama](https://ollama.com/download) for acessing and running open source LLM models locally
-   To download a model use ollama pull model .
+   - Ollama documentation : https://github.com/ollama/ollama .
+   - To download a model use ollama pull model .
    ```bash
    ollama run llama3.2:1b 	
-   Ollama documentation : https://github.com/ollama/ollama .
-3. pip install faiss-cpu sentence-transformers langchain ollama pandas
+   
+3. Download python packages : 
+   ```python
+   pip install faiss-cpu sentence-transformers langchain ollama pandas
 
 ## Usage 
 1. **Indexing Documents:**
