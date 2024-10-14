@@ -19,14 +19,14 @@ def retrieve_documents(model, index, document_texts, query, k=3):
     retrieved_docs = [document_texts.iloc[i][1] for i in indices[0]]
     return retrieved_docs
 
-def generate_response_with_ollama(query, retrieved_docs):
+def generate_response_with_ollama(query, retrieved_docs,llm_model):
     prompt = f"Given the following documents:\n\n"
     for doc in retrieved_docs:
         prompt += f"- {doc}\n"
     prompt += f"\nAnswer the following question: {query}\n"
     
     stream = ollama.chat(
-        model='llama3.2',
+        model=llm_model,
         messages=[{'role': 'user', 'content': prompt}],
         stream=True,
     )
@@ -39,7 +39,10 @@ if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     index_path = os.path.join(script_dir, "vector_db", "faiss_index.index")
     csv_file = os.path.join(script_dir,"Metadata.csv")
+    # mpnet embedding model : 
     embedding_model = "all-MiniLM-L6-v2"
+    # LLM model : 
+    llm_model = 'llama3.2:1b'
 
     # Load the model and FAISS index
     model = SentenceTransformer(embedding_model)
@@ -49,8 +52,8 @@ if __name__ == "__main__":
     
     # Query the index
     # k : Number of documents retrieved from user query. 
-    user_query = '''Can you summurize the resume ?'''
+    user_query = '''What is the name of the candidate ?'''
     retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
     
     # Generate a response using Ollama based on the retrieved documents
-    generate_response_with_ollama(user_query, retrieved_docs)
+    generate_response_with_ollama(user_query, retrieved_docs,llm_model)
