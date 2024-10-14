@@ -49,7 +49,7 @@ if __name__ == "__main__":
     
     # Query the index
     # k : Number of documents retrieved from user query. 
-    user_query = '''Can you update this code to just have buttons'''
+    user_query = '''Can you summurize the resume ?'''
     retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
     
     # Generate a response using Ollama based on the retrieved documents
