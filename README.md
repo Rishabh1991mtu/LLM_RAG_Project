@@ -48,22 +48,22 @@ Make sure the following dependencies are installed:
 3. pip install faiss-cpu sentence-transformers langchain ollama pandas
 
 ## Usage 
-1. Indexing Documents
-	-To create a FAISS index from your text and PDF files, follow these steps:
-	-Place your documents in the data/ directory : 
-	-Run the script create_vector_index.py to index the documents
-	-This will perform the following tasks :
-		Split documents into smaller chunks.
-		Create embeddings using an embedding model (by defualt : all-MiniLM-L6-v2 model)
-		Save the FAISS index in vector_db/faiss_index.index.
-		Store metadata in Metadata.csv.
+1. **Indexing Documents:**
+	- To create a FAISS index from your text and PDF files, follow these steps:
+	- Place your documents in the data/ directory : 
+	- Run the script create_vector_index.py to index the documents
+	- This will perform the following tasks :
+		-Split documents into smaller chunks.
+		-Create embeddings using an embedding model (by defualt : all-MiniLM-L6-v2 model)
+		-Save the FAISS index in vector_db/faiss_index.index.
+		-Store metadata in Metadata.csv.
 
-2. Querying the Index and Generating Responses
-	-You can query the index by modifying the user_query variable in the RAG_pipeline.py script and running it
-	-user_query = '''What is the name of the candidate?'''
-	-The framework will:
-		Retrieve the most relevant documents based on your query.
-		Use Ollama's LLM to generate a response using the retrieved documents.
+2. **Querying the Index and Generating Responses:**
+	- You can query the index by modifying the user_query variable in the RAG_pipeline.py script and running it
+	- user_query = '''What is the name of the candidate?'''
+	- The framework will:
+		- Retrieve the most relevant documents based on your query.
+		- Use Ollama's LLM to generate a response using the retrieved documents.
 
 ## How It Works  
 
@@ -87,11 +87,11 @@ Make sure the following dependencies are installed:
 
 1. **Changing the Embedding Model:**
 
-	-Update the embedding_model variable in the script. embedding_model = "all-MiniLM-L6-v2" . 
+	- Update the embedding_model variable in the script. embedding_model = "all-MiniLM-L6-v2" . 
 2. **Changing the Number of Retrieved Documents**:
-	-Adjust the k parameter in the retrieve_documents function:
-	-retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
+	- Adjust the k parameter in the retrieve_documents function:
+	- retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
 3. **Modifying the LLM Model:
-	-Update the llm_model variable to use a different Ollama model:
-	-llm_model = 'llama3.2:1b'
+	- Update the llm_model variable to use a different Ollama model:
+	- llm_model = 'llama3.2:1b'
 	
