@@ -1,0 +1,18 @@
+Invoking Digital Twin Actions DT actions can be invoked from a client via a Python/Js script or using the Web-UI client.
+Get Project Get all projects.
+dtProjects = (await DTProject.
+GetProjects(session)).projectsprint(dtProjects) Create Project Create project.
+dtProject = await DTProject.
+Create(session, name="TestProject") Get Project by Name Get project by name.
+dtProject = (await DTProject.
+GetProject(session, name=dtProject.name)).projectprint(dtProject.name) Upload Project Model Upload project model.
+dtModel = (await dtProject.getModel()).modelmodelFile = await uploadModel(os.path.dirname(__file__) + "/test_data/Drone.stmod", dtModel.data_dir, session)status = (await dtModel.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status) Run MDE on Model File Run MDE on a model file.
+status = (await dtModel.runMDE()).statusprint(status) Add Modules Add modules.
+# Add Module 1dtBatterModule = await DTModule.
+Create(session=session, name="Battery")status = (await dtProject.addModule(dtBatterModule)).statusprint(status)# Add Module 2dtControllerModule = await DTModule.
+Create(session=session, name="Controller")status = (await dtProject.addModule(dtControllerModule)).statusprint( status) Add Application and Models to Application Add application and models to the application.
+# Add App 1dtActivateApp = await DTActivateApp.
+Create(session=session, name="Activate")status = (await dtControllerModule.addApplication(dtActivateApp)).statusprint(status)# Add model for appdtActivateApp = (await Content.getByRef(session=session, contentRef=dtActivateApp.getRef())).contentmodelFile = await uploadModel(os.path.dirname(__file__) + "/test_data/Controller.scm", dtActivateApp.data_dir, session)status = (await dtActivateApp.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)# Add App 2dtOptistructApp = await DTOptistructApp.
+Create(session=session, name="OptistructApp")status = (await dtControllerModule.addApplication(dtOptistructApp)).statusprint(status)# Add model for appdtOptistructApp = (await Content.getByRef(session=session, contentRef=dtOptistructApp.getRef())).contentmodelFile = await uploadModel(os.path.dirname(__file__) + "/test_data/plate.fem", dtOptistructApp.data_dir, session)status = (await dtOptistructApp.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)modules = (await dtProject.getModules()).modulesprint(modules)module = (await dtProject.getModule(name="Controller")).moduleprint(module) Edit Model Files Edit model file in activate application.
+await dtActivateApp.edit() Generate Report Generate reports.
+await dtActivateApp.generateReport()

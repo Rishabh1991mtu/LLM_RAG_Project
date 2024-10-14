@@ -1,0 +1,13 @@
+Compile the Action for the Content Definition Compile that actions provided for the content definition.
+Once you compile the actions for the content definition, it will generate Python or JavaScript of the defined actions.
+The generated Python or JavaScript is applied to the action based on the selected Language for implementing action while creating the action.
+After compiling the action, you must author the business logic in the code that is used to run the actions.
+The action code consists of 3 arguments: Inputs - contains the information defined while creating the actions.
+Output - contains the information defined while creating the actions.
+Action Context - contains the details required for action execution.
+For example, to pass some environment variables to the action.
+Click the next to the created action.
+Action - Compile The action compile notification is displayed.
+Action Compile Notification Click Compile in the notification dialog box.
+The content definition action will be compiled and the action code will be displayed.
+Action Code

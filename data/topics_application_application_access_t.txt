@@ -1,0 +1,21 @@
+Access the Application Access the application with Altair One credentials.
+Once you include the Object Store packages in the React application framework, you can login to the application with Altair One credentials.
+The application will provide basic functionalities like the header, notifications, and footer information from Altair One.
+Login to the application portal to check the ToDo application.
+The Altair One login page is displayed to provide your credentials.
+Altair One Login Page Enter your Altair One credentials.
+The ToDo content packs deployed to manage and monitor the tasks is displayed.
+ToDo Application Click Add Todo to create a new task.
+The Add Todo dialog box is displayed.
+Add Todo Task Enter the task and select the category from the dropdown menu.
+Click Add.
+Add Todo Task The new Todo task will be added to the list.
+Todo Task List Click next to the task to add a Note.
+The Notes dialog box is displayed.
+Notes Click Add Note.
+A dialog box is displayed to add a note.
+Add Note Enter the name and content for the note and click Add.
+New Note The Note is added and it will be displayed in the dropdown menu.
+You can select the note from the dropdown menu to associate it to the task.
+Notes Menu Select the Show dropdown menu in the TODO LIST to view the completed or pending tasks.
+Task Status

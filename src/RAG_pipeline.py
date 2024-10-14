@@ -2,6 +2,11 @@ import faiss,os
 from sentence_transformers import SentenceTransformer
 import ollama
 import pandas as pd
+import warnings
+
+# Suppress specific warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
 
 def load_vector_index(index_path):
     return faiss.read_index(index_path)
@@ -12,8 +17,8 @@ def retrieve_documents(model, index, document_texts, query, k=3):
 
     # Search in FAISS index for the k nearest neighbors
     distances, indices = index.search(query_embedding, k)
-    print("distances",distances)
-    print("indices",indices)
+    
+    print(f"Indexes for retrieved documents : {indices}")
 
     # Retrieve the corresponding documents
     retrieved_docs = [document_texts.iloc[i][1] for i in indices[0]]
@@ -23,14 +28,13 @@ def generate_response_with_ollama(query, retrieved_docs,llm_model):
     prompt = f"Given the following documents:\n\n"
     for doc in retrieved_docs:
         prompt += f"- {doc}\n"
-    prompt += f"\nAnswer the following question: {query}\n"
+    prompt += f"\nAnswer the following question by strictly following the context: {query}\n"
     
     stream = ollama.chat(
         model=llm_model,
         messages=[{'role': 'user', 'content': prompt}],
         stream=True,
     )
-
     for chunk in stream:
         print(chunk['message']['content'], end='', flush=True)
 
@@ -52,8 +56,10 @@ if __name__ == "__main__":
     
     # Query the index
     # k : Number of documents retrieved from user query. 
-    user_query = '''What is the name of the candidate ?'''
+    user_query = '''How to upload a project model ?'''
     retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
+    
+    print("User Question : {user_query}")
     
     # Generate a response using Ollama based on the retrieved documents
     generate_response_with_ollama(user_query, retrieved_docs,llm_model)

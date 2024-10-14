@@ -1,0 +1,6 @@
+About Altair Object Store Object Store is an enhanced next-generation platform core that has combined capabilities of numerous services.
+Altair Object Store is an enhanced next-generation platform providing a set of core fundamental services that let client applications define, modify, and share authoritative digital content representing virtual engineering meta-worlds.
+The Object Store is a unique content management system that enables complex digital modeling through: object inheritance, instancing fine-grained access control metadata for search and classification object linkage through relationships capture of behaviors and actions publish-subscribe (pub/sub) messaging to enable event-driven architecture Domain Objects, Actions, Events, and Execution Environments can be modeled as objects.
+Solving, result extraction, file operations and other actions are modeled as domain actions.
+These can be executed in PBS Professional, OpenFaaS or other environments.
+See AlsoTutorials
