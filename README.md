@@ -45,12 +45,12 @@ Make sure the following dependencies are installed:
 2. Download [Ollama](https://ollama.com/download) for acessing and running open source LLM models locally
    - Ollama documentation : https://github.com/ollama/ollama .
    - To download a model use ollama pull model .
-   ```bash
+   ```python
    ollama run llama3.2:1b 	
    
-3. Download python packages : 
+3. Install the python dependencies using the requirements.txt file : 
    ```python
-   pip install faiss-cpu sentence-transformers langchain ollama pandas
+   pip install -r requirements.txt
 
 ## Usage 
 1. **Indexing Documents:**
@@ -93,11 +93,14 @@ Make sure the following dependencies are installed:
 1. **Changing the Embedding Model:**
 
 	- Update the embedding_model variable in the script. 
+	```python
 	embedding_model = "all-MiniLM-L6-v2" . 
 2. **Changing the Number of Retrieved Documents**:
 	- Adjust the k parameter in the retrieve_documents function:
-	- retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
+	```python
+	retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
 3. **Modifying the LLM Model:
 	- Update the llm_model variable to use a different Ollama model:
-	- llm_model = 'llama3.2:1b'
+	```python
+	llm_model = 'llama3.2:1b'
 	
