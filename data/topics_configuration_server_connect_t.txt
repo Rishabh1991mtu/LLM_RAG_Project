@@ -1,0 +1,15 @@
+Connect to a Server and Create a Profile Before we begin, we need to connect to the Object Store server, create a profile and fetch the essential remote content packs.
+Perform the following steps to create a profile.
+Click Altair One Tool icon () in the VS Code.
+Click at the top pane in the left panel.
+The Create Profile is displayed in the right panel.
+Create Profile Enter a Profile Name.
+Enter the Server URL.
+Select the Execution Environment from the drop-down menu.
+Click Create.
+The created profile will be listed.
+Created Profile Right-click the profile and select Make Default to set it as a default profile.
+Set the Profile as Default Note: Refresh the Remote Packs after adding the profile to authenticate your credentials using Okta login page.
+Remote packs get activated after authenticating your credentials.
+Click Altair One Content Pack icon ().
+The Remote Packs deployed are listed: Remote Packs Create Local Packs.

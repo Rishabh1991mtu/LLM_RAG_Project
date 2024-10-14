@@ -1,0 +1,9 @@
+Uploading a Local File to Server Let us say, we have a content-pack altair.datasheet with a content-definition called MotorDataSheetCSV deployed in the server.
+{ "name": "MotorDataSheetCSV", "defType": "content", "extendsFrom": "altair.system.
+FileEntity", "metadata": { "exts": ["csv"] }} Here, the MotorDataSheetCSV content extends from "altair.system.
+FileEntity".
+This denotes that all instances of this type are based on files in Object Store.
+Following is the code snippet to upload a local file.
+Here we upload “.csv” file – note that the content-type is automatically set to “altair.datasheet.
+MotorDataSheetCSV” since we have defined the extension in the content-definition from altair.system import Fs, FileEntity # Get the directory content by drive path.
+Here, "~" denotes the user home directory pathdirectory = (await Fs.info(session=session, path="~")).content# Create a FileEntity instancefile = FileEntity(session)file.filePath = "C:/Test/my_file.csv" # Local file path# Add the file to the given directorydirectory.addFile(file=file)# Save it in Serverawait session.save()

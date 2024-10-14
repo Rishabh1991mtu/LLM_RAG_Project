@@ -1,0 +1,9 @@
+Create an Advanced Application using Object Store Creating an advanced (Digital Twin) application to design, build, test, optimize, evaluate the what-if scenarios, perform predictive maintenance, and extend the remaining useful life (RUL) of their products without the need for physical prototypes.
+Typical work flow of the Digital Twin application: Create a Project Upload project model files Set main model file for Project Run MDE & get JSON model file Add a Module Assign parts to Module Add an Application Upload application model files Set main model file for the Application Edit the Application Generate report for the Application View Report Digital Twin Data Model The data model for the Digital Twin application is an abstract model that organizes elements of data and standardizes how they relate to one another and to the entities.
+Digital Twin Data Model Create the required Content Pack Objects like Properties, Relations, and Actions for each of the Data Models.
+Note: Refer to Create Objects in Object Store for more information.
+Digital Twin Content Pack You can download the Digital Content pack zip file (dtwin.zip) from Altair One Drive location at https://altairone.com/Drive/dir/64e72c5c3c2985487dbb3595 or obtained using your usual Altair support channels.
+To load the Digital Twin Content pack, refer to Register the Content Pack with VS Code.
+Authoring the Digital Twin ApplicationAuthor the actions for the Digital Twin (DT) application in Object Store.
+Invoking Digital Twin ActionsDT actions can be invoked from a client via a Python/Js script or using the Web-UI client.
+Execute Actions on HPCThe following sections shows how to execute actions on HPC for accessing the files, creating models, executing solver, and editing the model.

@@ -15,7 +15,7 @@ def load_documents_from_files(directory_path):
         
         # Load text files
         if filename.endswith(".txt"):
-            loader = TextLoader(file_path)
+            loader = TextLoader(file_path, autodetect_encoding=True)
             documents.extend(loader.load())  # Appending list of Document objects
         
         # Load PDF files
