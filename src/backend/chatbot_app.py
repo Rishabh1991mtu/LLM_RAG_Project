@@ -1,11 +1,21 @@
 # api.py
 import os 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from retrievel import initialize_components
 
 # Initialize FastAPI app
 app = FastAPI()
+
+# Allow CORS for local testing
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins for testing; restrict in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define request model
 class QueryRequest(BaseModel):
@@ -26,6 +36,11 @@ retriever, response_generator = initialize_components(csv_file, index_path, embe
 
 # FastAPI endpoint for chatbot query
 @app.post("/query/")
+# End point for FastAPI : http://127.0.0.1:8000/docs
+# End point for HTML page : http://localhost:8080/index.html
+# Ctrl + C to shut down 
+# uvicorn chatbot_app:app --reload
+
 async def query_chatbot(request: QueryRequest):
     try:
         # Retrieve documents based on query
