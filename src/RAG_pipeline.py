@@ -56,10 +56,10 @@ if __name__ == "__main__":
     
     # Query the index
     # k : Number of documents retrieved from user query. 
-    user_query = '''How to upload a project model ?'''
+    user_query = '''Can you mention the code for invoking Digital Twin Actions DT actions can be invoked from a client via a Python/Js script or using the Web-UI client'''
     retrieved_docs = retrieve_documents(model, index, docs_data, user_query, k=6)
     
-    print("User Question : {user_query}")
+    print(f"User Question : {user_query}")
     
     # Generate a response using Ollama based on the retrieved documents
     generate_response_with_ollama(user_query, retrieved_docs,llm_model)
