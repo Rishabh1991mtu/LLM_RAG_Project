@@ -33,10 +33,12 @@ def generate_response_with_ollama(query, retrieved_docs,llm_model):
     stream = ollama.chat(
         model=llm_model,
         messages=[{'role': 'user', 'content': prompt}],
-        stream=True,
+        stream=False,
     )
-    for chunk in stream:
-        print(chunk['message']['content'], end='', flush=True)
+    #for chunk in stream:
+        #print(chunk['message']['content'], end='', flush=True)
+    
+    return stream['message']['content']
 
 if __name__ == "__main__":
     # Get the absolute path of the script    
@@ -62,4 +64,4 @@ if __name__ == "__main__":
     print(f"User Question : {user_query}")
     
     # Generate a response using Ollama based on the retrieved documents
-    generate_response_with_ollama(user_query, retrieved_docs,llm_model)
+    print(generate_response_with_ollama(user_query, retrieved_docs,llm_model))

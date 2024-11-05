@@ -97,7 +97,7 @@ class ResponseGenerator:
         prompt = "Given the following documents:\n\n"
         for doc in retrieved_docs:
             prompt += f"- {doc}\n"
-        prompt += f"\nAnswer the following question by strictly following the context: {query}\n"
+        prompt += f"\n Answer the following question by strictly following the context: {query}\n"
 
         # Generate the response using the standard method
         return self._generate_response_from_prompt(prompt)
