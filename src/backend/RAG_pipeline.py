@@ -40,7 +40,7 @@ def generate_response_with_ollama(query, retrieved_docs,llm_model):
 
 if __name__ == "__main__":
     # Get the absolute path of the script    
-    script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     index_path = os.path.join(script_dir, "vector_db", "faiss_index.index")
     csv_file = os.path.join(script_dir,"Metadata.csv")
     # mpnet embedding model : 
