@@ -99,6 +99,26 @@ class ResponseGenerator:
             prompt += f"- {doc}\n"
         prompt += f"\nAnswer the following question by strictly following the context: {query}\n"
 
+        # Generate the response using the standard method
+        return self._generate_response_from_prompt(prompt)
+
+    def stream_response(self, query, retrieved_docs):
+        """
+        Streams a response based on the retrieved documents and the user's query.
+
+        Args:
+            query (str): The user's query.
+            retrieved_docs (list): List of documents retrieved from the index.
+
+        Yields:
+            str: Chunks of the generated response text.
+        """
+        # Formulate a prompt for the LLM using the retrieved documents
+        prompt = "Given the following documents:\n\n"
+        for doc in retrieved_docs:
+            prompt += f"- {doc}\n"
+        prompt += f"\nAnswer the following question by strictly following the context: {query}\n"
+
         # Generate the response using Ollama's chat model with streaming enabled
         stream = ollama.chat(
             model=self.llm_model,
@@ -106,12 +126,27 @@ class ResponseGenerator:
             stream=True,
         )
         
-        # Collect the response from the stream output
-        response = ""
+        # Yield each chunk of the response as it becomes available
         for chunk in stream:
-            response += chunk['message']['content']
-        
-        return response
+            yield chunk['message']['content']
+
+    def _generate_response_from_prompt(self, prompt):
+        """
+        Generates a full response from a prompt.
+
+        Args:
+            prompt (str): The prompt to send to the LLM.
+
+        Returns:
+            str: The generated response text.
+        """
+        # Directly get the full response without streaming
+        response = ollama.chat(
+            model=self.llm_model,
+            messages=[{'role': 'user', 'content': prompt}],
+            stream=False,  # or omit stream altogether
+        )
+        return response['message']['content']
 
 
 def initialize_components(csv_file, index_path, embedding_model, llm_model):

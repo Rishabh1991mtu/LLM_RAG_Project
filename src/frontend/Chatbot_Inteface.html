@@ -23,6 +23,7 @@
       padding: 15px;
       border: 1px solid #ccc;
       background-color: #f9f9f9;
+      white-space: pre-wrap; /* Preserve formatting */
     }
   </style>
 </head>
@@ -51,11 +52,12 @@
         return;
       }
 
-      // Make the POST request to the FastAPI endpoint
+      // Set up the response container
       const responseBox = document.getElementById("response");
       responseBox.innerHTML = "Processing...";
 
       try {
+        // Make the POST request to the FastAPI endpoint
         const response = await fetch("http://127.0.0.1:8000/query/", {
           method: "POST",
           headers: {
@@ -71,8 +73,31 @@
           throw new Error("Error: " + response.statusText);
         }
 
-        const data = await response.json();
-        responseBox.innerHTML = `<strong>Answer:</strong> ${data.answer}`;
+        // Handle the streamed response
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder("utf-8");
+        let result = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+        
+          // Decode and process the chunk
+          const chunk = decoder.decode(value, { stream: true });
+          result += chunk; // Accumulate the chunk
+        
+          // Split the result into words
+          const words = result.split(/\s+/);  // Split by spaces to get individual words
+        
+          // Keep the last word in 'result' in case it's incomplete
+          result = words.pop();
+        
+          // Process each word and update the responseBox
+          words.forEach((word) => {
+            responseBox.innerHTML += `${word} `;  // Append word with a space
+            responseBox.scrollTop = responseBox.scrollHeight; // Auto-scroll to bottom
+          });
+        }
       } catch (error) {
         responseBox.innerHTML = `<strong>Error:</strong> ${error.message}`;
       }
