@@ -1,2 +1,0 @@
-Get Project by Name # Get Project by namedtProject = (await DTProject.
-GetProject(session, name=dtProject.name)).projectprint(dtProject.name)

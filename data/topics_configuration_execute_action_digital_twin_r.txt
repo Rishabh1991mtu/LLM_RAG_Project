@@ -1,2 +1,0 @@
-Execute Actions on HPC The following sections shows how to execute actions on HPC for accessing the files, creating models, executing solver, and editing the model.
-Mounting and Unmounting Altair DriveAccessing Mounted File(s)Getting the Application Path from Execution EnvironmentRunning MDEExecuting SolveEditing an ApplicationCopying Files to Altair Drive (adcopy)

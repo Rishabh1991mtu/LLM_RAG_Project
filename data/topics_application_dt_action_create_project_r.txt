@@ -1,2 +1,0 @@
-Create Project # Create projectdtProject = await DTProject.
-Create(session, name="TestProject")
