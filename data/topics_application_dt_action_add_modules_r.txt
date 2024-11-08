@@ -1,3 +1,0 @@
-Add Modules # Add Module 1dtBatterModule = await DTModule.
-Create(session=session, name="Battery")status = (await dtProject.addModule(dtBatterModule)).statusprint(status)# Add Module 2dtControllerModule = await DTModule.
-Create(session=session, name="Controller")status = (await dtProject.addModule(dtControllerModule)).statusprint( status)

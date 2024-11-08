@@ -1,2 +1,0 @@
-Get Project # Get all ProjectsdtProjects = (await DTProject.
-GetProjects(session)).projectsprint(dtProjects)
