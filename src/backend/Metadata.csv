@@ -1,0 +1,507 @@
+Index_ID,Text_Chunk
+0,"Intellectual Property Rights Notice Copyrights, trademarks, trade secrets, patents and third party software licenses.
+Altair PBS Worksâ„¢ v. 2023.1.0 Copyright Â© 1994-2022.
+Altair Engineering Inc.
+Copyright Â© 1986-2022.
+All Rights Reserved.
+This Intellectual Property Rights Notice is exemplary, and therefore not exhaustive, of intellectual property rights held by Altair Engineering Inc. or its affiliates."
+1,"Software, other products, and materials of Altair Engineering Inc. or its affiliates are protected under laws of the United States and laws of other jurisdictions.
+In addition to intellectual property rights indicated herein, such software, other products, and materials of Altair Engineering Inc. or its affiliates may be further protected by patents, additional copyrights, additional trademarks, trade secrets, and additional other intellectual property rights."
+2,"For avoidance of doubt, copyright notice does not imply publication.
+Copyrights in the below are held by Altair Engineering Inc. or its affiliates.
+Additionally, all non-Altair marks are the property of their respective owners.
+This Intellectual Property Rights Notice does not give you any right to any product, such as software, or underlying intellectual property rights of Altair Engineering Inc. or its affiliates."
+3,"Usage, for example, of software of Altair Engineering Inc. or its affiliates is governed by and dependent on a valid license agreement."
+4,"Altair HPC & Cloud Products AltairÂ® PBS ProfessionalÂ® Â©1994-2022 AltairÂ® PBS Worksâ„¢ Â© 2022 AltairÂ® Controlâ„¢ Â©2008-2022 AltairÂ® Accessâ„¢ Â©2008-2022 AltairÂ® Acceleratorâ„¢ Â©1995-2022 AltairÂ® Acceleratorâ„¢ Plus Â©1995-2022 AltairÂ® FlowTracerâ„¢ Â©1995-2022 AltairÂ® Allocatorâ„¢ Â©1995-2022 AltairÂ® Monitorâ„¢ Â©1995-2022 AltairÂ® Heroâ„¢ Â©1995-2022 AltairÂ® Software Asset Optimization (SAO) Â©2007-2022 Altair Mistralâ„¢ Â©2022 AltairÂ® Grid EngineÂ® Â©2001, 2011-2022 AltairÂ® DesignAIâ„¢"
+5,"EngineÂ® Â©2001, 2011-2022 AltairÂ® DesignAIâ„¢ Â©2022 Altair Breezeâ„¢ Â©2022 AltairÂ® NavOpsÂ® Â© 2022 AltairÂ® Unlimitedâ„¢ Â© 2022 Altair Simulation Products AltairÂ® AcuSolveÂ® Â©1997-2022 Altair ActivateÂ®Â©1989-2022 AltairÂ® Battery Designerâ„¢ Â©2019-2022 Altair ComposeÂ®Â©2007-2022 AltairÂ® ConnectMeâ„¢ Â©2014-2022 AltairÂ® EDEMâ„¢ Â© 2005-2022 AltairÂ® ElectroFloâ„¢ Â©1992-2022 Altair EmbedÂ® Â©1989-2022 Altair EmbedÂ® SE Â©1989-2022 Altair EmbedÂ®/Digital Power Designer Â©2012-2022 Altair"
+6,EmbedÂ®/Digital Power Designer Â©2012-2022 Altair EmbedÂ® Viewer Â©1996-2022 AltairÂ® ESACompÂ® Â©1992-2022 AltairÂ® FekoÂ® Â©1999-2022 AltairÂ® Flow Simulatorâ„¢Â©2016-2022 AltairÂ® FluxÂ® Â©1983-2022 AltairÂ® FluxMotorÂ® Â©2017-2022 AltairÂ® HyperCrashÂ® Â©2001-2022 AltairÂ® HyperGraphÂ® Â©1995-2022 AltairÂ® HyperLifeÂ® Â©1990-2022 AltairÂ® HyperMeshÂ® Â©1990-2022 AltairÂ® HyperStudyÂ® Â©1999-2022 AltairÂ® HyperViewÂ® Â©1999-2022 AltairÂ® HyperWorksÂ® Â©1990-2022 AltairÂ® HyperXtrudeÂ® Â©1999-2022
+7,Â©1990-2022 AltairÂ® HyperXtrudeÂ® Â©1999-2022 AltairÂ® Inspireâ„¢ Â©2009-2022 AltairÂ® Inspireâ„¢ Cast Â©2011-2022 AltairÂ® Inspireâ„¢ Extrude Metal Â©1996-2022 AltairÂ® Inspireâ„¢ Extrude Polymer Â©1996-2022 AltairÂ® Inspireâ„¢ Form Â©1998-2022 AltairÂ® Inspireâ„¢ Mold Â©2009-2022 AltairÂ® Inspireâ„¢ PolyFoam Â©2009-2022 AltairÂ® Inspireâ„¢ Print3D Â©2022 AltairÂ® Inspire â„¢ Render Â©1993-2022 AltairÂ® Inspireâ„¢ Studio Â©1993-2022 AltairÂ® Material Data Centerâ„¢ Â©2019-2022 AltairÂ® MotionSolveÂ®
+8,Data Centerâ„¢ Â©2019-2022 AltairÂ® MotionSolveÂ® Â©2002-2022 AltairÂ® MotionViewÂ® Â©1993-2022 AltairÂ® Multiscale DesignerÂ® Â©2011-2022 AltairÂ® nanoFluidXÂ® Â©2013-2022 AltairÂ® OptiStructÂ® Â©1996-2022 AltairÂ® PollExâ„¢ Â©2003-2022 AltairÂ® PSIMâ„¢ Â© 2022 AltairÂ® Pulseâ„¢ Â©2020-2022 AltairÂ® RadiossÂ® Â©1986-2022 AltairÂ® romAIâ„¢ Â© 2022 AltairÂ® SEAMÂ® Â© 1985-2022 AltairÂ® SimLabÂ® Â©2004-2022 AltairÂ® SimLabÂ® ST Â© 2019-2022 Altair SimSolidÂ® Â©2015-2022 AltairÂ® ultraFluidXÂ® Â©2010-2022
+9,Â©2015-2022 AltairÂ® ultraFluidXÂ® Â©2010-2022 AltairÂ® Virtual Wind Tunnelâ„¢ Â©2012-2022 AltairÂ® WinPropâ„¢ Â©2000-2022 AltairÂ® WRAPâ„¢ Â©1998-2022 AltairÂ® S-FRAMEÂ® Â© 1995-2022 AltairÂ® S-STEELâ„¢ Â© 1995-2022 AltairÂ® S-PADâ„¢ Â© 1995-2022 AltairÂ® S-CONCRETEâ„¢ Â© 1995-2022 AltairÂ® S-LINEâ„¢ Â© 1995-2022 AltairÂ® S-TIMBERâ„¢ Â© 1995-2022 AltairÂ® S-FOUNDATIONâ„¢ Â© 1995-2022 AltairÂ® S-CALCâ„¢ Â© 1995-2022 AltairÂ® S-VIEWâ„¢ Â© 1995-2022 AltairÂ® Structural Officeâ„¢ Â© 2022 AltairÂ®
+10,AltairÂ® Structural Officeâ„¢ Â© 2022 AltairÂ® HyperViewPlayerÂ® Â© 2022 Altair Packaged Solution Offerings (PSOs) AltairÂ® Automated Reporting Directorâ„¢ Â©2008-2022 AltairÂ® e-Motor Directorâ„¢ Â©2019-2022 AltairÂ® Geomechanics Directorâ„¢ Â©2011-2022 AltairÂ® Impact Simulation Directorâ„¢ Â©2010-2022 AltairÂ® Model Mesher Directorâ„¢ Â©2010-2022 AltairÂ® NVH Directorâ„¢ Â©2010-2022 AltairÂ® NVH Full Vehicleâ„¢ Â© 2022 AltairÂ® NVH Standardâ„¢ Â© 2022 AltairÂ® Squeak and Rattle Directorâ„¢ Â©2012-2022
+11,Squeak and Rattle Directorâ„¢ Â©2012-2022 AltairÂ® Virtual Gauge Directorâ„¢ Â©2012-2022 AltairÂ® Weld Certification Directorâ„¢ Â©2014-2022 AltairÂ® Multi-Disciplinary Optimization Directorâ„¢ Â©2012-2022 Altair Data Analytics Products Altair Analytics Workbenchâ„¢ Â© 2002-2022 AltairÂ® Knowledge StudioÂ® Â© 1994-2022 AltairÂ® Knowledge StudioÂ® for Apache Spark Â© 1994-2022 AltairÂ® Knowledge Seekerâ„¢ Â© 1994-2022 AltairÂ® Knowledge Hubâ„¢ Â© 2017-2022 AltairÂ® MonarchÂ® Â© 1996-2022 AltairÂ®
+12,AltairÂ® MonarchÂ® Â© 1996-2022 AltairÂ® Panopticonâ„¢ Â© 2004-2022 AltairÂ® SmartWorksâ„¢ Â© 2021-2022 Altair SLCâ„¢ Â©2002-2022 Altair SmartWorks Hubâ„¢ Â©2002-2022 Altair Oneâ„¢ Â©1994-2022 Third party software licenses AcuConsole contains material licensed from Intelligent Light (www.ilight.com) and used by permission.
+13,"Software Security Measures: Altair Engineering Inc. and its subsidiaries and affiliates reserve the right to embed software security mechanisms in the Software for the purpose of detecting the installation and/or use of illegal copies of the Software.
+The Software may collect and transmit non-proprietary data about those illegal copies."
+14,"Data collected will not include any customer data created by or used in connection with the Software and will not be provided to any third party, except as may be required by law or legal process or to enforce our rights with respect to the use of any illegal copies of the Software.
+By using the Software, each user consents to such detection and collection of data, as well as its transmission and use if an illegal copy of the Software is detected."
+15,No steps may be taken to avoid or detect the purpose of any such security mechanisms.
+16,"Technical Support Altair provides comprehensive software support via telephone and e-mail.
+Telephone and E-mail When contacting Altair support, please specify the product and version number you are using along with a detailed description of the problem.
+Many times, it is very beneficial for the support engineer to know what type of workstation, operating system, RAM, and graphics board you have, so please have that information ready."
+17,"If you send an e-mail, please specify the workstation type, operating system, RAM, and graphics board information in the e-mail.
+To contact an Altair support representative, reference the following table."
+18,Location Telephone E-mail Australia +61 3 9866 5557 +61 4 1486 0829 anz-pbssupport@altair.com China +86 21 6117 1666 pbs@altair.com.cn France +33 (0)1 4133 0992 pbssupport@europe.altair.com Germany +49 (0)7031 6208 22 pbssupport@europe.altair.com India +91 80 66 29 4500 +1 800 208 9234 (Toll Free) pbs-support@india.altair.com Italy +39 800 905595 pbssupport@europe.altair.com Japan +81 3 6225 5821 pbs@altairjp.co.jp Korea +82 70 4050 9200 support@altair.co.kr Malaysia +91 80 66 29 4500 +1 800 208 9234 (Toll
+19,Malaysia +91 80 66 29 4500 +1 800 208 9234 (Toll Free) pbs-support@india.altair.com North America +1 248 614 2425 pbssupport@altair.com Russia +49 7031 6208 22 pbssupport@europe.altair.com Scandinavia +46 (0) 46 460 2828 pbssupport@europe.altair.com Singapore +91 80 66 29 4500+1 800 208 9234 (Toll Free) pbs-support@india.altair.com South Africa +27 21 831 1500 pbssupport@europe.altair.com South America +55 11 3884 0414 br_support@altair.com United Kingdom +44 (0)1926 468 600 pbssupport@europe.altair.com
+20,API Documentation This section will provide the Object Store API documentation.
+21,"Access the Application Access the application with Altair One credentials.
+Once you include the Object Store packages in the React application framework, you can login to the application with Altair One credentials.
+The application will provide basic functionalities like the header, notifications, and footer information from Altair One.
+Login to the application portal to check the ToDo application.
+The Altair One login page is displayed to provide your credentials."
+22,"Altair One Login Page Enter your Altair One credentials.
+The ToDo content packs deployed to manage and monitor the tasks is displayed.
+ToDo Application Click Add Todo to create a new task.
+The Add Todo dialog box is displayed.
+Add Todo Task Enter the task and select the category from the dropdown menu.
+Click Add.
+Add Todo Task The new Todo task will be added to the list.
+Todo Task List Click next to the task to add a Note.
+The Notes dialog box is displayed.
+Notes Click Add Note."
+23,"Notes Click Add Note.
+A dialog box is displayed to add a note.
+Add Note Enter the name and content for the note and click Add.
+New Note The Note is added and it will be displayed in the dropdown menu.
+You can select the note from the dropdown menu to associate it to the task.
+Notes Menu Select the Show dropdown menu in the TODO LIST to view the completed or pending tasks.
+Task Status"
+24,"Accessing Mounted File(s) The following code is used for accessing the mounted file(s): # Get Input File Mounted Pathoutput = await Fs.info(session=session, contentRef=modelFile.getRef(), options={'path': True})# File PathfilePath = modelFile.get('path')# Or if its a Shared FilefilePath = output.get('metadata.path')if not filePath: filePath = modelFile.get('path')fileMountPath = mountPath + filePathprint(fileMountPath)"
+25,Add Application and Models to Application # Add App 1dtActivateApp = await DTActivateApp.
+26,"Create(session=session, name=""Activate"")status = (await dtControllerModule.addApplication(dtActivateApp)).statusprint(status)# Add model for appdtActivateApp = (await Content.getByRef(session=session, contentRef=dtActivateApp.getRef())).contentmodelFile = await uploadModel(os.path.dirname(__file__) + ""/test_data/Controller.scm"", dtActivateApp.data_dir, session)status = (await dtActivateApp.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)# Add App 2dtOptistructApp = await DTOptistructApp."
+27,"Create(session=session, name=""OptistructApp"")status = (await dtControllerModule.addApplication(dtOptistructApp)).statusprint(status)# Add model for appdtOptistructApp = (await Content.getByRef(session=session, contentRef=dtOptistructApp.getRef())).contentmodelFile = await uploadModel(os.path.dirname(__file__) + ""/test_data/plate.fem"", dtOptistructApp.data_dir, session)status = (await dtOptistructApp.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)modules = (await"
+28,"= (await dtProject.getModules()).modulesprint(modules)module = (await dtProject.getModule(name=""Controller"")).moduleprint(module)"
+29,"Add Modules # Add Module 1dtBatterModule = await DTModule.
+Create(session=session, name=""Battery"")status = (await dtProject.addModule(dtBatterModule)).statusprint(status)# Add Module 2dtControllerModule = await DTModule.
+Create(session=session, name=""Controller"")status = (await dtProject.addModule(dtControllerModule)).statusprint( status)"
+30,"Create Project # Create projectdtProject = await DTProject.
+Create(session, name=""TestProject"")"
+31,Edit Model Files # Edit model file in Activate appawait dtActivateApp.edit()
+32,Generate Report # Generate reportawait dtActivateApp.generateReport()
+33,"Get Project by Name # Get Project by namedtProject = (await DTProject.
+GetProject(session, name=dtProject.name)).projectprint(dtProject.name)"
+34,"Get Project # Get all ProjectsdtProjects = (await DTProject.
+GetProjects(session)).projectsprint(dtProjects)"
+35,Run MDE on Model Files # Run MDE on model filestatus = (await dtModel.runMDE()).statusprint(status)
+36,"Upload Project Model # Upload Project ModeldtModel = (await dtProject.getModel()).modelmodelFile = await uploadModel(os.path.dirname(__file__) + ""/test_data/Drone.stmod"", dtModel.data_dir, session)status = (await dtModel.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)"
+37,"Add an Application The code used to add an application:# Get the Application by referenceapp = (await Content.getByRef(session=context.session, contentRef=inputs.app)).content# Relate the Application with Module.
+# The addApps _ method is autogenerated by the system since the cdef has a relation created between themawait module.addApps_(app)"
+38,"Add a Module Add a Module The code used to add a module:# Get the Module by referencemodule = (await Content.getByRef(session=context.session, contentRef=inputs.module)).content# Relate the Module with Project.# The addModules_ method is autogenerated by the system since the cdef has a relation created between themawait project.addModules_(module)"
+39,Assign Parts to the Module The code used to assign a module:# Set the array of partnames on the module specified in the inputsmodule.parts = inputs.partNames
+40,"Copying Files to Altair Drive (adcopy) The following code is used for copying the files to Altair Drive:# Get Adcopy path from ExecutionEnvironmentexecEnvData = await action.getExecEnv()onboardedApps = execEnvData.json[""installedApplications""]appConfig = await getApplicationLatestVersionConfig(onboardedApps, ""adcopy"")path = appConfig['installationPath']# Build Adcopy commandlogLocation = os.path.dirname(localPath)args = [ str(path), '-serverURL', session.serverUrl.split(""api/"")[0], '-logLocation',"
+41,"'-logLocation', logLocation, '-logLevel', 'DEBUG', '-accessToken', session.bearerJwt, '-clientID', session._authHeaders[""x-client-id""], '-refreshToken', session._authHeaders[""Cookie""].split('refresh-token=')[-1], '-oc', '-f', localPath, 'remote:' + remotePath]# Run adcopy command as a processawait action.log('--DTActivateAppGenerateReportRun-- Executing Adcopy command : ' + str(args))process_env = os.environ.copy()process = subprocess."
+42,"Popen(args, stdout=subprocess.
+PIPE, env=process_env, shell=False, cwd=os.path.dirname(str(path)))(out, err) = process.communicate()print(process.returncode)"
+43,"Create the DT Project and Set a Model by Default The DT project content outline: DT Project The code used to create the DT project and to set a model by default:from altair.dtwin import DTProject, DT3DModel# Create projectproject = DTProject(session=context.session)project.name = inputs.name# Create Model and its data directorymodel = DT3DModel(session=context.session)# Add relation from Project to Modelawait project.setModel_(model)"
+44,"Editing an Application The following code is used for editing an application:appName = ""Hypermesh""# Set Command Criteria which contains the application detailscommandCriteria = Criteria(session)commandCriteria.applicationName = appNamecommandCriteria.applicationVersion = appVersioncommandCriteria.associatedContentType = modelFile.contentTypecommandCriteria.label = ""windows""# Set Template Values to fill the inputs in runtimetemplateValues = {""INPUT_FILE"": filePath}# Launch Interactive RDP Sessionawait"
+45,"filePath}# Launch Interactive RDP Sessionawait RDPSession.launchApp(session=session,targetExecEnv=""Sessions"",commandCriteria=commandCriteria,templateValues=templateValues,inputFile=modelFile.getRef(),execOptions=ActionExecOptions(metadata={""queueType"": ""interactive""})) You can achieve this in the UI using View Definition file: The file will be opened in the application that is selected."
+46,"Edit an Application The code for editing an application model files:# Specify the application Name to edit from appName = ""Activate""# Set Command Criteria which contains the application detailscommandCriteria = Criteria(session)commandCriteria.applicationName = appNamecommandCriteria.applicationVersion = appVersioncommandCriteria.associatedContentType = modelFile.contentTypecommandCriteria.label = ""windows""# Set Template Values to fill the inputs in runtimetemplateValues = {""INPUT_FILE"": filePath}# Launch"
+47,"= {""INPUT_FILE"": filePath}# Launch Interactive RDP Sessionawait RDPSession.launchApp(session=session,targetExecEnv=""Sessions"",commandCriteria=commandCriteria,templateValues=templateValues,inputFile=modelFile.getRef(),execOptions=ActionExecOptions(metadata={""queueType"": ""interactive""}))"
+48,"Invoking Digital Twin Actions DT actions can be invoked from a client via a Python/Js script or using the Web-UI client.
+Get Project Get all projects.
+dtProjects = (await DTProject.
+GetProjects(session)).projectsprint(dtProjects) Create Project Create project.
+dtProject = await DTProject.
+Create(session, name=""TestProject"") Get Project by Name Get project by name.
+dtProject = (await DTProject.
+GetProject(session, name=dtProject.name)).projectprint(dtProject.name) Upload Project Model Upload project model."
+49,"dtModel = (await dtProject.getModel()).modelmodelFile = await uploadModel(os.path.dirname(__file__) + ""/test_data/Drone.stmod"", dtModel.data_dir, session)status = (await dtModel.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status) Run MDE on Model File Run MDE on a model file.
+status = (await dtModel.runMDE()).statusprint(status) Add Modules Add modules.
+# Add Module 1dtBatterModule = await DTModule."
+50,"# Add Module 1dtBatterModule = await DTModule.
+Create(session=session, name=""Battery"")status = (await dtProject.addModule(dtBatterModule)).statusprint(status)# Add Module 2dtControllerModule = await DTModule.
+Create(session=session, name=""Controller"")status = (await dtProject.addModule(dtControllerModule)).statusprint( status) Add Application and Models to Application Add application and models to the application.
+# Add App 1dtActivateApp = await DTActivateApp."
+51,"Create(session=session, name=""Activate"")status = (await dtControllerModule.addApplication(dtActivateApp)).statusprint(status)# Add model for appdtActivateApp = (await Content.getByRef(session=session, contentRef=dtActivateApp.getRef())).contentmodelFile = await uploadModel(os.path.dirname(__file__) + ""/test_data/Controller.scm"", dtActivateApp.data_dir, session)status = (await dtActivateApp.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)# Add App 2dtOptistructApp = await DTOptistructApp."
+52,"Create(session=session, name=""OptistructApp"")status = (await dtControllerModule.addApplication(dtOptistructApp)).statusprint(status)# Add model for appdtOptistructApp = (await Content.getByRef(session=session, contentRef=dtOptistructApp.getRef())).contentmodelFile = await uploadModel(os.path.dirname(__file__) + ""/test_data/plate.fem"", dtOptistructApp.data_dir, session)status = (await dtOptistructApp.setMainModelFile(modelFile=modelFile.getRef())).statusprint(status)modules = (await"
+53,"= (await dtProject.getModules()).modulesprint(modules)module = (await dtProject.getModule(name=""Controller"")).moduleprint(module) Edit Model Files Edit model file in activate application."
+54,"await dtActivateApp.edit() Generate Report Generate reports.
+await dtActivateApp.generateReport()"
+55,"Executing Solve The following code is used for executing the solver:memory = { ""value"": 3750, ""valueWithUnits"": ""3750 MiB"", ""normalizedValue"": 3932160000}ncpu = 2version = ""2022.2""options = ActionExecOptions(metadata={""queueType"": ""implicit""}, execEnv=""Jobs"")optistructJobAction = await (modelFile.solve(memory=memory, ncpu=ncpu, version=version, execOptions=options)) You can achieve this in the UI using View Definition file: The contents of the Job directory will have the result files once the job is"
+56,will have the result files once the job is complete.
+57,"Generate Report for an Application The code for generating report for an application:import amat_run_activate_report# Get Input model file pathmodelFileInfoActionOutput = await Fs.info(session=session, contentRef=modelFile.getRef(), options={'path': True})filePath = modelFileInfoActionOutput.get('metadata.path')# Get the Activate application path from execution environment docexecEnvData = await action.getExecEnv()onboardedApps = execEnvData.json[""installedApplications""]appConfig = await"
+58,"= await getApplicationLatestVersionConfig(onboardedApps, ""Activate""activatePath = appConfig['installationPath']activateAppPath = os.path.dirname(activatePath) + ""/Activate_batch.bat""# Execute the report generationamat_run_activate_report.create_report_for_model(fileMountPath, reportDirPath, activateAppPath)"
+59,"Getting the Application Path from Execution Environment The following code is used for getting the application path from execution environment:# Get installed Activate Path & check ""/Activate_batch.bat"" is presentexecEnvData = await action.getExecEnv()onboardedApps = execEnvData.json[""installedApplications""]appConfig = await getApplicationLatestVersionConfig(onboardedApps, ""Activate"")activatePath = appConfig['installationPath']activateAppPath = os.path.dirname(activatePath) +"
+60,"= os.path.dirname(activatePath) + ""/Activate_batch.bat""print(activateAppPath)"
+61,"Get the JSON Model Generated by MDE The code used to get the JSON model generated by MDE: # Get the Model file entity by its referencemodelFile = (await Content.getByRef(session=context.session, contentRef= modelFileRef)).content# Compute the expected path which is created post MDE."
+62,"This is by Convention.modelJsonPath = ""/data/files/"" + modelFile.id + ""/"" + modelFile.contentType + ""/3D/model.json""# Get the Model Json file entity by pathmodelJsonFileEntity = (await Fs.info(path=modelJsonPath, session=session)).content# Download to local pathtempDir = tempfile.gettempdir()downloadPath = tempDir + ""/"" + modelJsonFileEntity.nameawait modelJsonFileEntity.download(filePath=downloadPath)# Read contents of model.jsonwith open(downloadPath, 'r') as fp:outputs.modelJson = fp.read()"
+63,"Mounting and Unmounting Altair Drive The following code is used for mounting and unmounting Altair Drive: Mount Adrive# Mount AdrivedriveExecOptions = ActionExecOptions(execEnv=""current"")mountOutputs = await MountAdrive(session=session, execOptions=driveExecOptions)mountPath = mountOutputs.mountPathprint(mountPath) Unmount Adrive# Unmount Adrivefrom altair.adrivemounter import UnmountDrivedriveExecOptions = ActionExecOptions(execEnv=""current"")mountOutputs = await UnmountDrive(session=session,"
+64,"= await UnmountDrive(session=session, execOptions=driveExecOptions)"
+65,"Running MDE The following code is used for running MDE:from altair.mde import GeneratePreviewfrom altair.system import Fs, Contentfrom altair.system import ActionExecOptions, WaitForActionCompletion# Specific where to run the MDE i.e on which ApplianceexecOptions = ActionExecOptions(execEnvFilter={""path"": ""$.name"", ""value"": ""Sessions""})# Execute Preview Gen MDE for the given model filemdeAction = await GeneratePreview(inputFile=modelFile.getRef(), session=session, execOptions=execOptions) You can achieve"
+66,execOptions=execOptions) You can achieve this in the UI using View Definition file: The result of the file metadata will be displayed.
+67,"Run MDE & Generate the Model JSON The code used to run MDE and to generate the model JSON: from altair.mde import GeneratePreviewfrom altair.system import Fs, Contentfrom altair.system import ActionExecOptions, WaitForActionCompletion# Specific where to run the MDE i.e on which ApplianceexecOptions = ActionExecOptions(execEnvFilter={""path"": ""$.name"", ""value"": ""Sessions""})# Execute Preview Gen MDE for the given model filemdeAction = await GeneratePreview(inputFile=modelFile.getRef(), session=session,"
+68,"session=session, execOptions=execOptions)# Wait for MDE to complete since itâ€™s a long running action.# Alternately, we can subscribe to event handler instead of waiting here."
+69,"mdeActionOutput = await WaitForActionCompletion(mdeAction, timeout=300)"
+70,"Upload an Application Model Files The code used to upload an application model files:# Get the Model File entitymodelDirectory = (await Fs.info(session=session, path= modelFilePath)).content# Create the File entity object with name and local file pathmodelFile= FileEntity(session)modelFile.name = “<Model File Name>”modelFile.filePath = “<Model Local File Path>”# Add the model file entity to the parent Model directorydirectory.addFile(file=modelFile)# Set the model fileRef to the Project as its main model"
+71,model fileRef to the Project as its main model file application.modelFile = modelFile.getRef()
+72,"Upload Project Model Files The code used to upload project model files:# Get the Model File entitymodelDirectory = (await Fs.info(session=session, path= modelFilePath)).content# Create the File entity object with name and local file pathmodelFile= FileEntity(session)modelFile.name = “<Model File Name>”modelFile.filePath = “<Model Local File Path>”# Add the model file entity to the parent Model directorydirectory.addFile(file=modelFile)# Set the model fileRef to the Project as its main model file"
+73,fileRef to the Project as its main model file project.modelFile = modelFile.getRef()
+74,"Object Store Examples The following sections provides the list of Object Store examples.
+Uploading a Local File to ServerSet Custom Metadata on a ContentSearch for Contents by Metadata"
+75,"Search for Contents by Metadata The contents created can be searched by specifying the metadata criteria.
+Here is an example of an advanced search by metadata in AltairOne Web.
+Following is the code snippet to programmatically search by metadata:from altair.system.
+Search import Search# Search for all entities with content-type 'altair.datasheet."
+76,"MotorDataSheetCSV' whose total_mass is 1234result = await Search.search(session=session, filter='system.contentType == @contentType && attributes.total_mass == 1234', bindVars={ 'contentType': ""altair.datasheet.
+MotorDataSheetCSV"" })print(result.entities)# Search for all entities with content-type 'altair.datasheet."
+77,"MotorDataSheetCSV' whose total_mass > 4 gramsresult = await Search.search(session=session, filter='system.contentType == @contentType && mass > @weightArg', bindVars= { 'weightArg': ""4 g"", 'contentType': ""altair.datasheet.
+MotorDataSheetCSV"" }, typeHints= { ""mass"": ""UNIT_SCALAR"", ""@weightArg"": ""UNIT_SCALAR"" }, searchOptions= { 'returnCounts': True })print(result.entities)"
+78,"Set Custom Metadata on a Content In this section, we will perform: Get the uploaded file from the file path Set metadata Custom metadata on the file content Set netsted metadata set UnitScalar metadata Save the session Get the metadata that is set previously Get the Uploaded File # Get the uploaded file from file pathcsv_file = (await Fs.info(path=""~/my_file.csv"", session=session)).content Set Metadata # Set some custom metadata on the file"
+79,"Metadata # Set some custom metadata on the file contentcsv_file.set(""string_key"",""foobar"")csv_file.set(""integer_key"", 5678)csv_file.set(""float_key"", 12.34)# Set nested metadatacsv_file.set(""attributes.total_mass"", 1234)# Set UnitScalar metadata from altair.system import UnitScalarunitScalarType= UnitScalar(session)unitScalarType.valueWithUnits=""5 g""csv_file.set(""mass"", unitScalarType) Save the Session # Saveawait session.save() Get Metadata that is Set # Get the metadata set"
+80,"Get Metadata that is Set # Get the metadata set previouslyprint(csv_file.get(""attributes.total_mass"").value) # 1234print(csv_file.get(""mass"").value) # 5print(csv_file.get(""mass"").unit) # gprint(csv_file.get(""mass"").valueWithUnits) # 5gprint(csv_file.get(""mass"").normalizedValue) # 0.005"
+81,"Uploading a Local File to Server Let us say, we have a content-pack altair.datasheet with a content-definition called MotorDataSheetCSV deployed in the server.
+{ ""name"": ""MotorDataSheetCSV"", ""defType"": ""content"", ""extendsFrom"": ""altair.system.
+FileEntity"", ""metadata"": { ""exts"": [""csv""] }} Here, the MotorDataSheetCSV content extends from ""altair.system.
+FileEntity"".
+This denotes that all instances of this type are based on files in Object Store.
+Following is the code snippet to upload a local file."
+82,"Here we upload “.csv” file – note that the content-type is automatically set to “altair.datasheet.
+MotorDataSheetCSV” since we have defined the extension in the content-definition from altair.system import Fs, FileEntity # Get the directory content by drive path."
+83,"Here, ""~"" denotes the user home directory pathdirectory = (await Fs.info(session=session, path=""~"")).content# Create a FileEntity instancefile = FileEntity(session)file.filePath = ""C:/Test/my_file.csv"" # Local file path# Add the file to the given directorydirectory.addFile(file=file)# Save it in Serverawait session.save()"
+84,Actions Code Snippets View the python code that is generated when you create the actions for the content definition.
+85,Create The python code generated when creating a description action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoCreate generated by Altair One content definition compiler.# ToDoCreatePre [optional] precheck and setup resources required for action.# ToDoCreateRun business logic of action and set outputs.# ToDoCreatePost [optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.#
+86,action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoCreateInputsfrom altair.todo import ToDoCreateOutputsfrom altair.todo.
+87,"ToDo import ToDoasync def ToDoCreateRun(inputs: ToDoCreateInputs, outputs: ToDoCreateOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs (ToDoCreateInputs): action inputs outputs (ToDoCreateOutputs): action outputs context (ActionContext): action context ''' # Creating the todo instance todo = ToDo(session=context.session) # Update the attributes todo.description = inputs.description todo.category = inputs.category todo.status = 'Pending' await"
+88,= inputs.category todo.status = 'Pending' await context.session.save() # Emit the ToDo create event await todo.emitToDoCreatedEvent(todoRef=todo) # Assign the todo object to the output content outputs.content = todo GetAll The python code generated when creating a status action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoGetAll generated by Altair One content definition compiler.# ToDoGetAllPre [optional] precheck and setup
+89,ToDoGetAllPre [optional] precheck and setup resources required for action.# ToDoGetAllRun business logic of action and set outputs.# ToDoGetAllPost [optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoGetAllInputsfrom altair.todo import ToDoGetAllOutputsfrom altair.system
+90,"import ToDoGetAllOutputsfrom altair.system import Searchasync def ToDoGetAllRun(inputs: ToDoGetAllInputs, outputs: ToDoGetAllOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs (ToDoGetAllInputs): action inputs outputs (ToDoGetAllOutputs): action outputs context (ActionContext): action context ''' result = await Search.search(session=context.session, filter= 'system.contentType in [""altair.todo."
+91,"ToDo""]') outputs.todos = result.entities Delete The python code generated when creating a category action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoDelete generated by Altair One content definition compiler.# ToDoDeletePre [optional] precheck and setup resources required for action.# ToDoDeleteRun business logic of action and set outputs.# ToDoDeletePost [optional] postchecks and free resources aquired by action.# *** DO NOT"
+92,"and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoDeleteInputsfrom altair.todo import ToDoDeleteOutputsasync def ToDoDeleteRun(inputs: ToDoDeleteInputs, outputs: ToDoDeleteOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs (ToDoDeleteInputs):"
+93,and set outputs Args: inputs (ToDoDeleteInputs): action inputs outputs (ToDoDeleteOutputs): action outputs context (ActionContext): action context ''' await inputs.thisContent.delete() await inputs.thisContent.emitToDoDeletedEvent(todoId=inputs.thisContent.id) outputs.status = True MarkAsCompleted The python code generated when creating a MarkAsCompleted action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoMarkAsComplete generated by
+94,stubs for action ToDoMarkAsComplete generated by Altair One content definition compiler.# ToDoMarkAsCompletePre [optional] precheck and setup resources required for action.# ToDoMarkAsCompleteRun business logic of action and set outputs.# ToDoMarkAsCompletePost [optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import
+95,"PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoMarkAsCompleteInputsfrom altair.todo import ToDoMarkAsCompleteOutputsasync def ToDoMarkAsCompleteRun(inputs: ToDoMarkAsCompleteInputs, outputs: ToDoMarkAsCompleteOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs (ToDoMarkAsCompleteInputs): action inputs outputs (ToDoMarkAsCompleteOutputs): action outputs context (ActionContext): action context '''"
+96,context (ActionContext): action context ''' inputs.thisContent.status = 'Completed' outputs.status = True await inputs.thisContent.emitToDoModifiedEvent(todoRef=inputs.thisContent) MarkAsPending The python code generated when creating a MarkAsPending action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoMarkAsPending generated by Altair One content definition compiler.# ToDoMarkAsPendingPre [optional] precheck and setup resources
+97,[optional] precheck and setup resources required for action.# ToDoMarkAsPendingRun business logic of action and set outputs.# ToDoMarkAsPendingPost [optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoMarkAsPendingInputsfrom altair.todo import ToDoMarkAsPendingOutputsasync def
+98,"import ToDoMarkAsPendingOutputsasync def ToDoMarkAsPendingRun(inputs: ToDoMarkAsPendingInputs, outputs: ToDoMarkAsPendingOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs (ToDoMarkAsPendingInputs): action inputs outputs (ToDoMarkAsPendingOutputs): action outputs context (ActionContext): action context ''' inputs.thisContent.status = 'Pending' outputs.status = True await inputs.thisContent.emitToDoModifiedEvent(todoRef=inputs.thisContent) GetPending The"
+99,GetPending The python code generated when creating a GetPending action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoGetPending generated by Altair One content definition compiler.# ToDoGetPendingPre [optional] precheck and setup resources required for action.# ToDoGetPendingRun business logic of action and set outputs.# ToDoGetPendingPost [optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS
+100,"by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoGetPendingInputsfrom altair.todo import ToDoGetPendingOutputsfrom altair.system import Searchasync def ToDoGetPendingRun(inputs: ToDoGetPendingInputs, outputs: ToDoGetPendingOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs"
+101,"logic of action and set outputs Args: inputs (ToDoGetPendingInputs): action inputs outputs (ToDoGetPendingOutputs): action outputs context (ActionContext): action context ''' result = await Search.search(session=context.session, filter= 'status like ""Pending"" && system.contentType in [""altair.todo."
+102,"ToDo""]' ) outputs.pendingToDos = result.entities GetCompleted The python code generated when creating a GetPending action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoGetCompleted generated by Altair One content definition compiler.# ToDoGetCompletedPre [optional] precheck and setup resources required for action.# ToDoGetCompletedRun business logic of action and set outputs.# ToDoGetCompletedPost [optional] postchecks and free"
+103,"[optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoGetCompletedInputsfrom altair.todo import ToDoGetCompletedOutputsfrom altair.system import Searchasync def ToDoGetCompletedRun(inputs: ToDoGetCompletedInputs, outputs: ToDoGetCompletedOutputs, context: ActionContext):"
+104,"ToDoGetCompletedOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs (ToDoGetCompletedInputs): action inputs outputs (ToDoGetCompletedOutputs): action outputs context (ActionContext): action context ''' result = await Search.search(session=context.session, filter= 'status like ""Completed"" && system.contentType in [""altair.todo."
+105,"ToDo""]' ) outputs.completedToDos = result.entities GetNotes The python code generated when creating a GetNotes action is as follows:# --------------------------------------------------------------------------------# stubs for action ToDoGetNotes generated by Altair One content definition compiler.# ToDoGetNotesPre [optional] precheck and setup resources required for action.# ToDoGetNotesRun business logic of action and set outputs.# ToDoGetNotesPost [optional] postchecks and free resources aquired by"
+106,"postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import ToDoGetNotesInputsfrom altair.todo import ToDoGetNotesOutputsasync def ToDoGetNotesRun(inputs: ToDoGetNotesInputs, outputs: ToDoGetNotesOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs"
+107,logic of action and set outputs Args: inputs (ToDoGetNotesInputs): action inputs outputs (ToDoGetNotesOutputs): action outputs context (ActionContext): action context ''' notes = await inputs.thisContent.getNotes() outputs.notes = notes pass
+108,Note Action Code Snippets View the python code that is generated when you create and delete note actions for the content definition.
+109,Create The python code generated when creating a Create note is as follows:# --------------------------------------------------------------------------------# stubs for action NoteCreate generated by Altair One content definition compiler.# NoteCreatePre [optional] precheck and setup resources required for action.# NoteCreateRun business logic of action and set outputs.# NoteCreatePost [optional] postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.#
+110,"action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import NoteCreateInputsfrom altair.todo import NoteCreateOutputsfrom altair.todo import Notefrom altair.system import Contentasync def NoteCreateRun(inputs: NoteCreateInputs, outputs: NoteCreateOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args:"
+111,"business logic of action and set outputs Args: inputs (NoteCreateInputs): action inputs outputs (NoteCreateOutputs): action outputs context (ActionContext): action context ''' # Create the instance of the note note = Note(session=context.session) note.name = inputs.name note.content = inputs.content # Add note the parent ToDo parentRef = await Content.getByRef(session=context.session, contentRef=inputs.parentRef) parentRef.content.addRelation(to=note, relationType=""notes"") # Assign the note object to the"
+112,# Assign the note object to the output content outputs.content = note Delete The python code generated when creating a Delete note is as follows:# --------------------------------------------------------------------------------# stubs for action NoteDelete generated by Altair One content definition compiler.# NoteDeletePre [optional] precheck and setup resources required for action.# NoteDeleteRun business logic of action and set outputs.# NoteDeletePost [optional] postchecks and free resources aquired by
+113,"postchecks and free resources aquired by action.# *** DO NOT MODIFY STUB DEFINITIONS ***.# --------------------------------------------------------------------------------#Created from PythonActionSrcTemplatefrom altair.system import ActionContextfrom altair.todo import NoteDeleteInputsfrom altair.todo import NoteDeleteOutputsasync def NoteDeleteRun(inputs: NoteDeleteInputs, outputs: NoteDeleteOutputs, context: ActionContext): '''Implement business logic of action and set outputs Args: inputs"
+114,logic of action and set outputs Args: inputs (NoteDeleteInputs): action inputs outputs (NoteDeleteOutputs): action outputs context (ActionContext): action context ''' await inputs.thisContent.delete() outputs.success = True
+115,"Compile the Action for the Content Definition Compile that actions provided for the content definition.
+Once you compile the actions for the content definition, it will generate Python or JavaScript of the defined actions.
+The generated Python or JavaScript is applied to the action based on the selected Language for implementing action while creating the action.
+After compiling the action, you must author the business logic in the code that is used to run the actions."
+116,"The action code consists of 3 arguments: Inputs - contains the information defined while creating the actions.
+Output - contains the information defined while creating the actions.
+Action Context - contains the details required for action execution.
+For example, to pass some environment variables to the action.
+Click the next to the created action.
+Action - Compile The action compile notification is displayed.
+Action Compile Notification Click Compile in the notification dialog box."
+117,"The content definition action will be compiled and the action code will be displayed.
+Action Code"
+118,"Create an Action for the Content Definition Let us add a Create action for our ToDo content definition.
+Perform the following steps to create an action for the content definition.
+Click next to the Actions.
+Content Definition Actions The Create Action is displayed.
+Create Action Enter the Action name.
+By default, the Extends from event content type value is selected.
+Choose one of the following actions to model the content definition: Constructor action - action to construct the entity type."
+119,"Static action - a type level action which is applicable for the content definition.
+Inline action - is an action which provides an output as part of the invocation response.
+Select the Language for implementing action from the drop-down list.
+Enter the Description.
+The description is mandatory in all the places for documentation purpose.
+The information provided in this field will generate documentation for the content definition action.
+Click next to the Action Inputs to define the action inputs."
+120,"The action inputs field are displayed.
+Action Inputs Enter the required details for the Action Inputs.
+The required action inputs are Name, Type, and Description.
+Click next to the Action Outputs to define the action output when the action is complete.
+The action outputs field are displayed.
+Action Outputs Enter the required details for the Action Outputs.
+The required action outputs are Name, Type, and Description.
+Click Create.
+The content definition lists the created action."
+121,"The content definition lists the created action.
+Created Content Definition Action In this example, we have created a Create action to perform an action on the task.
+Now, we can create GetAll, Delete, MarkAsCompleted, MarkAsPending, GetPending, GetCompleted and GetNotes actions to perform various operations on the tasks.
+Similarly, we can create Create and Delete note actions.
+Compile the Action for the Content Definition."
+122,"Compile the Action for the Content Definition.
+Compile the Action for the Content DefinitionCompile that actions provided for the content definition.
+Actions Code SnippetsView the python code that is generated when you create the actions for the content definition.
+Note Action Code SnippetsView the python code that is generated when you create and delete note actions for the content definition."
+123,"Create an Advanced Application using Object Store Creating an advanced (Digital Twin) application to design, build, test, optimize, evaluate the what-if scenarios, performâ€¯predictive maintenance, and extend the remaining useful life (RUL) of their products without the need for physical prototypes."
+124,Typical work flow of the Digital Twin application: Create a Project Upload project model files Set main model file for Project Run MDE & get JSON model file Add a Module Assign parts to Module Add an Application Upload application model files Set main model file for the Application Edit the Application Generate report for the Application View Report Digital Twin Data Model The data model for the Digital Twin application is an abstract model that organizes elements of data and standardizes how they relate
+125,elements of data and standardizes how they relate to one another and to the entities.
+126,"Digital Twin Data Model Create the required Content Pack Objects like Properties, Relations, and Actions for each of the Data Models.
+Note: Refer to Create Objects in Object Store for more information.
+Digital Twin Content Pack You can download the Digital Content pack zip file (dtwin.zip) from Altair One Drive location at https://altairone.com/Drive/dir/64e72c5c3c2985487dbb3595 or obtained using your usual Altair support channels."
+127,"To load the Digital Twin Content pack, refer to Register the Content Pack with VS Code.
+Authoring the Digital Twin ApplicationAuthor the actions for the Digital Twin (DT) application in Object Store.
+Invoking Digital Twin ActionsDT actions can be invoked from a client via a Python/Js script or using the Web-UI client.
+Execute Actions on HPCThe following sections shows how to execute actions on HPC for accessing the files, creating models, executing solver, and editing the model."
+128,"Create an Application using Object Store Altair Object Store provides the building blocks required to create and deploy applications.
+The main steps to build an application are: Connect to the Object Store server and create a profile.
+Create a local content pack with content definitions.
+Add properties, actions, events and relations to content definitions.
+Build and Deploy the content pack.
+Apply the Object Store packages.
+Apply the Web Content pack.
+Access the application."
+129,"Access the application.
+Let us examine these steps with an example of a ToDo task management application.
+The application consists of a list of tasks.
+A task (ToDo content) consists of a basic description, status (pending, in-progress or done), start and end dates.
+Tasks can also be assigned a category (Personal or Work).
+The application also contains notes.
+A note (Note content) captures text about a task.
+These are the content definitions we need to create."
+130,"Content Definition Create the following Content Definition: ToDo - captures the basic description, status, start and end dates.
+Optionally one can assign a category to a ToDo task.
+Note - captures the note for the tasks.
+Properties We need to add these properties for the ToDo content definition.
+description - ToDo that you want to accomplish.
+This is a string property type to define the content of the task.
+status - Status of the ToDo whether in progress, pending or completed."
+131,"All todos are by default in pending status.
+Set the property value as “In Progress”, “Completed”, and “Pending”.
+category - Group the ToDo .
+Set the property value as “Personal” and “Work”.
+Actions These are the actions that need to be added to the ToDo content definition."
+132,"Create - Create a ToDo action with the description, status and category GetAll - Get All ToDos that is created by the user from the database Delete - Delete the selected ToDo MarkAsCompleted - Mark the ToDo as completed MarkAsPending - Mark the ToDo as pending GetPending - Get all the pending ToDos GetCompleted - Returns completed ToDos GetNotes - Get all the associated notes Events Here are the Events that need to be added to the ToDo content definition."
+133,"ToDoCreateEvent - Event is triggered when a ToDo entity is created ToDoDeleteEvent - This event is triggered on deletion of a ToDo entity ToDoModifiedEvent - Trigger on modification of ToDo Relations We need to create a relation to Notes from the ToDo content definition.
+Notes"
+134,"Create Content Definition Create the content definition in the local packs.
+The content definition captures the definition of the domain object that you want to model.
+The Type of definition created for the local packs are: Content - captures the definition of the domain object that you want to model.
+Property - is a data type in programming parlance.
+When you share the content pack with a user, then the user can use the authored properties as well.
+Global Action - Actions defined globally."
+135,"Global Action - Actions defined globally.
+Global Event - Events defined globally.
+Let's create a ToDo content definition for our application.
+Click next to the created local pack.
+Content Definition Select Content from the Type of definition drop down list.
+Content Definition - Options The Create Content Definition is displayed.
+Create Content Definition Enter the Content definition name.
+Note: The content definition name should start with an Uppercase character."
+136,"Select the Extends from content definition from the drop-down list.
+Extend from content definition - Lists By default, only the system content packs are displayed for an empty database.
+It will display user deployed content packs if they are available.
+Enter the Description.
+The description is mandatory in all the places for documentation purpose.
+The information provided in this field will generate documentation for the content definition."
+137,"Optional: Select Abstract content definition to define an interface.
+The content definition created will be extended and defined later.
+Click Create.
+The local packs lists the created content definition.
+Created Content Definition and Content Outline Click the created content definition to view the Content Outline in the bottom pane.
+The content outline of the content definition will be displayed."
+138,"Content OutlineThe content outline provides you to further author the content definitions like Properties, Relations, Actions, and Events."
+139,"Authoring the Digital Twin Application Author the actions for the Digital Twin (DT) application in Object Store.
+Create the DT Project and Set a Model by DefaultUpload Project Model FilesRun MDE & Generate the Model JSONGet the JSON Model Generated by MDEAdd a ModuleAdd an ApplicationUpload an Application Model FilesEdit an ApplicationGenerate Report for an Application"
+140,"Create an Event for the Content Definition Author the content definition by creating an event.
+Let's create a Create Event for our ToDo content definition.
+This event will be triggered when a ToDo entity is created.
+Click next to the Events.
+Content Definition Events The Create Event is displayed.
+Create Event Enter the Event name.
+By default, the Extends from event content type value is selected.
+Select Static checkbox if you do not want the event to be instantiated."
+141,"Static content will not have any associated action.
+Enter the Description.
+The description is mandatory in all the places for documentation purpose.
+The information provided in this field will generate documentation for the content definition action.
+Click next to the Event Payload to define the event payload information.
+The Event Payload field are displayed.
+Event Payload Click Create.
+The content definition lists the created event."
+142,"The content definition lists the created event.
+Created Content Definition Event In this example, we have created a Create event.
+Now, we can create Delete and Modified events."
+143,"Execute Actions on HPC The following sections shows how to execute actions on HPC for accessing the files, creating models, executing solver, and editing the model.
+Mounting and Unmounting Altair DriveAccessing Mounted File(s)Getting the Application Path from Execution EnvironmentRunning MDEExecuting SolveEditing an ApplicationCopying Files to Altair Drive (adcopy)"
+144,"Build and Deploy the Local Pack Build, deploy and install the local pack with the content definition, its property, actions, events, and the relations.
+Once the Build, Deploy and Install is complete, it will package the Python and NodeJS code into a WHL file and the tar.gz respectively.
+This has to be used to build our ToDo application.
+Right-click the created local pack.
+Created Local Pack Select Build, Deploy & Install from the drop-down list."
+145,"Build, Deploy, and Install Local Pack Note: Any changes done after you Build, Deploy, and Install the content pack, you must increment the Content pack version number before you Build, Deploy, and Install the updated content pack.
+Update the Content Pack Version Number Build and deploy notifications will be displayed.
+Build and Deploy Notifications Click the Output tab in the VS Code to view the process of build and deploy.
+Build and Deploy Process The Remote Packs pane lists the deployed local pack."
+146,"You can browse the deployed local pack to verify the content definition, its property, actions, events, and the relations.
+Once the Build, Deploy and Install is complete, it will package the Python and NodeJS code into a WHL file and the tar.gz respectively.
+Packaged FilesYou can use the bundled package content in the UI and start using the application that is created using the Object Store."
+147,"Create a Local Content Pack Now that we have connected to the server, created a profile and downloaded the essential remote content packs, we can begin creating our local content pack.
+In this example, we will create a todo content pack.
+Click in the Local Packs pane.
+Create Local Packs The Create Content Pack is displayed.
+Create Content Pack Enter the Content pack name.
+The content pack name should be in lowercase which is the standard way used in Python and nodejs package names."
+148,"The content pack name links to the package name in Python or in nodejs (npm package).
+Enter the Content pack provider.
+The content pack provider is a higher-level namespace to differentiate package names at an account level.
+Enter the Content pack version number.
+The selected content pack version should be based on npm versioning style which is prevalent in the node modules and at various package management system (Major.
+Minor, and Bug Fixes - 1.0.0).
+Select the Content pack dependencies."
+149,"Select the Content pack dependencies.
+By default, all the content pack is dependent on system pack.
+System pack is a set of interfaces defined by the platform.
+This provides the information about the content pack and its relationship with the event, action, application, execution environment, and file directory.
+Enter the Content pack description.
+The content pack description is mandatory in all the places for documentation purpose."
+150,"The information provided in this field will generate documentation for that pack.
+Select the Content pack parent directory.
+The content pack parent directory is where the content pack must be initialised.
+Click Create.
+ToDo Example The Local Packs pane lists the created local content pack.
+Created Local Content Pack"
+151,"Create Objects in Object Store Create the objects in Object Store to generate the APIs for the ToDo application.
+Connect to a Server and Create a ProfileBefore we begin, we need to connect to the Object Store server, create a profile and fetch the essential remote content packs.
+Create a Local Content PackNow that we have connected to the server, created a profile and downloaded the essential remote content packs, we can begin creating our local content pack."
+152,"Create Content DefinitionCreate the content definition in the local packs.
+Create Property for the Content DefinitionAuthor the content definition by creating a property.
+Create an Action for the Content DefinitionLet us add a Create action for our ToDo content definition.
+Create an Event for the Content DefinitionAuthor the content definition by creating an event.
+Create a Relation for the Content DefinitionAuthor the content definition by creating a relation."
+153,"Build and Deploy the Local PackBuild, deploy and install the local pack with the content definition, its property, actions, events, and the relations."
+154,"Create Property for the Content Definition Author the content definition by creating a property.
+For our ToDo content definition let's add a description property which will take string values.
+Click next to the Property.
+Content Definition Property The Create Property is displayed.
+Create Property Enter the Property name.
+Select the Property Type from the drop-down list."
+155,"Select the Property Type from the drop-down list.
+Property Type - Lists The property type is a list of various native types supported by JSON schema and the system properties authored on top of the JSON schema.
+Note: Additional fields are displayed based on the selected Property Type.
+For example, if you have selected String as the Property Type, then it displays the Enumerations for property value field.
+Property Lists - Additional Fields Enter the Description."
+156,"The description is mandatory in all the places for documentation purpose.
+The information provided in this field will generate documentation for the content definition property.
+Optional: Select Required to define if property defined is required or not for the content definition.
+Click Create.
+The content definition lists the created property.
+Created Content Definition Property In this example, we have created a description property to describe the task."
+157,"Now, we can create status and category properties to describe the task status and its category."
+158,"Create a Relation for the Content Definition Author the content definition by creating a relation.
+Let's create a relation between ToDos and Notes in our application.
+Click next to the Relations.
+Content Definition Relations The Create Relation is displayed.
+Create Relation Enter the Relation name.
+Select the Content type of related content from the drop-down list.
+Select the From cardinality [from this content to related content] from the drop-down list."
+159,"From Cardinality Select the To cardinality [from this content to related content] from the drop-down list.
+Click Create.
+Create Relation Details The content definition lists the created relation.
+Created Content Definition Relation"
+160,"Connect to a Server and Create a Profile Before we begin, we need to connect to the Object Store server, create a profile and fetch the essential remote content packs.
+Perform the following steps to create a profile.
+Click Altair One Tool icon () in the VS Code.
+Click at the top pane in the left panel.
+The Create Profile is displayed in the right panel.
+Create Profile Enter a Profile Name.
+Enter the Server URL.
+Select the Execution Environment from the drop-down menu.
+Click Create."
+161,"Click Create.
+The created profile will be listed.
+Created Profile Right-click the profile and select Make Default to set it as a default profile.
+Set the Profile as Default Note: Refresh the Remote Packs after adding the profile to authenticate your credentials using Okta login page.
+Remote packs get activated after authenticating your credentials.
+Click Altair One Content Pack icon ().
+The Remote Packs deployed are listed: Remote Packs Create Local Packs."
+162,"Altair Object Store Platform Architecture The Object Store architecture includes, in addition to the central Object Store engine that manages configuration and execution, an environment manager, a multi-model database, an event bus, and gateways.
+Investigate the many different parts that make up the Object Store architecture.
+Altair Object Store platform architecture consists of: Object Store Architecture Arango Database â€“ a multi-model database that provides storage capability and a graph model."
+163,The database provides Search capability and it indexes the data based on the index definition.
+164,"Redis for distributed data structure implementation NATS Event Bus Root Gateway API Gateway â€“ a downstream gateway that calls the Object Store Authentication Server - Receive Request, Authenticate the user, give JWT token and forward the request to the downstream configured services Object Store engine â€“ a core engine handling configuration and execution Environment Manager - a service that curates the execution environment (PBS or OpenFaaS)."
+165,"This service is responsible for authoring and deployment of content definitions in the execution environment.
+It manages the health of the environment and addresses various functions (for example, bringing up a server which is down)."
+166,Benefits of Object Store The Altair Object Store allows you to model engineering objects that are independent of the user interface and can be consumed in a variety of applications via APIs.
+167,"The benefits of Object Store are as follows: Object Store enables you to model engineering objects, define properties, and methods Ability to define and capture Objects (for example, content, file and folder) Define the properties, behavior, and methods for these Objects Write sample code for a method, action, and behavior Objects can be independent rather than glued to the user interface Consume objects in different applications through APIs (for example, in HyperWorks, HyperView and Inspire) Support for"
+168,"in HyperWorks, HyperView and Inspire) Support for authoring the contents, actions, and deploying them Users can author content and get it onboarded to the platform easily."
+169,"Object Store Features Altair Object Store is an advanced content management system that combines the capabilities of numerous services and an action execution engine that applies Access Control List (ACL) and other authorization policies for enhanced security.
+The main features of the Object Store are: Everything in the object store is modeled as an Object.
+Supports object extension and ACL.
+Capability to define, create and manage content through content packs."
+170,"Actions can be authored in one language and consumed in other languages.
+Achieves a clear separation of storage and computation.
+Seamless communication between the applications.
+Built on multi-model graph database for high performance.
+Support various deployment modes.
+Content Packs Content packs encapsulate definitions, actions, applications, events, execution environments and other resources.
+Consumers can pay and use contents packs authored and deployed by various providers in the Object Store."
+171,"About Altair Object Store Object Store is an enhanced next-generation platform core that has combined capabilities of numerous services.
+Altair Object Store is an enhanced next-generation platform providing a set of core fundamental services that let client applications define, modify, and share authoritative digital content representing virtual engineering meta-worlds."
+172,"The Object Store is a unique content management system that enables complex digital modeling through: object inheritance, instancing fine-grained access control metadata for search and classification object linkage through relationships capture of behaviors and actions publish-subscribe (pub/sub) messaging to enable event-driven architecture Domain Objects, Actions, Events, and Execution Environments can be modeled as objects."
+173,"Solving, result extraction, file operations and other actions are modeled as domain actions.
+These can be executed in PBS Professional, OpenFaaS or other environments.
+See AlsoTutorials"
+174,"Register the Content Pack with VS Code You can register the content pack with VS Code to use the objects.
+Before you begin, unzip the Content pack zip file in your local system.
+Click on the left panel of the VS Code.
+Register Content Pack Select the unzipped Content Pack folder from the Windows Explorer.
+Click Select Folder.
+The content pack will be registered in the VS Code."
+175,"Integration with VS Code The Object Store plugin for Visual Studio Code (VSCode) provides an efficient coding environment for authoring and onboarding content packs.
+The VS Code helps to author the content which is easier for users to get onboarded to the platform.
+The icons added in the VS Code after you install Object Store are: - Altair One Tool icon - Altair One Content Pack icon.
+The VSCode plugin provides: Authoring Panel: A panel on the left to define a workflow for authoring a content pack."
+176,"It consists of: Remote Packs Pane: A pane at the top that displays the packs that are deployed on the server.
+Local Packs Pane: A pane in the middle that displays the packs authored by the user.
+Content Outline Pane: A pane at the bottom that displays the contents of the content pack.
+Editor Panel: A panel on the right to edit the code of the content pack."
+177,"Install Object Store This section provides the prerequisites, instructions to install Object Store, verification of Object Store installation, and Object Store service commands.
+Prerequisites Prerequisites for installing Object Store components and Object Store.
+Node.js 16 LTS Python 3.8.10 Amazon Coretto OpenJDK 11 Docker GitBash (on Windows) Object Store Installer zip archive.
+Note: Contact Altair Support channels to obtain the installer."
+178,"Visual Studio Code (VSCode) Install Object Store Copy the Object Store installer to the system where you want to install.
+Start the console as an administrator.
+Navigate to the location where you have copied the Object Store installer zip file.
+Unzip the Object Store Installer zip file.
+Run the reinstall.sh script.
+This will install Object Store docker image with database and VSCode plugin."
+179,"Note: If there is an existing instance of the Object Store, then this command will reinstall the Object Store docker image with a new database and VSCode plugin.
+Installation Verification Run the sanity tests to verify the Object Store installation.
+To verify the installation: Navigate to client/tests/js.
+Execute the following command: execute ""npm test"" Navigate to client/tests/python."
+180,"Execute the following command: execute ""pytest -v"" Object Store Service Commands Commands for starting and stopping of Object Store.
+You need administrator (sudo) permissions to start or stop the Object Store services.
+To start Object Store docker image: docker-compose up To stop Object Store docker image: docker-compose down Troubleshooting the Installation Troubleshoot the Object Store installation."
+181,"Perform the steps if the following error is displayed while starting the Object Store server on Windows:""A required privilege is not held by the client"" Run secpol.msc and add the user to the list of users who can create symbolic links by navigating to Security Settings -> Local Policies -> User Rights Assignment -> Create symbolic links.
+Start the console used to launch Object store as administrator."
+182,"Apply Object Store Packs to use the Application Apply the Object Store packages and web content packs in the local UI framework.
+We will use the ToDo packages and the altair system package to continue authoring our application.
+Apply the Object Store PackagesApply the Object Store API packages created to the local UI framework.
+Apply the Web Content PackFor our ToDo application, we will update the javascript code to use the objects we defined in our content pack."
+183,Access the ApplicationAccess the application with Altair One credentials.
+184,"Apply the Web Content Pack For our ToDo application, we will update the javascript code to use the objects we defined in our content pack.
+Create the following files to use the Object Store web content pack: session.js - To create the sessions while using the content definition useManageToDo.js - To use the properties and actions useToDoCreateEvent.js - To use the events useManageNote.js - To use the notes Note: The above file names are just an example."
+185,"The file names can be different based on your requirements.
+Update the session.js file with the following code to create sessions while using the content definitions: import { Session } from '@altair/system';let session;const serverUrl = `${window.location.origin}/api/objectstore`;export const getSession = async () => { if (!session) { session = await Session."
+186,"Create({ serverUrl }); } return session; }; Update the useManageToDo.js file with the following code to consume the Object Store properties and actions content definitions: import React from 'react';import { ToDo } from '@altair/todo';import { getSession } from '../session';import { useToDoCreateEvent } from './useToDoCreateEvent';const EMPTY_ARRAY = [];export const useManageToDo = () => { const [todos, setTodos] = React.useState(EMPTY_ARRAY); const [isLoading, setIsLoading] = React.useState(false);"
+187,"setIsLoading] = React.useState(false); useToDoCreateEvent({ todos, setTodos }); const addToDo = React.useCallback(async (text, category) => { const session = await getSession(); await ToDo."
+188,"Create({ session, description: text, category: category.label }); }, []); const getAll = React.useCallback(async () => { setIsLoading(true); const session = await getSession(); const { todos = [] } = await ToDo."
+189,"GetAll({ session }); const newTodos = todos.map(todo => ({ id: todo.id, text: todo.description, category: todo.category, isDone: todo.status === 'Completed', entity: todo, })); setIsLoading(false); setTodos(newTodos); }, []); const markTodo = React.useCallback( async (index, todo) => { const mapTodos = {}; todos.forEach(todo => { mapTodos[todo.id] = todo; }); const session = await getSession(); const todoRef = await ToDo.getByRef({ contentRef: { id: todo.id, contentType: todo.entity.contentType }, session,"
+190,"contentType: todo.entity.contentType }, session, }); if (todo.isDone) { await todoRef.content."
+191,"MarkAsPending({ session }); mapTodos[todo.id].isDone = false; } else { await todoRef.content.
+MarkAsComplete({ session }); mapTodos[todo.id].isDone = true; } setTodos(Object.values(mapTodos)); }, [todos] ); const getCompleted = React.useCallback(async () => { const session = await getSession(); const { completedToDos } = await ToDo."
+192,"GetCompleted({ session }); const newTodos = completedToDos.map(todo => ({ id: todo.id, text: todo.description, category: todo.category, isDone: todo.status === 'Completed', entity: todo, })); setTodos(newTodos); }, []); const getPending = React.useCallback(async () => { const session = await getSession(); const { pendingToDos } = await ToDo."
+193,"GetPending({ session }); const newTodos = pendingToDos.map(todo => ({ id: todo.id, text: todo.description, category: todo.category, isDone: todo.status === 'Completed', entity: todo, })); setTodos(newTodos); }, []); const removeTodo = React.useCallback( async (index, todo) => { const session = await getSession(); const todoRef = await ToDo.getByRef({ contentRef: { id: todo.id, contentType: todo.entity.contentType }, session, }); await todoRef.content."
+194,"Delete({}); const newTodos = todos.filter(({ id }) => todo.id !== id); setTodos(newTodos); }, [todos] ); React.useEffect(() => { getAll(); }, [getAll]); return { addToDo, getAll, getCompleted, markTodo, getPending, removeTodo, todos, isLoading };}; Update the useToDoCreateEvent.js file with the following code to consume the Object Store Event content definitions: import React from 'react';import { useSocketCallback } from '@altair/react-hooks';import { Content } from '@altair/system';import { getSession }"
+195,} from '@altair/system';import { getSession } from '../session';const topics = ['altair_todo_ToDoToDoCreatedEvent.
+196,"*'];export const useToDoCreateEvent = ({ todos, setTodos }) => { const socketCallback = React.useCallback( async eventPayload => { const { payload } = eventPayload; const session = await getSession(); const { content } = await Content.getByRef({ contentRef: payload.todoRef, session, }); if (content?.id) { const newTodos = [ { text: content.description, isDone: false, id: content.id, category: content.category, entity: content }, ...todos, ]; setTodos(newTodos); } }, [setTodos, todos] );"
+197,"]; setTodos(newTodos); } }, [setTodos, todos] ); useSocketCallback(socketCallback, topics);}; Update the useManageNote.js file with the following code to consume the Object Store Note content definitions: import React from 'react';import { Note, ToDo } from '@altair/todo';import { getSession } from '../session';const EMPTY_ARRAY = [];export const useManageNote = ({ selectedEntity, isOpen, setShowAddNote }) => { const [notes, setNotes] = React.useState(EMPTY_ARRAY); const [isLoadingNotes, setIsLoadingNotes]"
+198,"const [isLoadingNotes, setIsLoadingNotes] = React.useState(false); const [isCreatingNote, setIsCreatingNote] = React.useState(false); React.useEffect(() => { if (selectedEntity?.id && isOpen) { const fetchNotes = async () => { try { setIsLoadingNotes(true); const session = await getSession(); const todoRef = await ToDo.getByRef({ contentRef: { id: selectedEntity.id, contentType: selectedEntity.entity.contentType }, session, }); const notesResponse = await todoRef.content.getNotes();"
+199,"notesResponse = await todoRef.content.getNotes(); setNotes(notesResponse); } catch (e) { console.error(e); } finally { setIsLoadingNotes(false); } }; fetchNotes(); } }, [selectedEntity, isOpen]); const createNote = React.useCallback( async ({ name, content }) => { try { setIsCreatingNote(true); const session = await getSession(); const createdNote = await Note."
+200,"Create({ session, content, name, parentRef: { id: selectedEntity?.id, contentType: selectedEntity?.entity?.contentType, }, }); setNotes([createdNote, ...notes]); } catch (e) { console.error(e); } finally { setIsCreatingNote(false); setShowAddNote(false); } }, [selectedEntity, notes, setShowAddNote] ); return { isLoadingNotes, isCreatingNote, notes, createNote };};"
+201,"Apply the Object Store Packages Apply the Object Store API packages created to the local UI framework.
+Before you begin, ensure that you have the following packages: Python (WHL file) or NodeJS (tar.gz) package."
+202,"For example, the ToDo package (altair-todo-version.tgz) that is created Altair System package (altair-system-version.tgz) located at <objectstore location>/<version>/js/ The following steps must be performed to use the Object Store packages: Copy the Object Store and Altair System Packages to the local web workspace Update the Application framework Install the packages Copy the Object Store and Altair System packages to the local web workspace."
+203,Upload Packages Update the package.json file to include the copied packages and the application framework.
+204,"{ ""name"": ""todo"", ""version"": ""0.1.0"", ""private"": true, ""dependencies"": { ""@altair/a365-themes"": ""^2.1.0"", ""@altair/app-frame"": ""^6.3.2"", ""@altair/react-hooks"": ""^2.2.0"", ""@altair/system"": ""./packages/altair-system-1.0.276.tgz"", ""@altair/todo"": ""./packages/altair-todo-1.0.0.tgz"", ""@testing-library/jest-dom"": ""^5.16.1"", ""@testing-library/react"": ""^12.1.2"", ""@testing-library/user-event"": ""^13.5.0"", ""bootstrap"": ""^5.1.3"", ""nats.ws"": ""^1.5.0"", ""react"": ""^17.0.2"", ""react-app-rewired"": ""^2.2.1"","
+205,"""^17.0.2"", ""react-app-rewired"": ""^2.2.1"", ""react-bootstrap"": ""^2.1.0"", ""react-dom"": ""^17.0.2"", ""react-modal"": ""^3.15.1"", ""react-scripts"": ""5.0.0"", ""react-select"": ""^5.2.1"", ""uuid"": ""^8.3.2"", ""web-vitals"": ""^2.1.2"" }, ""devDependencies"": { ""@altair/prettier-rules"": ""^2.0.1"", ""@altair/react-dev-proxy"": ""^3.0.1"", ""cross-env"": ""^5.2.1"" }, ""scripts"": { ""start"": ""cross-env GENERATE_SOURCEMAP=false REACT_APP_PROXIES=local react-app-rewired start"", ""build"": ""react-app-rewired build"", ""test"": ""react-app-rewired"
+206,"build"", ""test"": ""react-app-rewired test"", ""eject"": ""react-app-rewired eject"" }, ""eslintConfig"": { ""extends"": [ ""react-app"", ""react-app/jest"" ] }, ""browserslist"": { ""production"": [ "">0.2%"", ""not dead"", ""not op_mini all"" ], ""development"": [ ""last 1 chrome version"", ""last 1 firefox version"", ""last 1 safari version"" ] }} The included application framework provides the login page, authentication, authorization, and notifications required to use the web portal."
+207,"Update the index.js file to use the application framework: import React from 'react';import ReactDOM from 'react-dom';import AppFrame from '@altair/app-frame';import './index.css';const App = React.lazy(() => import('./App'));ReactDOM.render( <AppFrame appNames={['Todo']} defaultAppName=""Todo"" config={{ notification: { enabled: true }, waffleMenuFavoriteAppsEnabled: true }}> <App appName=""Todo"" /> </AppFrame>, document.getElementById('root')); Install the packages to the UI framework based on the node"
+208,packages to the UI framework based on the node package manager that is used.
+209,"For example, use the following command to install the package: yarn install This will detect and install all the packages in node modules defined in the package.json.
+Next step is to use the Object Store content definitions in the application framework."
+210,Tutorials Video tutorials to help you get started with Altair Object Store.
+211,"What's New Here is a quick look at the latest features available with Altair Object Store.
+See AlsoTutorials"
