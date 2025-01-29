@@ -55,9 +55,9 @@ async def query_chatbot(request: QueryRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 # Notes : 
+# Run API endpoint :  cd to backend and run : uvicorn chatbot_app:app --reload
+# Chatbot Interface : cd to frontend and run : python -m http.server 8080 (cd to frontend folder and run this command)
 
 # End point for FastAPI : http://127.0.0.1:8000/docs
 # End point for HTML page : http://localhost:8080/Chatbot_Inteface.html 
 # Ctrl + C to shut down 
-# Run API endpoint :  uvicorn chatbot_app:app --reload
-# Chatbot Interface : python -m http.server 8080 (cd to frontend folder and run this command)

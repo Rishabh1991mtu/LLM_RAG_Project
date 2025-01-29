@@ -1,0 +1,1 @@
+ Assign Parts to the Module The code used to assign a module:# Set the array of partnames on the module specified in the inputsmodule.parts = inputs.partNames 

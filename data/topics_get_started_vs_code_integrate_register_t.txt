@@ -1,0 +1,1 @@
+ Register the Content Pack with VS Code You can register the content pack with VS Code to use the objects. Before you begin, unzip the Content pack zip file in your local system. Click on the left panel of the VS Code. Register Content Pack Select the unzipped Content Pack folder from the Windows Explorer. Click Select Folder. The content pack will be registered in the VS Code. 
