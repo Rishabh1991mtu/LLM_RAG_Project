@@ -3,7 +3,7 @@ import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from retrievel import initialize_components
+from src.backend.retrievel import initialize_components
 from fastapi.responses import StreamingResponse
 
 # Initialize FastAPI app
